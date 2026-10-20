@@ -80,9 +80,11 @@ select.field{appearance:none;background-image:linear-gradient(45deg,transparent 
 @media (prefers-reduced-motion: reduce){.rise,.arc,.pin,.line{animation-duration:.01s !important;animation-delay:0s !important}.pinring,.float{animation:none}.float.rise{animation:none;opacity:1}.card:hover{transform:none}}
 @media (max-width: 1240px){.nav .links{display:none}}
 @media (max-width: 1080px){.hero,.g2{grid-template-columns:minmax(0,1fr)}.serve{grid-template-columns:minmax(0,1fr)}.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.nav .links{display:none}}
+/* phones: lighter section rhythm */
+@media (max-width: 640px){.ita>section{padding-top:72px !important;padding-bottom:72px !important}}
 /* header must fit 375px: logo + CTA */
 @media (max-width: 640px){.nav .wrap{gap:12px !important}.nav img{height:32px !important}.nav .btn{padding:0 16px}}
-@media (max-width: 640px){.wrap{padding:0 20px}.g4,.g3{grid-template-columns:minmax(0,1fr)}.h1{font-size:36px !important}.h2{font-size:28px !important}.hide-sm{display:none !important}.mapcards{display:none}}
+@media (max-width: 640px){.wrap{padding:0 20px}.g4,.g3{grid-template-columns:minmax(0,1fr)}.h1{font-size:34px !important}.h2{font-size:26px !important}.hide-sm{display:none !important}.mapcards{display:none}}
 /* ===== motion system: scroll-driven, subtle ===== */
 @property --n{syntax:'<integer>';inherits:false;initial-value:0}
 @keyframes wordUp{from{transform:translateY(120%)}to{transform:none}}
@@ -203,38 +205,33 @@ h2.h2,.card,.news,.trustbar>div,.g4>div,.qa a,figure,.fp>div,.chip,ol>li{animati
 </header>
 
 <!-- HERO -->
-<section style="padding: 64px 0 72px; overflow: hidden; background: linear-gradient(180deg, #FAF7F2 0%, #FAF7F2 78%, #F4F6FA 78%)">
+<section style="padding: 96px 0; overflow: hidden; background: #FAF7F2">
 <div class="wrap hero">
 <div style="padding-bottom: 40px">
 <div class="rise" style="animation-delay: 1.35s; display: inline-flex; align-items: center; gap: 10px; background: #FFFFFF; border: 1px solid #E6E1D8; border-radius: 999px; padding: 6px 16px 6px 6px; font-size: 13px; font-weight: 600; color: #0F2D56">
 <span style="width: 26px; height: 26px; border-radius: 50%; background: #7A1F3D; display: inline-flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M20 6 9 17l-5-5"></path></svg></span>
 IBCC-registered exam delivery partner
 </div>
-<h1 class="serif h1" style="font-size: 48px; line-height: 1.04; font-weight: 600; color: #0F2D56; margin: 26px 0 22px; letter-spacing: -0.8px"><span class="wl"><span style="animation-delay: 1.45s">Secure delivery.</span></span><span class="wl"><span style="animation-delay: 1.60s">Trusted people.</span></span><span class="wl"><span style="animation-delay: 1.75s">Advanced technology.</span></span></h1>
+<h1 class="serif h1" style="font-size: 44px; line-height: 1.04; font-weight: 600; color: #0F2D56; margin: 26px 0 22px; letter-spacing: -0.8px"><span class="wl"><span style="animation-delay: 1.45s">Secure delivery.</span></span><span class="wl"><span style="animation-delay: 1.60s">Trusted people.</span></span><span class="wl"><span style="animation-delay: 1.75s">Advanced technology.</span></span></h1>
 <p class="rise" style="animation-delay: 1.60s; font-size: 16px; max-width: 28em; margin: 0 0 34px">Independent exam delivery for awarding bodies, universities and training providers, proven across Pakistan and the UAE, and now launching in new countries.</p>
 <div class="rise" style="animation-delay: 1.75s; display: flex; gap: 14px; flex-wrap: wrap; align-items: center">
 <a class="btn btn-m" href="#">Become a partner <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 <a class="btn btn-o" href="#">Verify a result</a>
 </div>
-<div class="rise serif" style="animation-delay: 2.00s; margin-top: 44px; font-style: italic; font-size: 20px; color: #7A1F3D; display: flex; align-items: center; gap: 16px">
+<div class="rise serif" style="animation-delay: 2.00s; margin-top: 44px; font-style: italic; font-size: 18px; color: #7A1F3D; display: flex; align-items: center; gap: 16px">
 <span class="rule-in" style="height: 1px; width: 56px; background: #7A1F3D; display: block"></span>Trusted assessment. Delivered.</div>
 </div>
 
 <!-- animated network panel -->
-<div class="rise" style="animation-delay: 1.50s; position: relative">
-<div class="wipe tilt" data-tilt="" style="position: relative; border-radius: 12px; overflow: hidden; height: 440px; background: #0F2D56">
+<div class="rise" style="animation-delay: 1.50s; position: relative; width: 100%; max-width: 420px; margin-left: auto">
+<div class="wipe tilt" data-tilt="" style="position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 1 / 1; background: #0F2D56">
 <img class="kb" src="assets/ita-hall-exam.jpg" alt="Candidates sitting an exam in an ITA-managed hall" style="display: block; width: 100%; height: 100%; object-fit: cover">
 <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,45,86,0) 40%, rgba(15,45,86,.78) 100%)"></div>
 <svg style="position: absolute; inset: 22px; width: calc(100% - 44px); height: calc(100% - 44px)" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><g fill="none" stroke="#FFFFFF" stroke-width="2" vector-effect="non-scaling-stroke" opacity=".85"><path d="M0 8V0h6" vector-effect="non-scaling-stroke"></path><path d="M94 0h6v8" vector-effect="non-scaling-stroke"></path></g></svg>
 <div class="glass" style="position: absolute; top: 36px; left: 36px; display: flex; align-items: center; gap: 8px; padding: 6px 12px; font-size: 12px; font-weight: 700; color: #FFFFFF"><span class="recdot"></span>CCTV recording</div>
-<div class="glass" style="position: absolute; left: 24px; right: 24px; bottom: 24px; padding: 16px 20px; color: #FFFFFF; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap">
-<div><div style="font-size: 13px; color: #DCE7F5">Live sitting</div><div class="serif" style="font-size: 20px; font-weight: 600">Every desk numbered, every candidate checked</div></div>
-<div style="text-align: right"><div style="font-size: 12px; color: #DCE7F5">Time remaining</div><div style="font-size: 22px; font-weight: 700; font-variant-numeric: tabular-nums"><span id="clock">02:14:36</span></div></div>
 </div>
-</div>
-<div class="mapcards rise" style="animation-delay: 2.90s; position: absolute; right: -32px; top: 72px; width: 120px; height: 96px; border-radius: 12px; overflow: hidden; border: 5px solid #FFFFFF; box-shadow: 0 24px 48px -20px rgba(15,45,86,.5)"><img src="assets/ita-security-gate.jpg" alt="Security gate at the entrance of an ITA exam venue" style="display: block; width: 100%; height: 100%; object-fit: cover"></div>
 <!-- floating cards -->
-<div class="mapcards" style="position: absolute; left: -32px; top: 34%; width: 230px">
+<div class="mapcards" style="position: absolute; left: -48px; bottom: 32px; width: 230px">
 <div class="float rise" style="animation-delay: 3.10s; background: #FFFFFF; border-radius: 12px; padding: 18px; box-shadow: 0 24px 48px -20px rgba(15,45,86,.45); border: 1px solid #E6E1D8; display: flex; gap: 14px; align-items: center">
 <div style="width: 46px; height: 46px; border-radius: 8px; background: #F6EDF0; display: flex; align-items: center; justify-content: center; flex: none"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7A1F3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path pathLength="100" d="m9 12 2 2 4-4"></path></svg></div>
 <div><div style="font-weight: 700; color: #0F2D56; font-size: 15px">Candidate verified</div><div style="font-size: 13px">QR and photo ID matched</div></div>
@@ -250,11 +247,14 @@ IBCC-registered exam delivery partner
 </div>
 </section>
 
-<!-- trust bar -->
-<section style="background: #F4F6FA; padding: 0 0 24px">
-<div class="wrap">
 <!-- audience finder -->
-<div style="background: #FFFFFF; border: 1px solid #E6E1D8; border-radius: 16px; box-shadow: 0 24px 60px -36px rgba(15,45,86,.35); margin-bottom: 64px; overflow: hidden">
+<section style="background: #F4F6FA; padding: 96px 0">
+<div class="wrap">
+<div style="text-align: center; margin-bottom: 36px">
+<div style="font-size: 14px; font-weight: 700; color: #7A1F3D; margin-bottom: 10px">Get started</div>
+<h2 class="serif h2" style="font-size: 30px; line-height: 1.15; font-weight: 600; color: #0F2D56; margin: 0">Find what you need</h2>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E6E1D8; border-radius: 16px; box-shadow: 0 24px 60px -36px rgba(15,45,86,.35); overflow: hidden">
 <div role="tablist" aria-label="Choose who you are" style="display: flex; flex-wrap: wrap; border-bottom: 1px solid #E6E1D8">
 <button type="button" role="tab" class="ftab on" data-aud="cand" aria-selected="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle pathLength="100" cx="12" cy="8" r="4"></circle><path pathLength="100" d="M4 21a8 8 0 0 1 16 0"></path></svg>I’m sitting an exam</button>
 <button type="button" role="tab" class="ftab" data-aud="body" aria-selected="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M3 21h18M5 21V10M19 21V10M9 21v-7M15 21v-7M2 10l10-7 10 7z"></path></svg>I run exams for an institution</button>
@@ -286,18 +286,30 @@ IBCC-registered exam delivery partner
 </div>
 </div>
 </div>
-<div class="g4 trustbar" style="padding: 8px 0; gap: 0">
+</div>
+</section>
+
+<!-- trust bar -->
+<section style="background: #FFFFFF; padding: 64px 0; border-top: 1px solid #E6E1D8; border-bottom: 1px solid #E6E1D8">
+<div class="wrap">
+<div class="g4 trustbar" style="gap: 0">
 <div style="display: flex; gap: 14px; align-items: center; padding: 6px 18px; border-right: 1px solid #E6E1D8"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#7A1F3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M12 3v18M5 7h14M5 7l-3 7a4 4 0 0 0 6 0zM19 7l-3 7a4 4 0 0 0 6 0z"></path></svg><span style="font-weight: 600; color: #0F2D56; line-height: 1.35">Independent and impartial</span></div>
 <div style="display: flex; gap: 14px; align-items: center; padding: 6px 18px; border-right: 1px solid #E6E1D8"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#7A1F3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg><span style="font-weight: 600; color: #0F2D56; line-height: 1.35">IBCC-aligned procedures</span></div>
 <div style="display: flex; gap: 14px; align-items: center; padding: 6px 18px; border-right: 1px solid #E6E1D8"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#7A1F3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M9 11l3 3L22 4"></path><path pathLength="100" d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg><span style="font-weight: 600; color: #0F2D56; line-height: 1.35">ISO-style audit trail</span></div>
 <div style="display: flex; gap: 14px; align-items: center; padding: 6px 18px"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#7A1F3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle pathLength="100" cx="12" cy="12" r="10"></circle><path pathLength="100" d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"></path></svg><span style="font-weight: 600; color: #0F2D56; line-height: 1.35">Proven in Pakistan, launching worldwide</span></div>
 </div>
-<div style="display: flex; align-items: center; gap: 44px; flex-wrap: wrap; justify-content: center; padding: 56px 0 0; border-top: 1px solid #E6E1D8; margin-top: 48px">
+</div>
+</section>
+
+<!-- awarding bodies -->
+<section style="background: #FAF7F2; padding: 72px 0">
+<div class="wrap">
+<div style="display: flex; align-items: center; gap: 44px; flex-wrap: wrap; justify-content: center">
 <span style="font-size: 14px">Trusted by awarding bodies including</span>
-<span class="serif" style="font-size: 21px; color: #4B5563">University of Greenwich</span>
-<span class="serif" style="font-size: 21px; color: #4B5563">NCC Education</span>
-<span class="serif" style="font-size: 21px; color: #4B5563">City &amp; Guilds</span>
-<span class="serif" style="font-size: 21px; color: #4B5563">Denning Campuses</span>
+<span class="serif" style="font-size: 18px; color: #4B5563">University of Greenwich</span>
+<span class="serif" style="font-size: 18px; color: #4B5563">NCC Education</span>
+<span class="serif" style="font-size: 18px; color: #4B5563">City &amp; Guilds</span>
+<span class="serif" style="font-size: 18px; color: #4B5563">Denning Campuses</span>
 </div>
 </div>
 </section>
@@ -308,7 +320,7 @@ IBCC-registered exam delivery partner
 <div class="g2" style="align-items: end; gap: 48px; margin-bottom: 56px">
 <div>
 <div style="font-size: 14px; font-weight: 700; color: #7A1F3D; margin-bottom: 12px">Who we work with</div>
-<h2 class="serif h2" style="font-size: 36px; line-height: 1.1; font-weight: 600; color: #0F2D56; margin: 0">Fair, reliable, internationally aligned exams.</h2>
+<h2 class="serif h2" style="font-size: 30px; line-height: 1.1; font-weight: 600; color: #0F2D56; margin: 0">Fair, reliable, internationally aligned exams.</h2>
 </div>
 <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap">
 <p style="margin: 0; font-size: 16px; max-width: 24em">Whoever sets the standard, we apply it the same way every time.</p>
@@ -321,32 +333,32 @@ IBCC-registered exam delivery partner
 <div class="flip-in">
 <div class="face card">
 <div class="ph" style="height: 210px; border-radius: 0"><img src="assets/ita-invigilator-hall.jpg" alt="Invigilator supervising a scholarship exam hall"></div>
-<div style="padding: 22px"><h3 class="serif" style="font-size: 21px; color: #0F2D56; margin: 0 0 6px; font-weight: 600">Awarding bodies</h3><p style="margin: 0; font-size: 14px">Every session to your protocols, with conflict-free invigilators.</p></div>
+<div style="padding: 22px"><h3 class="serif" style="font-size: 18px; color: #0F2D56; margin: 0 0 6px; font-weight: 600">Awarding bodies</h3><p style="margin: 0; font-size: 14px">Every session to your protocols, with conflict-free invigilators.</p></div>
 <span class="glass fliphint"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5"></path></svg>Hover for details</span></div>
-<div class="face back"><div style="font-size: 13px; font-weight: 700; color: #A9C3E6">For awarding bodies</div><h3 class="serif" style="font-size: 22px; font-weight: 600; line-height: 1.15">What we handle for you</h3><span class="bl">Your protocols applied at every sitting</span><span class="bl">Trained, conflict-free invigilators</span><span class="bl">A full report after each session</span><a href="#">See how it works</a></div>
+<div class="face back"><div style="font-size: 13px; font-weight: 700; color: #A9C3E6">For awarding bodies</div><h3 class="serif" style="font-size: 20px; font-weight: 600; line-height: 1.15">What we handle for you</h3><span class="bl">Your protocols applied at every sitting</span><span class="bl">Trained, conflict-free invigilators</span><span class="bl">A full report after each session</span><a href="#">See how it works</a></div>
 </div>
 </article>
 <article class="flip" tabindex="0" style="height: 380px">
 <div class="flip-in">
 <div class="face card">
 <div class="ph" style="height: 210px; border-radius: 0"><img src="assets/ita-greenwich.jpg" alt="Students outside a University of Greenwich building"></div>
-<div style="padding: 22px"><h3 class="serif" style="font-size: 21px; color: #0F2D56; margin: 0 0 6px; font-weight: 600">Universities</h3><p style="margin: 0; font-size: 14px">One consistent picture across a distributed exam network.</p></div>
+<div style="padding: 22px"><h3 class="serif" style="font-size: 18px; color: #0F2D56; margin: 0 0 6px; font-weight: 600">Universities</h3><p style="margin: 0; font-size: 14px">One consistent picture across a distributed exam network.</p></div>
 <span class="glass fliphint"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5"></path></svg>Hover for details</span></div>
-<div class="face back"><div style="font-size: 13px; font-weight: 700; color: #A9C3E6">For universities</div><h3 class="serif" style="font-size: 22px; font-weight: 600; line-height: 1.15">What we handle for you</h3><span class="bl">The same checks in every city</span><span class="bl">One consistent record across campuses</span><span class="bl">Controlled venues with CCTV</span><a href="#">See how it works</a></div>
+<div class="face back"><div style="font-size: 13px; font-weight: 700; color: #A9C3E6">For universities</div><h3 class="serif" style="font-size: 20px; font-weight: 600; line-height: 1.15">What we handle for you</h3><span class="bl">The same checks in every city</span><span class="bl">One consistent record across campuses</span><span class="bl">Controlled venues with CCTV</span><a href="#">See how it works</a></div>
 </div>
 </article>
 <article class="flip" tabindex="0" style="height: 380px">
 <div class="flip-in">
 <div class="face card">
 <div class="ph" style="height: 210px; border-radius: 0"><img src="assets/ita-checkin.jpg" alt="ITA staff checking candidates in on laptops"></div>
-<div style="padding: 22px"><h3 class="serif" style="font-size: 21px; color: #0F2D56; margin: 0 0 6px; font-weight: 600">Training providers</h3><p style="margin: 0; font-size: 14px">A neutral layer, with an auditable record of every sitting.</p></div>
+<div style="padding: 22px"><h3 class="serif" style="font-size: 18px; color: #0F2D56; margin: 0 0 6px; font-weight: 600">Training providers</h3><p style="margin: 0; font-size: 14px">A neutral layer, with an auditable record of every sitting.</p></div>
 <span class="glass fliphint"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5"></path></svg>Hover for details</span></div>
-<div class="face back"><div style="font-size: 13px; font-weight: 700; color: #A9C3E6">For training providers</div><h3 class="serif" style="font-size: 22px; font-weight: 600; line-height: 1.15">What we handle for you</h3><span class="bl">A neutral layer between you and candidates</span><span class="bl">An auditable record of every sitting</span><span class="bl">Photo ID and QR checks at the door</span><a href="#">See how it works</a></div>
+<div class="face back"><div style="font-size: 13px; font-weight: 700; color: #A9C3E6">For training providers</div><h3 class="serif" style="font-size: 20px; font-weight: 600; line-height: 1.15">What we handle for you</h3><span class="bl">A neutral layer between you and candidates</span><span class="bl">An auditable record of every sitting</span><span class="bl">Photo ID and QR checks at the door</span><a href="#">See how it works</a></div>
 </div>
 </article>
 </div>
 <aside style="background: #FFFFFF; border: 1px solid #E6E1D8; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column">
-<h3 class="serif" style="font-size: 20px; color: #0F2D56; margin: 0; padding: 18px 16px 10px; font-weight: 600">Quick access</h3>
+<h3 class="serif" style="font-size: 18px; color: #0F2D56; margin: 0; padding: 18px 16px 10px; font-weight: 600">Quick access</h3>
 <nav class="qa" aria-label="Quick access">
 <a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7A1F3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect pathLength="100" x="3" y="4" width="18" height="18" rx="2"></rect><path pathLength="100" d="M16 2v4M8 2v4M3 10h18"></path></svg>Book an exam</a>
 <a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7A1F3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path pathLength="100" d="M14 2v6h6M9 13h6M9 17h6"></path></svg>Exam guidelines</a>
@@ -367,7 +379,7 @@ IBCC-registered exam delivery partner
 <div class="wrap g2" style="gap: 72px">
 <div>
 <div style="font-size: 14px; font-weight: 700; color: #A9C3E6; margin-bottom: 14px">Why choose ITA</div>
-<h2 class="serif h2" style="font-size: 36px; line-height: 1.1; font-weight: 600; color: #FFFFFF; margin: 0 0 20px">An independent invigilation partner, not a conflicted one.</h2>
+<h2 class="serif h2" style="font-size: 30px; line-height: 1.1; font-weight: 600; color: #FFFFFF; margin: 0 0 20px">An independent invigilation partner, not a conflicted one.</h2>
 <p style="font-size: 16px; margin: 0 0 32px; max-width: 30em">When the same centre teaches, registers and invigilates, nobody can call the result fully impartial. We sit between you and your candidates.</p>
 <div style="display: flex; gap: 10px; flex-wrap: wrap">
 <button class="tab" type="button" data-model="trad">Traditional model</button>
@@ -418,7 +430,7 @@ IBCC-registered exam delivery partner
 </div>
 <div>
 <div style="font-size: 14px; font-weight: 700; color: #7A1F3D; margin-bottom: 12px">Inside an ITA venue</div>
-<h2 class="serif h2" style="font-size: 36px; line-height: 1.1; font-weight: 600; color: #0F2D56; margin: 0 0 16px">The room is ready before the first candidate arrives.</h2>
+<h2 class="serif h2" style="font-size: 30px; line-height: 1.1; font-weight: 600; color: #0F2D56; margin: 0 0 16px">The room is ready before the first candidate arrives.</h2>
 <p style="margin: 0 0 28px; font-size: 16px">Halls set, rules posted and desks numbered, the same way at every centre.</p>
 <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
 <figure style="margin: 0"><div class="ph" style="height: 150px"><img src="assets/ita-hall-desks.jpg" alt="Exam hall with spaced desks and chairs"></div><figcaption style="font-size: 14px; margin-top: 8px; color: #0F2D56; font-weight: 600">Spaced, numbered desks</figcaption></figure>
@@ -436,11 +448,11 @@ IBCC-registered exam delivery partner
 <div class="spot" style="background: #0F2D56; border-radius: 12px; overflow: hidden; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))">
 <div style="padding: 56px; color: #DCE7F5">
 <div style="font-size: 14px; font-weight: 700; color: #A9C3E6; margin-bottom: 12px">Case study</div>
-<h2 class="serif h2" style="font-size: 36px; line-height: 1.1; font-weight: 600; color: #FFFFFF; margin: 0 0 18px">University of Greenwich. Six cities, one set of rules.</h2>
+<h2 class="serif h2" style="font-size: 30px; line-height: 1.1; font-weight: 600; color: #FFFFFF; margin: 0 0 18px">University of Greenwich. Six cities, one set of rules.</h2>
 <p style="margin: 0 0 32px; font-size: 16px">We deliver Greenwich exams with the same checks and reporting in every city, so the university sees one picture, not six.</p>
 <div style="display: flex; gap: 48px; margin-bottom: 36px; flex-wrap: wrap">
-<div><div class="serif" style="font-size: 40px; line-height: 1; color: #FFFFFF; font-weight: 600"><span class="cnt" style="--to: 4"><span class="st">4</span></span>,000+</div><div style="font-size: 14px; margin-top: 8px">Candidates</div></div>
-<div><div class="serif" style="font-size: 40px; line-height: 1; color: #FFFFFF; font-weight: 600"><span class="cnt" style="--to: 15"><span class="st">15</span></span>,000</div><div style="font-size: 14px; margin-top: 8px">Exam sittings</div></div>
+<div><div class="serif" style="font-size: 34px; line-height: 1; color: #FFFFFF; font-weight: 600"><span class="cnt" style="--to: 4"><span class="st">4</span></span>,000+</div><div style="font-size: 14px; margin-top: 8px">Candidates</div></div>
+<div><div class="serif" style="font-size: 34px; line-height: 1; color: #FFFFFF; font-weight: 600"><span class="cnt" style="--to: 15"><span class="st">15</span></span>,000</div><div style="font-size: 14px; margin-top: 8px">Exam sittings</div></div>
 </div>
 <a class="btn btn-w" href="#">Read the case study</a>
 </div>
