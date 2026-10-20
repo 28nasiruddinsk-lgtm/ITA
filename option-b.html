@@ -13,8 +13,11 @@ a{color:#1F5AA6}a:hover{color:#0F2D56}
 .wrap{max-width:1280px;margin:0 auto;padding:0 40px}
 .serif{font-family:'Playfair Display',Georgia,'Times New Roman',serif}
 .nl{display:flex}
-.nl a{color:#DCE7F5;text-decoration:none;font-weight:600;font-size:15px;padding:12px 2px;border-bottom:2px solid transparent}
-.nl a:hover{color:#FFFFFF;border-bottom-color:#C9A063}
+.nl a{color:#0F2D56;text-decoration:none;font-weight:600;font-size:15px;padding:12px 2px;border-bottom:2px solid transparent}
+.nl a:hover{color:#8A6631;border-bottom-color:#C9A063}
+.btn.btn-ink{background:transparent;color:#0F2D56;border-color:#CDBF9F}.btn.btn-ink::before{background:#0F2D56}.btn.btn-ink:hover{color:#FFFFFF;border-color:#0F2D56}
+/* light banner: map routes need ink colours */
+.heromap .arc{stroke:#8A6631}.heromap .arc2{stroke:#8A6631}
 .btn{position:relative;isolation:isolate;overflow:hidden;display:inline-flex;white-space:nowrap;flex-shrink:0;justify-content:center;line-height:1.2;align-items:center;gap:10px;min-height:48px;padding:0 24px;border-radius:8px;font-weight:600;font-size:15px;text-decoration:none;font-family:inherit;cursor:pointer;border:1px solid transparent;transition:color .3s ease,border-color .3s ease,transform .25s ease,box-shadow .25s ease}
 .btn::before{content:"";position:absolute;inset:0;z-index:-1;transform:scaleX(0);transform-origin:left center;transition:transform .35s cubic-bezier(.4,0,.2,1)}
 .btn:hover::before{transform:scaleX(1)}
@@ -30,17 +33,17 @@ a{color:#1F5AA6}a:hover{color:#0F2D56}
 .ln:hover{color:#8A6631;background-size:40% 2px}
 .ln svg{transition:transform .25s ease}.ln:hover svg{transform:translateX(4px)}
 .hgrid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:64px;align-items:center}
-.bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:340px;gap:18px}
-.tile{position:relative;border-radius:12px;overflow:hidden;color:#FFFFFF;text-decoration:none;display:block;background:#0F2D56}
-.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,45,86,0) 40%,rgba(15,45,86,.45) 100%);transition:background .35s ease}
-.tile:hover::after{background:linear-gradient(180deg,rgba(15,45,86,.1) 30%,rgba(15,45,86,.6) 100%)}
-.tile .tx{position:absolute;left:12px;right:12px;bottom:12px;padding:18px 18px 16px;z-index:1;background:rgba(15,45,86,.78);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.14);border-radius:10px;transition:transform .35s ease}
+.bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:auto;gap:18px}
+.tile{position:relative;border-radius:12px;overflow:hidden;color:#FFFFFF;text-decoration:none;display:flex;flex-direction:column;background:#0F2D56}
+.tile img{position:relative;display:block;width:100%;height:180px;flex:none;object-fit:cover}
+.tile::after{content:none}
+
+.tile .tx{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;align-items:flex-start;padding:20px 20px 22px;background:#0F2D56}
 .tile .tx::before{content:"";display:block;width:28px;height:2px;background:#C9A063;border-radius:2px;margin-bottom:12px}
 .tile .tx h3{color:#FFFFFF}
-.tile:hover .tx{transform:translateY(-4px)}
+
 .tile .tx p{margin:6px 0 0;font-size:13.5px;line-height:1.5;color:#DCE7F5;max-width:30em}
-.tile .more{display:inline-flex;align-items:center;gap:8px;margin-top:12px;font-weight:600;font-size:14px;color:#C9A063}
+.tile .more{display:inline-flex;align-items:center;gap:8px;margin-top:auto;padding-top:14px;font-weight:600;font-size:14px;color:#C9A063}
 .tile .more svg{transition:transform .25s ease}.tile:hover .more svg{transform:translateX(4px)}
 .t-a,.t-b,.t-c,.t-d{grid-column:auto;grid-row:auto}
 .steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid #D9D3C7}
@@ -55,7 +58,7 @@ a{color:#1F5AA6}a:hover{color:#0F2D56}
 .chk{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-top:1px solid #ECE7DD;font-size:15px}
 .cell{transition:background .3s ease}
 .cell:hover{background:#FBF8F3}
-@media (max-width: 1080px){.hgrid,.spanel{grid-template-columns:minmax(0,1fr)}.bento{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:300px}.t-a,.t-b,.t-c,.t-d{grid-column:auto;grid-row:auto}.steps{grid-template-columns:repeat(5,minmax(120px,1fr));overflow-x:auto}}
+@media (max-width: 1080px){.hgrid,.spanel{grid-template-columns:minmax(0,1fr)}.bento{grid-template-columns:repeat(2,minmax(0,1fr))}.t-a,.t-b,.t-c,.t-d{grid-column:auto;grid-row:auto}.steps{grid-template-columns:repeat(5,minmax(120px,1fr));overflow-x:auto}}
 @media (prefers-reduced-motion: reduce){.btn,.btn::before,.btn svg,.step::before,.tile::after{transition:none}.btn:hover{transform:none}}
 a:focus-visible,button:focus-visible{outline:3px solid #6B9FD6;outline-offset:2px}
 .g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px;align-items:center}
@@ -225,8 +228,8 @@ a:focus-visible,button:focus-visible{outline:3px solid #6B9FD6;outline-offset:2p
 </div>
 
 <!-- HERO -->
-<section class="spot" style="background: #0F2D56; color: #DCE7F5; position: relative; overflow: hidden">
-<div class="heromap" style="position: absolute; left: -8%; top: 120px; width: 72%; min-width: 620px; opacity: .55" aria-hidden="true">
+<section class="spot" style="background: #FAF6EE; color: #374151; position: relative; overflow: hidden">
+<div class="heromap" style="position: absolute; left: -8%; top: 120px; width: 72%; min-width: 620px; opacity: .3" aria-hidden="true">
 <div class="drift" style="position: relative">
 <img src="assets/map-b.svg" alt="" style="display: block; width: 100%; height: auto">
 <svg viewBox="0 0 1040 600" style="position: absolute; inset: 0; width: 100%; height: 100%">
@@ -238,7 +241,7 @@ a:focus-visible,button:focus-visible{outline:3px solid #6B9FD6;outline-offset:2p
 <path class="arc2" style="animation-delay: 3.05s" d="M651 285 Q648 215 589 184"></path>
 <path class="arc2" style="animation-delay: 3.20s" d="M651 285 Q820 290 930 500"></path>
 <path class="arc2" style="animation-delay: 3.35s" d="M651 285 Q390 20 133 78"></path>
-<circle class="pin" style="animation-delay: 3.50s" cx="547" cy="337" r="5" fill="#FFFFFF"></circle>
+<circle class="pin" style="animation-delay: 3.50s" cx="547" cy="337" r="5" fill="#8A6631"></circle>
 <circle class="pin" style="animation-delay: 3.60s" cx="515" cy="316" r="5" fill="#0F2D56" stroke="#C9A063" stroke-width="2.5"></circle>
 <circle class="pin" style="animation-delay: 3.70s" cx="474" cy="336" r="5" fill="#0F2D56" stroke="#C9A063" stroke-width="2.5"></circle>
 <circle class="pin" style="animation-delay: 3.80s" cx="462" cy="258" r="5" fill="#0F2D56" stroke="#C9A063" stroke-width="2.5"></circle>
@@ -252,8 +255,8 @@ a:focus-visible,button:focus-visible{outline:3px solid #6B9FD6;outline-offset:2p
 </div>
 </div>
 
-<header class="wrap" style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 96px; border-bottom: 1px solid rgba(169,195,230,.18)">
-<a href="#" aria-label="International Testing Alliance home" style="display: flex"><img src="assets/ita-logo-h-white.png" alt="International Testing Alliance" style="height: 52px; width: auto; display: block"></a>
+<header class="wrap" style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 96px; border-bottom: 1px solid #E6DFD0">
+<a href="#" aria-label="International Testing Alliance home" style="display: flex"><img src="assets/ita-logo-h.png" alt="International Testing Alliance" style="height: 52px; width: auto; display: block"></a>
 <nav class="nl" aria-label="Main" style="gap: 30px">
 <a href="#">About</a><a href="#">Services</a><a href="#">Awarding bodies</a><a href="#">Compliance</a><a href="#">Verify a result</a>
 </nav>
@@ -262,22 +265,22 @@ a:focus-visible,button:focus-visible{outline:3px solid #6B9FD6;outline-offset:2p
 
 <div class="wrap hgrid" style="position: relative; padding-top: 80px; padding-bottom: 80px">
 <div>
-<div class="rise" style="animation-delay: 1.35s; display: flex; align-items: center; gap: 14px; font-size: 15px; color: #C9A063; font-weight: 600"><span class="rule-in" style="width: 40px; height: 1px; background: #C9A063; display: block"></span>Proven in Pakistan, launching worldwide</div>
-<h1 class="serif h1" style="font-size: 44px; line-height: 1.02; font-weight: 600; color: #FFFFFF; margin: 24px 0 24px; letter-spacing: -1px"><span class="wl"><span style="animation-delay: 1.45s">Trusted assessment.</span></span><span class="wl"><span style="animation-delay: 1.65s; font-style: italic; font-weight: 500; color: #E2C391">Delivered.</span></span></h1>
-<p class="rise" style="animation-delay: 1.60s; font-size: 16px; max-width: 30em; margin: 0 0 36px; color: #DCE7F5">Secure venues, trained invigilators and full reporting for awarding bodies and universities. We follow your rules and have no stake in the results.</p>
+<div class="rise" style="animation-delay: 1.35s; display: flex; align-items: center; gap: 14px; font-size: 15px; color: #8A6631; font-weight: 600"><span class="rule-in" style="width: 40px; height: 1px; background: #8A6631; display: block"></span>Proven in Pakistan, launching worldwide</div>
+<h1 class="serif h1" style="font-size: 44px; line-height: 1.02; font-weight: 600; color: #0F2D56; margin: 24px 0 24px; letter-spacing: -1px"><span class="wl"><span style="animation-delay: 1.45s">Trusted assessment.</span></span><span class="wl"><span style="animation-delay: 1.65s; font-style: italic; font-weight: 500; color: #8A6631">Delivered.</span></span></h1>
+<p class="rise" style="animation-delay: 1.60s; font-size: 16px; max-width: 30em; margin: 0 0 36px; color: #374151">Secure venues, trained invigilators and full reporting for awarding bodies and universities. We follow your rules and have no stake in the results.</p>
 <div class="rise" style="animation-delay: 1.75s; display: flex; gap: 14px; flex-wrap: wrap">
 <a class="btn btn-gold" href="#">Become a partner <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-<a class="btn btn-line" href="#">Book an exam</a>
+<a class="btn btn-ink" href="#">Book an exam</a>
 </div>
-<div class="rise" style="animation-delay: 1.90s; display: flex; gap: 28px; flex-wrap: wrap; margin-top: 40px; font-size: 14px; color: #DCE7F5">
-<span style="display: flex; gap: 8px; align-items: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A063" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path pathLength="100" d="m9 12 2 2 4-4"></path></svg>IBCC-registered</span>
-<span style="display: flex; gap: 8px; align-items: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A063" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M9 11l3 3L22 4"></path><path pathLength="100" d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>ISO-style audit trail</span>
-<span style="display: flex; gap: 8px; align-items: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A063" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M12 3v18M5 7h14M5 7l-3 7a4 4 0 0 0 6 0zM19 7l-3 7a4 4 0 0 0 6 0z"></path></svg>No stake in results</span>
+<div class="rise" style="animation-delay: 1.90s; display: flex; gap: 28px; flex-wrap: wrap; margin-top: 40px; font-size: 14px; color: #374151">
+<span style="display: flex; gap: 8px; align-items: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8A6631" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path pathLength="100" d="m9 12 2 2 4-4"></path></svg>IBCC-registered</span>
+<span style="display: flex; gap: 8px; align-items: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8A6631" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M9 11l3 3L22 4"></path><path pathLength="100" d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>ISO-style audit trail</span>
+<span style="display: flex; gap: 8px; align-items: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8A6631" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M12 3v18M5 7h14M5 7l-3 7a4 4 0 0 0 6 0zM19 7l-3 7a4 4 0 0 0 6 0z"></path></svg>No stake in results</span>
 </div>
 </div>
 
 <div class="rise" style="animation-delay: 1.55s; position: relative">
-<div class="wipe tilt" data-tilt="" style="position: relative; height: 420px; border-radius: 12px; overflow: hidden; box-shadow: 0 40px 80px -40px rgba(0,0,0,.7)">
+<div class="wipe tilt" data-tilt="" style="position: relative; height: 420px; border-radius: 12px; overflow: hidden; box-shadow: 0 30px 60px -36px rgba(15,45,86,.45)">
 <img src="assets/dummy-d1-hero.jpg" alt="Candidates sitting an exam in an ITA-managed hall" style="display: block; width: 100%; height: 100%; object-fit: cover">
 <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,45,86,0) 55%, rgba(15,45,86,.6) 100%)"></div>
 <span class="glass" style="position: absolute; top: 20px; right: 20px; display: flex; align-items: center; gap: 8px; padding: 6px 12px; font-size: 12px; font-weight: 700; color: #FFFFFF"><span class="breathe" style="width: 7px; height: 7px; border-radius: 50%; background: #E2C391"></span>Session in progress</span>
@@ -285,7 +288,7 @@ a:focus-visible,button:focus-visible{outline:3px solid #6B9FD6;outline-offset:2p
 <div class="rule-in" style="position: absolute; top: 28px; left: -18px; width: 4px; height: 120px; background: #C9A063; border-radius: 2px; transform-origin: top" aria-hidden="true"></div>
 
 <!-- register card -->
-<div class="rise hide-sm" style="animation-delay: 2.30s; position: absolute; left: -48px; bottom: -40px; width: 280px; background: #FAF7F2; color: #374151; border-radius: 12px; padding: 20px 22px 14px; box-shadow: 0 40px 80px -30px rgba(0,0,0,.6)" role="img" aria-label="Illustration of a sitting register logging sessions in different countries">
+<div class="rise hide-sm" style="animation-delay: 2.30s; position: absolute; left: -48px; bottom: -40px; width: 280px; background: #FFFFFF; color: #374151; border: 1px solid #ECE7DD; border-radius: 12px; padding: 20px 22px 14px; box-shadow: 0 30px 60px -30px rgba(15,45,86,.35)" role="img" aria-label="Illustration of a sitting register logging sessions in different countries">
 <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px"><div class="serif" style="font-size: 18px; color: #0F2D56; font-weight: 600">Today’s sittings</div><div style="font-size: 12px; color: #8A6631; font-weight: 700">Audit trail on</div></div>
 <div class="row" style="animation-delay: 2.80s; display: grid; grid-template-columns: 48px minmax(0,1fr) auto; gap: 10px; align-items: center; padding: 9px 0; border-bottom: 1px solid #ECE7DD; font-size: 13px"><span style="color: #0F2D56; font-weight: 700">08:30</span><span>Karachi</span><span style="font-size: 11px; font-weight: 700; color: #0F2D56; background: #E7EEF8; border-radius: 999px; padding: 2px 9px">Sealed</span></div>
 <div class="row" style="animation-delay: 3.05s; display: grid; grid-template-columns: 48px minmax(0,1fr) auto; gap: 10px; align-items: center; padding: 9px 0; border-bottom: 1px solid #ECE7DD; font-size: 13px"><span style="color: #0F2D56; font-weight: 700">09:00</span><span>Dubai</span><span style="font-size: 11px; font-weight: 700; color: #0F2D56; background: #E7EEF8; border-radius: 999px; padding: 2px 9px">IDs checked</span></div>
@@ -297,11 +300,11 @@ a:focus-visible,button:focus-visible{outline:3px solid #6B9FD6;outline-offset:2p
 <!-- number bar -->
 <div class="wrap" style="position: relative">
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); border-top: 1px solid rgba(201,160,99,.5)">
-<div style="padding: 28px 20px 36px 0"><div class="serif" style="font-size: 36px; line-height: 1; color: #FFFFFF; font-weight: 600"><span class="cnt" style="--to: 9"><span class="st">9</span></span></div><div style="font-size: 14px; margin-top: 8px">Cities in Pakistan</div></div>
-<div style="padding: 28px 20px 36px"><div class="serif" style="font-size: 36px; line-height: 1; color: #FFFFFF; font-weight: 600"><span class="cnt" style="--to: 20"><span class="st">20</span></span>+</div><div style="font-size: 14px; margin-top: 8px">Examination centres</div></div>
-<div style="padding: 28px 20px 36px"><div class="serif" style="font-size: 36px; line-height: 1; color: #FFFFFF; font-weight: 600"><span class="cnt" style="--to: 100"><span class="st">100</span></span>k+</div><div style="font-size: 14px; margin-top: 8px">Candidates served</div></div>
-<div style="padding: 28px 20px 36px"><div class="serif" style="font-size: 36px; line-height: 1; color: #FFFFFF; font-weight: 600"><span class="cnt" style="--to: 5"><span class="st">5</span></span></div><div style="font-size: 14px; margin-top: 8px">Years of experience</div></div>
-<div style="padding: 28px 20px 36px"><div class="serif" style="font-size: 36px; line-height: 1; color: #C9A063; font-weight: 600">IBCC</div><div style="font-size: 14px; margin-top: 8px">Registered delivery partner</div></div>
+<div style="padding: 28px 20px 36px 0"><div class="serif" style="font-size: 36px; line-height: 1; color: #0F2D56; font-weight: 600"><span class="cnt" style="--to: 9"><span class="st">9</span></span></div><div style="font-size: 14px; margin-top: 8px">Cities in Pakistan</div></div>
+<div style="padding: 28px 20px 36px"><div class="serif" style="font-size: 36px; line-height: 1; color: #0F2D56; font-weight: 600"><span class="cnt" style="--to: 20"><span class="st">20</span></span>+</div><div style="font-size: 14px; margin-top: 8px">Examination centres</div></div>
+<div style="padding: 28px 20px 36px"><div class="serif" style="font-size: 36px; line-height: 1; color: #0F2D56; font-weight: 600"><span class="cnt" style="--to: 100"><span class="st">100</span></span>k+</div><div style="font-size: 14px; margin-top: 8px">Candidates served</div></div>
+<div style="padding: 28px 20px 36px"><div class="serif" style="font-size: 36px; line-height: 1; color: #0F2D56; font-weight: 600"><span class="cnt" style="--to: 5"><span class="st">5</span></span></div><div style="font-size: 14px; margin-top: 8px">Years of experience</div></div>
+<div style="padding: 28px 20px 36px"><div class="serif" style="font-size: 36px; line-height: 1; color: #8A6631; font-weight: 600">IBCC</div><div style="font-size: 14px; margin-top: 8px">Registered delivery partner</div></div>
 </div>
 </div>
 </section>
