@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ITA homepage — Option A, maroon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&amp;display=swap">
+<style>
+body{margin:0;background:#FAF7F2}
+a{color:#1F5AA6}a:hover{color:#0F2D56}
+.ita *{box-sizing:border-box}
+.wrap{max-width:1280px;margin:0 auto;padding:0 40px}
+.serif{font-family:'Playfair Display',Georgia,'Times New Roman',serif}
+.nav a.nl{white-space:nowrap;color:#0F2D56;text-decoration:none;font-weight:600;font-size:15px;padding:30px 2px;border-bottom:2px solid transparent}
+.nav a.nl:hover,.nav a.nl.on{border-bottom-color:#7A1F3D}
+.btn{position:relative;isolation:isolate;overflow:hidden;display:inline-flex;white-space:nowrap;flex-shrink:0;justify-content:center;line-height:1.2;align-items:center;gap:10px;min-height:48px;padding:0 24px;border-radius:8px;font-weight:600;font-size:15px;text-decoration:none;font-family:inherit;cursor:pointer;border:1px solid transparent;transition:color .3s ease,border-color .3s ease,transform .25s ease,box-shadow .25s ease}
+.btn::before{content:"";position:absolute;inset:0;z-index:-1;transform:scaleX(0);transform-origin:left center;transition:transform .35s cubic-bezier(.4,0,.2,1)}
+.btn:hover::before{transform:scaleX(1)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px -14px rgba(15,45,86,.6)}
+.btn:active{transform:translateY(0);box-shadow:none}
+.btn svg{transition:transform .25s ease}
+.btn:hover svg{transform:translateX(4px)}
+.btn-m{background:#7A1F3D;color:#FFFFFF;border-color:#7A1F3D}.btn-m::before{background:#5A142B}.btn-m:hover{color:#FFFFFF}
+.btn-o{background:#FFFFFF;color:#0F2D56;border-color:#C9D2E0}.btn-o::before{background:#0F2D56}.btn-o:hover{color:#FFFFFF;border-color:#0F2D56}
+.btn-w{background:#FFFFFF;color:#0F2D56}.btn-w::before{background:#DCE7F5}.btn-w:hover{color:#0F2D56}
+.btn-wl{background:transparent;color:#FFFFFF;border-color:rgba(255,255,255,.45)}.btn-wl::before{background:#FFFFFF}.btn-wl:hover{color:#0F2D56;border-color:#FFFFFF}
+.ul{background-image:linear-gradient(#7A1F3D,#7A1F3D);background-size:0 2px;background-repeat:no-repeat;background-position:0 100%;transition:background-size .3s ease,color .2s ease}
+.ul:hover{background-size:100% 2px}
+.btn:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #6B9FD6;outline-offset:2px}
+.ul{color:#0F2D56;font-weight:600;text-decoration:none;border-bottom:2px solid #7A1F3D;padding-bottom:2px}.ul:hover{color:#7A1F3D}
+.hero{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:48px;align-items:center}
+.g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px;align-items:center}
+.serve{display:grid;grid-template-columns:minmax(0,3fr) minmax(260px,1fr);gap:24px;align-items:stretch}
+.qa a{display:flex;align-items:center;gap:14px;min-height:56px;padding:0 16px;border-bottom:1px solid #EADDE2;color:#0F2D56;text-decoration:none;font-weight:600;font-size:15px}
+.qa a:hover{background:#FBF5F7;color:#7A1F3D}
+.card{background:#FFFFFF;border:1px solid #E6E1D8;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .25s ease,box-shadow .25s ease}
+.card:hover{border-color:#C9D2E0;box-shadow:0 14px 32px -24px rgba(15,45,86,.45)}
+.tab{min-height:44px;padding:0 18px;border-radius:8px;border:1px solid rgba(255,255,255,.35);background:transparent;color:#DCE7F5;font:inherit;font-weight:600;font-size:14px;cursor:pointer}
+.tab.on{background:#FFFFFF;color:#0F2D56;border-color:#FFFFFF}
+.ftab{flex:1 1 180px;min-height:60px;border:0;border-bottom:3px solid transparent;background:transparent;font:inherit;font-weight:600;font-size:15px;color:#374151;cursor:pointer;padding:0 20px;display:flex;align-items:center;justify-content:center;gap:10px}
+.ftab:hover{color:#0F2D56}
+.ftab.on{color:#0F2D56;border-bottom-color:#7A1F3D;background:#FBF8F3}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;align-items:end}
+.flabel{display:block;font-size:13px;font-weight:600;color:#0F2D56;margin-bottom:6px}
+select.field{appearance:none;background-image:linear-gradient(45deg,transparent 50%,#1F5AA6 50%),linear-gradient(135deg,#1F5AA6 50%,transparent 50%);background-position:calc(100% - 20px) 21px,calc(100% - 15px) 21px;background-size:5px 5px;background-repeat:no-repeat;padding-right:36px}
+.kb{animation:kb 22s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.07)}}
+.glass{backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(15,45,86,.38);border:1px solid rgba(255,255,255,.28);border-radius:12px}
+.recdot{width:8px;height:8px;border-radius:50%;background:#FFFFFF;animation:recb 1.6s ease-in-out infinite}
+@keyframes recb{0%,100%{opacity:1}50%{opacity:.25}}
+.fp{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:48px;align-items:center}
+.ph{position:relative;border-radius:12px;overflow:hidden;background:#E7EEF8}
+.ph img{display:block;width:100%;height:100%;object-fit:cover}
+@media (max-width: 1080px){.fp{grid-template-columns:minmax(0,1fr)}}
+@media (prefers-reduced-motion: reduce){.kb,.recdot{animation:none}.btn,.btn::before,.btn svg{transition:none}.btn:hover{transform:none}}
+.news{display:block;text-decoration:none;color:#374151;background:#FFFFFF;border:1px solid #E6E1D8;border-radius:12px;padding:28px;transition:border-color .2s ease}
+.news:hover{border-color:#7A1F3D;color:#374151}
+.chip{display:inline-flex;align-items:center;min-height:36px;padding:0 14px;border-radius:999px;border:1px solid #C9D2E0;background:#FFFFFF;font-size:14px;color:#0F2D56;font-weight:600}
+.field{width:100%;min-height:48px;border:1px solid #C9D2E0;border-radius:8px;padding:0 16px;font:inherit;font-size:15px;color:#374151;background:#FFFFFF}
+/* motion */
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes fadeDash{to{opacity:.7}}
+.arc2{fill:none;stroke:#A9C3E6;stroke-width:1.4;stroke-linecap:round;stroke-dasharray:3 8;opacity:0;animation:fadeDash 1.4s ease forwards}
+@keyframes draw{from{stroke-dashoffset:700}to{stroke-dashoffset:0}}
+@keyframes ring{0%{transform:scale(1);opacity:.7}100%{transform:scale(3.2);opacity:0}}
+@keyframes dotIn{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:scale(1)}}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.rise{opacity:0;animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards}
+.arc{fill:none;stroke:#DCE7F5;stroke-width:1.6;stroke-linecap:round;stroke-dasharray:700;stroke-dashoffset:700;opacity:.85;animation:draw 2.2s cubic-bezier(.4,0,.2,1) forwards}
+.pinring{fill:none;stroke:#6B9FD6;stroke-width:2;transform-box:fill-box;transform-origin:center;animation:ring 2.8s ease-out infinite}
+.pin{transform-box:fill-box;transform-origin:center;opacity:0;animation:dotIn .4s ease forwards}
+.float{animation:floatY 6s ease-in-out infinite}
+.float.rise{animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards,floatY 6s ease-in-out infinite}
+.line{transform-origin:left;transform:scaleX(0);animation:fill 2.4s cubic-bezier(.4,0,.2,1) .4s forwards}
+@media (prefers-reduced-motion: reduce){.rise,.arc,.pin,.line{animation-duration:.01s !important;animation-delay:0s !important}.pinring,.float{animation:none}.float.rise{animation:none;opacity:1}.card:hover{transform:none}}
+@media (max-width: 1240px){.nav .links{display:none}}
+@media (max-width: 1080px){.hero,.g2{grid-template-columns:minmax(0,1fr)}.serve{grid-template-columns:minmax(0,1fr)}.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.nav .links{display:none}}
+@media (max-width: 640px){.wrap{padding:0 20px}.g4,.g3{grid-template-columns:minmax(0,1fr)}.h1{font-size:42px !important}.h2{font-size:32px !important}.hide-sm{display:none !important}.mapcards{display:none}}
+/* ===== motion system: scroll-driven, subtle ===== */
+@property --n{syntax:'<integer>';inherits:false;initial-value:0}
+@keyframes wordUp{from{transform:translateY(120%)}to{transform:none}}
+@keyframes wipe{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes rvUp{from{opacity:0;transform:translateY(42px)}to{opacity:1;transform:none}}
+@keyframes rvMask{from{clip-path:inset(18% 0 0 0);opacity:.2}to{clip-path:inset(0 0 0 0);opacity:1}}
+@keyframes rvScale{from{transform:scale(1.12)}to{transform:scale(1)}}
+@keyframes rvRule{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes cnt{from{--n:0}to{--n:var(--to)}}
+@keyframes prog{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(10px,-8px)}}
+.wl{display:block;overflow:hidden;padding:.04em 0 .2em;margin:-.04em 0 -.2em}
+.wl>span{display:inline-block;max-width:100%;transform:translateY(120%);animation:wordUp 1s cubic-bezier(.2,.75,.15,1) forwards}
+.wipe{animation:wipe 1.4s cubic-bezier(.7,0,.2,1) 1.5s both}
+.progress{position:fixed;top:0;left:0;right:0;height:3px;background:#7A1F3D;transform-origin:left;transform:scaleX(0);z-index:50;pointer-events:none}
+.spot{position:relative}
+.spot::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(520px circle at var(--mx,-600px) var(--my,-600px),rgba(107,159,214,.16),transparent 60%);transition:opacity .4s ease;z-index:0}
+.spot>*{position:relative;z-index:1}
+.drift{animation:drift 9s ease-in-out infinite}
+.cnt .st{display:inline}
+@media (prefers-reduced-motion: no-preference){
+@supports (animation-timeline: view()){
+.fp .arc{animation:draw linear both;animation-timeline:view();animation-range:entry 30% cover 55%}
+.fp .arc2{animation:fadeDash linear both;animation-timeline:view();animation-range:entry 40% cover 55%}
+.fp .pin{animation:dotIn linear both;animation-timeline:view();animation-range:cover 30% cover 50%}
+.line{animation:fill linear both;animation-timeline:view();animation-range:entry 30% cover 50%}
+.progress{animation:prog linear both;animation-timeline:scroll(root)}
+h2.h2,.card,.news,.trustbar>div,.g4>div,.qa a,figure,.fp>div,.chip,ol>li{animation:rvUp linear both;animation-timeline:view();animation-range:entry 0% entry 55%}
+.ph{animation:rvMask linear both;animation-timeline:view();animation-range:entry 0% entry 60%}
+.ph img{animation:rvScale linear both;animation-timeline:view();animation-range:entry 0% cover 50%}
+.rule-in{transform-origin:left;animation:rvRule linear both;animation-timeline:view();animation-range:entry 10% cover 40%}
+}
+}
+@media (prefers-reduced-motion: reduce){.wl>span,.wipe{animation:none;transform:none;clip-path:none}.drift{animation:none}.spot::before{display:none}}
+/* ===== round 2: loader, flips, tilt, icon redraw, edu motifs ===== */
+.loader{position:fixed;inset:0;z-index:100;background:#0F2D56;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:22px;animation:loaderOut .9s cubic-bezier(.7,0,.2,1) 1.6s forwards;pointer-events:none}
+.loader::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:#7A1F3D;transform-origin:left;animation:loadBar 1.5s cubic-bezier(.4,0,.2,1) forwards}
+.loader .sh{fill:none;stroke:#FFFFFF;stroke-width:3;stroke-dasharray:100;stroke-dashoffset:100;animation:shDraw 1.2s cubic-bezier(.6,0,.2,1) .1s forwards}
+.loader .lt{opacity:0;animation:ltIn .5s ease .8s forwards}
+.loader .cap{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:20px;color:#DCE7F5;opacity:0;animation:ltIn .6s ease .9s forwards}
+@keyframes loaderOut{to{transform:translateY(-100%);visibility:hidden}}
+@keyframes loadBar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes shDraw{to{stroke-dashoffset:0}}
+@keyframes ltIn{to{opacity:1}}
+.flip{perspective:1400px;position:relative}
+.flip-in{position:relative;width:100%;height:100%;transition:transform .8s cubic-bezier(.3,.7,.2,1);transform-style:preserve-3d}
+.flip:hover .flip-in,.flip:focus-within .flip-in{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:12px;overflow:hidden}
+.back{transform:rotateY(180deg);background:#0F2D56;color:#DCE7F5;padding:26px;display:flex;flex-direction:column;justify-content:center;gap:10px}
+.back h3{margin:0;color:#FFFFFF}
+.back .bl{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.45}
+.back .bl::before{content:"";flex:none;width:7px;height:7px;margin-top:7px;border-radius:50%;background:#7A1F3D}
+.back a{color:#FFFFFF;font-weight:600;font-size:14px;text-decoration:none;border-bottom:2px solid #7A1F3D;align-self:flex-start;margin-top:6px}
+.fliphint{position:absolute;right:12px;top:12px;z-index:2;display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;color:#FFFFFF;padding:4px 10px}
+.tilt{transform:perspective(1000px) rotateX(var(--ry,0deg)) rotateY(var(--rx,0deg));transition:transform .35s ease;will-change:transform}
+@keyframes redraw{from{stroke-dasharray:100;stroke-dashoffset:100}to{stroke-dasharray:100;stroke-dashoffset:0}}
+:is(.trustbar>div,.qa a,.g4>div,.cell,.who a,.news,.chk,.btn,.nrow,.bgrid label,.ftab,.btab,.step):hover svg [pathLength="100"]{animation:redraw .9s ease}
+.hl{background-image:linear-gradient(rgba(122,31,61,.55),rgba(122,31,61,.55));background-repeat:no-repeat;background-size:100% .42em;background-position:0 90%;padding:0 .08em}
+.pencil{position:relative;white-space:nowrap;display:inline-block}
+.pencil svg{position:absolute;left:-2%;bottom:-.22em;width:104%;height:.38em;overflow:visible}
+.pencil path{fill:none;stroke:#7A1F3D;stroke-width:3.5;stroke-linecap:round;stroke-dasharray:100;stroke-dashoffset:0}
+@keyframes hlIn{from{background-size:0% .42em}to{background-size:100% .42em}}
+@keyframes penIn{from{stroke-dashoffset:100}to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion: no-preference){
+@supports (animation-timeline: view()){
+.hl{animation:hlIn linear both;animation-timeline:view();animation-range:entry 40% cover 45%}
+.pencil path{animation:penIn linear both;animation-timeline:view();animation-range:entry 50% cover 50%}
+.g3>:nth-child(2) .card,.g3>.news:nth-child(2),.bento>.tile:nth-child(2),.g3>:nth-child(2) .cell{animation-range:entry 8% entry 65%}
+.g3>:nth-child(3) .card,.g3>.news:nth-child(3),.bento>.tile:nth-child(3),.g3>:nth-child(3) .cell{animation-range:entry 16% entry 75%}
+.bento>.tile:nth-child(4){animation-range:entry 22% entry 80%}
+}
+}
+@media (prefers-reduced-motion: reduce){.loader{display:none}.flip-in{transition:none}.tilt{transform:none}:is(.trustbar>div,.qa a,.g4>div,.cell,.who a,.news,.chk,.btn,.nrow,.bgrid label,.ftab,.btab,.step):hover svg [pathLength="100"]{animation:none}}
+
+.omr{background:#FFFFFF;border:1px solid #E6E1D8;border-radius:12px;padding:20px 22px;min-width:300px;position:relative}
+.omr .r{display:grid;grid-template-columns:64px repeat(4,26px);gap:10px;align-items:center;padding:6px 0;font-size:13px;color:#0F2D56;font-weight:600}
+.bub{width:26px;height:26px;border-radius:50%;border:1.5px solid #9AA6B8;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#4B5563}
+.bub.on{background:#0F2D56;border-color:#0F2D56;color:#FFFFFF}
+.stamp{position:absolute;right:-14px;bottom:-16px;transform:rotate(-8deg);border:2px solid #7A1F3D;color:#7A1F3D;background:#FFFFFF;border-radius:8px;padding:4px 12px;font-size:13px;font-weight:800;letter-spacing:.5px}
+@keyframes bubFill{from{background:transparent;border-color:#9AA6B8;color:#4B5563}to{background:#0F2D56;border-color:#0F2D56;color:#FFFFFF}}
+@keyframes stampIn{from{opacity:0;transform:rotate(-8deg) scale(1.6)}to{opacity:1;transform:rotate(-8deg) scale(1)}}
+@media (prefers-reduced-motion: no-preference){@supports (animation-timeline: view()){.bub.on{animation:bubFill linear both;animation-timeline:view()}.stamp{animation:stampIn linear both;animation-timeline:view();animation-range:entry 90% cover 45%}}}
+
+.optswitch{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;gap:4px;padding:4px;border-radius:999px;background:rgba(15,45,86,.92);box-shadow:0 12px 30px -12px rgba(0,0,0,.5);font-family:'Open Sans',system-ui,sans-serif}
+.optswitch a{color:#DCE7F5;text-decoration:none;font-size:13px;font-weight:700;padding:8px 14px;border-radius:999px}
+.optswitch a.on{background:#FFFFFF;color:#0F2D56}
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+<div class="loader" aria-hidden="true">
+<svg width="92" height="108" viewBox="0 0 120 140"><path class="sh" pathLength="100" d="M12 8h96v64c0 34-26 54-48 62C38 126 12 106 12 72z"></path><text class="lt" x="60" y="80" text-anchor="middle" fill="#FFFFFF" font-family="Open Sans, sans-serif" font-weight="800" font-size="38" letter-spacing="2">ITA</text></svg>
+<div class="cap">Trusted assessment. Delivered.</div>
+</div>
+
+<div class="ita" style="font-family: 'Open Sans', system-ui, sans-serif; color: #374151; background: #FAF7F2; font-size: 16px; line-height: 1.6">
+
+<!-- utility bar -->
+<div style="background: #0F2D56; color: #DCE7F5; font-size: 13px">
+<div class="wrap" style="display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 40px; flex-wrap: wrap">
+<span style="display: flex; gap: 12px; align-items: center"><span style="background: #7A1F3D; color: #FFFFFF; border-radius: 999px; padding: 1px 10px; font-size: 12px; font-weight: 700">News</span>Pakistan Bar Council approves ITS for foreign LLB exam delivery<a href="#" style="color: #FFFFFF; font-weight: 600">Read</a></span>
+<span class="hide-sm" style="display: flex; gap: 24px; align-items: center"><a href="#" style="color: #FFFFFF; font-weight: 600; text-decoration: none">Candidate portal</a><button type="button" aria-label="Change region and language" style="display: inline-flex; align-items: center; gap: 8px; min-height: 32px; background: transparent; border: 1px solid rgba(220,231,245,.35); border-radius: 8px; color: #FFFFFF; font: inherit; font-size: 13px; padding: 0 12px; cursor: pointer"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle pathLength="100" cx="12" cy="12" r="10"></circle><path pathLength="100" d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"></path></svg>Pakistan, English</button></span>
+</div>
+</div>
+
+<!-- nav -->
+<header class="nav" style="background: #FFFFFF; border-bottom: 1px solid #E6E1D8; position: sticky; top: 0; z-index: 5">
+<div class="wrap" style="display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 84px">
+<a href="#" aria-label="International Testing Alliance home" style="display: flex"><img src="assets/ita-logo-h.png" alt="International Testing Alliance" style="height: 52px; width: auto; display: block"></a>
+<nav class="links" aria-label="Main" style="display: flex; gap: 28px; flex-wrap: nowrap">
+<a class="nl" href="#">About</a><a class="nl" href="#">Services</a><a class="nl" href="#">Awarding bodies</a><a class="nl" href="#">Find a centre</a><a class="nl" href="#">Contact</a>
+</nav>
+<div style="display: flex; gap: 10px; align-items: center; flex-shrink: 0">
+<a class="btn btn-o hide-sm" href="#" style="padding: 0 18px">Book an exam</a>
+<a class="btn btn-m" href="#">Become a partner</a>
+</div>
+</div>
+</header>
+
+<!-- HERO -->
+<section style="padding: 64px 0 72px; overflow: hidden; background: linear-gradient(180deg, #FAF7F2 0%, #FAF7F2 78%, #F4F6FA 78%)">
+<div class="wrap hero">
+<div style="padding-bottom: 40px">
+<div class="rise" style="animation-delay: 1.35s; display: inline-flex; align-items: center; gap: 10px; background: #FFFFFF; border: 1px solid #E6E1D8; border-radius: 999px; padding: 6px 16px 6px 6px; font-size: 13px; font-weight: 600; color: #0F2D56">
+<span style="width: 26px; height: 26px; border-radius: 50%; background: #7A1F3D; display: inline-flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M20 6 9 17l-5-5"></path></svg></span>
+IBCC-registered exam delivery partner
+</div>
+<h1 class="serif h1" style="font-size: 64px; line-height: 1.04; font-weight: 600; color: #0F2D56; margin: 26px 0 22px; letter-spacing: -0.8px"><span class="wl"><span style="animation-delay: 1.45s">Secure delivery.</span></span><span class="wl"><span style="animation-delay: 1.60s">Trusted people.</span></span><span class="wl"><span style="animation-delay: 1.75s">Advanced technology.</span></span></h1>
+<p class="rise" style="animation-delay: 1.60s; font-size: 18px; max-width: 28em; margin: 0 0 34px">Independent exam delivery for awarding bodies, universities and training providers, proven across Pakistan and the UAE, and now launching in new countries.</p>
+<div class="rise" style="animation-delay: 1.75s; display: flex; gap: 14px; flex-wrap: wrap; align-items: center">
+<a class="btn btn-m" href="#">Become a partner <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="btn btn-o" href="#">Verify a result</a>
+</div>
+<div class="rise serif" style="animation-delay: 2.00s; margin-top: 44px; font-style: italic; font-size: 26px; color: #7A1F3D; display: flex; align-items: center; gap: 16px">
+<span class="rule-in" style="height: 1px; width: 56px; background: #7A1F3D; display: block"></span>Trusted assessment. Delivered.</div>
+</div>
+
+<!-- animated network panel -->
+<div class="rise" style="animation-delay: 1.50s; position: relative">
+<div class="wipe tilt" data-tilt="" style="position: relative; border-radius: 12px; overflow: hidden; height: 560px; background: #0F2D56">
+<img class="kb" src="assets/ita-hall-exam.jpg" alt="Candidates sitting an exam in an ITA-managed hall" style="display: block; width: 100%; height: 100%; object-fit: cover">
+<div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,45,86,0) 40%, rgba(15,45,86,.78) 100%)"></div>
+<svg style="position: absolute; inset: 22px; width: calc(100% - 44px); height: calc(100% - 44px)" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><g fill="none" stroke="#FFFFFF" stroke-width="2" vector-effect="non-scaling-stroke" opacity=".85"><path d="M0 8V0h6" vector-effect="non-scaling-stroke"></path><path d="M94 0h6v8" vector-effect="non-scaling-stroke"></path></g></svg>
+<div class="glass" style="position: absolute; top: 36px; left: 36px; display: flex; align-items: center; gap: 8px; padding: 6px 12px; font-size: 12px; font-weight: 700; color: #FFFFFF"><span class="recdot"></span>CCTV recording</div>
+<div class="glass" style="position: absolute; left: 24px; right: 24px; bottom: 24px; padding: 16px 20px; color: #FFFFFF; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap">
+<div><div style="font-size: 13px; color: #DCE7F5">Live sitting</div><div class="serif" style="font-size: 20px; font-weight: 600">Every desk numbered, every candidate checked</div></div>
+<div style="text-align: right"><div style="font-size: 12px; color: #DCE7F5">Time remaining</div><div style="font-size: 22px; font-weight: 700; font-variant-numeric: tabular-nums"><span id="clock">02:14:36</span></div></div>
+</div>
+</div>
+<div class="mapcards rise" style="animation-delay: 2.90s; position: absolute; right: -32px; top: 72px; width: 170px; height: 140px; border-radius: 12px; overflow: hidden; border: 5px solid #FFFFFF; box-shadow: 0 24px 48px -20px rgba(15,45,86,.5)"><img src="assets/ita-security-gate.jpg" alt="Security gate at the entrance of an ITA exam venue" style="display: block; width: 100%; height: 100%; object-fit: cover"></div>
+<!-- floating cards -->
+<div class="mapcards" style="position: absolute; left: -32px; top: 46%; width: 264px">
+<div class="float rise" style="animation-delay: 3.10s; background: #FFFFFF; border-radius: 12px; padding: 18px; box-shadow: 0 24px 48px -20px rgba(15,45,86,.45); border: 1px solid #E6E1D8; display: flex; gap: 14px; align-items: center">
+<div style="width: 46px; height: 46px; border-radius: 8px; background: #F6EDF0; display: flex; align-items: center; justify-content: center; flex: none"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7A1F3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path pathLength="100" d="m9 12 2 2 4-4"></path></svg></div>
+<div><div style="font-weight: 700; color: #0F2D56; font-size: 15px">Candidate verified</div><div style="font-size: 13px">QR and photo ID matched</div></div>
+</div>
+</div>
+<div class="mapcards" style="position: absolute; right: -20px; top: -26px; width: 236px">
+<div class="float rise" style="animation-delay: 3.50s; animation-duration: .8s, 7s; background: #FFFFFF; border-radius: 12px; padding: 14px 16px; box-shadow: 0 24px 48px -20px rgba(15,45,86,.45); border: 1px solid #E6E1D8; display: flex; gap: 12px; align-items: center">
+<div style="width: 40px; height: 40px; border-radius: 8px; background: #EEF3FA; display: flex; align-items: center; justify-content: center; flex: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1F5AA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect pathLength="100" x="3" y="11" width="18" height="11" rx="2"></rect><path pathLength="100" d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></div>
+<div><div style="font-weight: 700; color: #0F2D56; font-size: 14px">Paper pack sealed</div><div style="font-size: 12px">Chain of custody logged</div></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- trust bar -->
+<section style="background: #F4F6FA; padding: 0 0 8px">
+<div class="wrap">
+<!-- audience finder -->
+<div style="background: #FFFFFF; border: 1px solid #E6E1D8; border-radius: 12px; box-shadow: 0 30px 60px -40px rgba(15,45,86,.55); margin-bottom: 28px; overflow: hidden">
+<div role="tablist" aria-label="Choose who you are" style="display: flex; flex-wrap: wrap; border-bottom: 1px solid #E6E1D8">
+<button type="button" role="tab" class="ftab on" data-aud="cand" aria-selected="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle pathLength="100" cx="12" cy="8" r="4"></circle><path pathLength="100" d="M4 21a8 8 0 0 1 16 0"></path></svg>I’m sitting an exam</button>
+<button type="button" role="tab" class="ftab" data-aud="body" aria-selected="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M3 21h18M5 21V10M19 21V10M9 21v-7M15 21v-7M2 10l10-7 10 7z"></path></svg>I run exams for an institution</button>
+<button type="button" role="tab" class="ftab" data-aud="centre" aria-selected="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"></path><circle pathLength="100" cx="12" cy="9" r="2.5"></circle></svg>I want to become a centre</button>
+</div>
+<div style="padding: 26px 28px 28px">
+<div data-panel="cand">
+<div class="fgrid">
+<div><label class="flabel" for="f-exam">Exam</label><select class="field" id="f-exam"><option>University of Greenwich</option><option>NCC Education</option><option>City &amp; Guilds</option><option>Foreign LLB</option><option>Other awarding body</option></select></div>
+<div><label class="flabel" for="f-country">Country</label><select class="field" id="f-country"><option>Pakistan</option><option>United Arab Emirates</option><option disabled="">Saudi Arabia (coming soon)</option><option disabled="">Bahrain (coming soon)</option><option disabled="">Iraq (coming soon)</option><option disabled="">Egypt (coming soon)</option><option disabled="">Uzbekistan (coming soon)</option><option disabled="">Malaysia (coming soon)</option><option disabled="">United Kingdom (coming soon)</option></select></div>
+<div><label class="flabel" for="f-city">City</label><select class="field" id="f-city"><option>Karachi</option><option>Lahore</option><option>Islamabad</option><option>Rawalpindi</option><option>Multan</option><option>Hyderabad</option><option>Gujranwala</option><option>Faisalabad</option><option>Gilgit</option><option>Dubai</option></select></div>
+<button class="btn btn-m" type="button" style="justify-content: center">Find exam centres</button>
+</div>
+</div>
+<div data-panel="body" hidden>
+<div class="fgrid">
+<div><label class="flabel" for="f-org">You are</label><select class="field" id="f-org"><option>An awarding body</option><option>A university</option><option>A training organisation</option><option>A partner campus</option></select></div>
+<div><label class="flabel" for="f-need">You need</label><select class="field" id="f-need"><option>Full exam management</option><option>Invigilation only</option><option>Secure venues</option><option>Exam technology</option></select></div>
+<div><label class="flabel" for="f-where">Where</label><select class="field" id="f-where"><option>Pakistan</option><option>Middle East</option><option>Central Asia</option><option>South East Asia</option><option>Several countries</option></select></div>
+<button class="btn btn-m" type="button" style="justify-content: center">Talk to our team</button>
+</div>
+</div>
+<div data-panel="centre" hidden>
+<div class="fgrid">
+<div style="grid-column: span 2; min-width: 0"><div style="font-weight: 700; color: #0F2D56">Run ITA-standard exams at your venue</div><div style="font-size: 14px">We train your staff, audit the room and add you to our network.</div></div>
+<div><label class="flabel" for="f-cc">Country</label><select class="field" id="f-cc"><option>Pakistan</option><option>United Arab Emirates</option><option>Another country (we are expanding)</option></select></div>
+<button class="btn btn-m" type="button" style="justify-content: center">Apply to become a centre</button>
+</div>
+</div>
+</div>
+</div>
+<div class="g4 trustbar" style="background: #FFFFFF; border: 1px solid #E6E1D8; border-radius: 12px; padding: 26px 28px; gap: 0">
+<div style="display: flex; gap: 14px; align-items: center; padding: 6px 18px; border-right: 1px solid #E6E1D8"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#7A1F3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M12 3v18M5 7h14M5 7l-3 7a4 4 0 0 0 6 0zM19 7l-3 7a4 4 0 0 0 6 0z"></path></svg><span style="font-weight: 600; color: #0F2D56; line-height: 1.35">Independent and impartial</span></div>
+<div style="display: flex; gap: 14px; align-items: center; padding: 6px 18px; border-right: 1px solid #E6E1D8"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#7A1F3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg><span style="font-weight: 600; color: #0F2D56; line-height: 1.35">IBCC-aligned procedures</span></div>
+<div style="display: flex; gap: 14px; align-items: center; padding: 6px 18px; border-right: 1px solid #E6E1D8"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#7A1F3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M9 11l3 3L22 4"></path><path pathLength="100" d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg><span style="font-weight: 600; color: #0F2D56; line-height: 1.35">ISO-style audit trail</span></div>
+<div style="display: flex; gap: 14px; align-items: center; padding: 6px 18px"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#7A1F3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle pathLength="100" cx="12" cy="12" r="10"></circle><path pathLength="100" d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"></path></svg><span style="font-weight: 600; color: #0F2D56; line-height: 1.35">Proven in Pakistan, launching worldwide</span></div>
+</div>
+<div style="display: flex; align-items: center; gap: 44px; flex-wrap: wrap; justify-content: center; padding: 40px 0 0">
+<span style="font-size: 14px">Trusted by awarding bodies including</span>
+<span class="serif" style="font-size: 21px; color: #4B5563">University of Greenwich</span>
+<span class="serif" style="font-size: 21px; color: #4B5563">NCC Education</span>
+<span class="serif" style="font-size: 21px; color: #4B5563">City &amp; Guilds</span>
+<span class="serif" style="font-size: 21px; color: #4B5563">Denning Campuses</span>
+</div>
+</div>
+</section>
+
+<!-- who we serve + quick access -->
+<section style="background: #F4F6FA; padding: 88px 0 96px">
+<div class="wrap">
+<div class="g2" style="align-items: end; gap: 48px; margin-bottom: 44px">
+<div>
+<div style="font-size: 14px; font-weight: 700; color: #7A1F3D; margin-bottom: 12px">Who we work with</div>
+<h2 class="serif h2" style="font-size: 44px; line-height: 1.1; font-weight: 600; color: #0F2D56; margin: 0">Fair, reliable, internationally aligned exams.</h2>
+</div>
+<div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap">
+<p style="margin: 0; font-size: 17px; max-width: 24em">Whoever sets the standard, we apply it the same way every time.</p>
+<a class="btn btn-m" href="#">Find your service <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+</div>
+<div class="serve">
+<div class="g3" style="gap: 18px">
+<article class="flip" tabindex="0" style="height: 380px">
+<div class="flip-in">
+<div class="face card">
+<div class="ph" style="height: 210px; border-radius: 0"><img src="assets/ita-invigilator-hall.jpg" alt="Invigilator supervising a scholarship exam hall"></div>
+<div style="padding: 22px"><h3 class="serif" style="font-size: 21px; color: #0F2D56; margin: 0 0 6px; font-weight: 600">Awarding bodies</h3><p style="margin: 0; font-size: 14px">Every session to your protocols, with conflict-free invigilators.</p></div>
+<span class="glass fliphint"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5"></path></svg>Hover for details</span></div>
+<div class="face back"><div style="font-size: 13px; font-weight: 700; color: #A9C3E6">For awarding bodies</div><h3 class="serif" style="font-size: 26px; font-weight: 600; line-height: 1.15">What we handle for you</h3><span class="bl">Your protocols applied at every sitting</span><span class="bl">Trained, conflict-free invigilators</span><span class="bl">A full report after each session</span><a href="#">See how it works</a></div>
+</div>
+</article>
+<article class="flip" tabindex="0" style="height: 380px">
+<div class="flip-in">
+<div class="face card">
+<div class="ph" style="height: 210px; border-radius: 0"><img src="assets/ita-greenwich.jpg" alt="Students outside a University of Greenwich building"></div>
+<div style="padding: 22px"><h3 class="serif" style="font-size: 21px; color: #0F2D56; margin: 0 0 6px; font-weight: 600">Universities</h3><p style="margin: 0; font-size: 14px">One consistent picture across a distributed exam network.</p></div>
+<span class="glass fliphint"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5"></path></svg>Hover for details</span></div>
+<div class="face back"><div style="font-size: 13px; font-weight: 700; color: #A9C3E6">For universities</div><h3 class="serif" style="font-size: 26px; font-weight: 600; line-height: 1.15">What we handle for you</h3><span class="bl">The same checks in every city</span><span class="bl">One consistent record across campuses</span><span class="bl">Controlled venues with CCTV</span><a href="#">See how it works</a></div>
+</div>
+</article>
+<article class="flip" tabindex="0" style="height: 380px">
+<div class="flip-in">
+<div class="face card">
+<div class="ph" style="height: 210px; border-radius: 0"><img src="assets/ita-checkin.jpg" alt="ITA staff checking candidates in on laptops"></div>
+<div style="padding: 22px"><h3 class="serif" style="font-size: 21px; color: #0F2D56; margin: 0 0 6px; font-weight: 600">Training providers</h3><p style="margin: 0; font-size: 14px">A neutral layer, with an auditable record of every sitting.</p></div>
+<span class="glass fliphint"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5"></path></svg>Hover for details</span></div>
+<div class="face back"><div style="font-size: 13px; font-weight: 700; color: #A9C3E6">For training providers</div><h3 class="serif" style="font-size: 26px; font-weight: 600; line-height: 1.15">What we handle for you</h3><span class="bl">A neutral layer between you and candidates</span><span class="bl">An auditable record of every sitting</span><span class="bl">Photo ID and QR checks at the door</span><a href="#">See how it works</a></div>
+</div>
+</article>
+</div>
+<aside style="background: #FFFFFF; border: 1px solid #E6E1D8; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column">
+<h3 class="serif" style="font-size: 20px; color: #0F2D56; margin: 0; padding: 18px 16px 10px; font-weight: 600">Quick access</h3>
+<nav class="qa" aria-label="Quick access">
+<a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7A1F3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect pathLength="100" x="3" y="4" width="18" height="18" rx="2"></rect><path pathLength="100" d="M16 2v4M8 2v4M3 10h18"></path></svg>Book an exam</a>
+<a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7A1F3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path pathLength="100" d="M14 2v6h6M9 13h6M9 17h6"></path></svg>Exam guidelines</a>
+<a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7A1F3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle pathLength="100" cx="12" cy="8" r="4"></circle><path pathLength="100" d="M4 21a8 8 0 0 1 16 0"></path></svg>Candidate portal</a>
+<a href="#"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7A1F3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle pathLength="100" cx="12" cy="12" r="10"></circle><path pathLength="100" d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"></path></svg>Support and FAQs</a>
+</nav>
+<a href="#" style="margin: 14px; background: #7A1F3D; color: #FFFFFF; border-radius: 8px; padding: 16px; text-decoration: none; display: flex; gap: 12px; align-items: center">
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path pathLength="100" d="m9 12 2 2 4-4"></path></svg>
+<span><span style="display: block; font-weight: 700">Verify a result</span><span style="font-size: 13px; color: #F3DCE4">Check a certificate in seconds</span></span>
+</a>
+</aside>
+</div>
+</div>
+</section>
+
+<!-- independence, interactive -->
+<section class="spot" style="background: #0F2D56; color: #DCE7F5; padding: 104px 0; position: relative; overflow: hidden">
+<div class="wrap g2" style="gap: 72px">
+<div>
+<div style="font-size: 14px; font-weight: 700; color: #A9C3E6; margin-bottom: 14px">Why choose ITA</div>
+<h2 class="serif h2" style="font-size: 46px; line-height: 1.1; font-weight: 600; color: #FFFFFF; margin: 0 0 20px">An independent invigilation partner, <span class="hl">not a conflicted one.</span></h2>
+<p style="font-size: 17px; margin: 0 0 32px; max-width: 30em">When the same centre teaches, registers and invigilates, nobody can call the result fully impartial. We sit between you and your candidates.</p>
+<div style="display: flex; gap: 10px; flex-wrap: wrap">
+<button class="tab" type="button" data-model="trad">Traditional model</button>
+<button class="tab on" type="button" data-model="ita">The ITA model</button>
+</div>
+</div>
+<div style="background: rgba(255,255,255,.04); border: 1px solid rgba(169,195,230,.25); border-radius: 12px; padding: 40px 32px; min-height: 340px; display: flex; flex-direction: column; justify-content: center">
+<div data-mpanel="trad" hidden>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 18px">
+<div style="border: 1px solid rgba(169,195,230,.45); border-radius: 8px; padding: 14px 22px; font-weight: 700; color: #FFFFFF">Local centre</div>
+<div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center">
+<span style="background: rgba(122,31,61,.35); border: 1px solid rgba(243,220,228,.4); border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #FFFFFF">Teaches</span>
+<span style="background: rgba(122,31,61,.35); border: 1px solid rgba(243,220,228,.4); border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #FFFFFF">Registers</span>
+<span style="background: rgba(122,31,61,.35); border: 1px solid rgba(243,220,228,.4); border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #FFFFFF">Invigilates</span>
+</div>
+<svg width="22" height="30" viewBox="0 0 22 30" fill="none" stroke="#A9C3E6" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path pathLength="100" d="M11 2v24M4 20l7 7 7-7"></path></svg>
+<div style="border: 1px solid rgba(169,195,230,.45); border-radius: 8px; padding: 14px 22px; font-weight: 700; color: #FFFFFF">Candidate</div>
+<p style="margin: 6px 0 0; font-size: 14px; text-align: center; color: #A9C3E6">One team holds every role, so there is no independent check.</p>
+</div>
+</div>
+<div data-mpanel="ita">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 18px">
+<div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center">
+<div style="border: 1px solid rgba(169,195,230,.45); border-radius: 8px; padding: 14px 20px; font-weight: 700; color: #FFFFFF">Institution</div>
+<svg width="30" height="16" viewBox="0 0 30 16" fill="none" stroke="#A9C3E6" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path pathLength="100" d="M2 8h24M20 2l6 6-6 6"></path></svg>
+<div style="background: #FFFFFF; color: #0F2D56; border-radius: 8px; padding: 14px 20px; font-weight: 700; display: flex; gap: 8px; align-items: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7A1F3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>ITA</div>
+<svg width="30" height="16" viewBox="0 0 30 16" fill="none" stroke="#A9C3E6" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path pathLength="100" d="M2 8h24M20 2l6 6-6 6"></path></svg>
+<div style="border: 1px solid rgba(169,195,230,.45); border-radius: 8px; padding: 14px 20px; font-weight: 700; color: #FFFFFF">Candidate</div>
+</div>
+<p class="serif" style="margin: 8px 0 0; font-size: 22px; font-style: italic; text-align: center; color: #FFFFFF">You set the standard. We apply it the same way every time.</p>
+<div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; font-size: 13px; color: #DCE7F5">
+<span style="border: 1px solid rgba(169,195,230,.35); border-radius: 999px; padding: 4px 12px">IBCC-aligned SOPs</span>
+<span style="border: 1px solid rgba(169,195,230,.35); border-radius: 999px; padding: 4px 12px">ISO-style audit trail</span>
+<span style="border: 1px solid rgba(169,195,230,.35); border-radius: 999px; padding: 4px 12px">Objective oversight</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- how a session runs -->
+<section style="padding: 104px 0">
+<div class="wrap">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-bottom: 56px">
+<div><div style="font-size: 14px; font-weight: 700; color: #7A1F3D; margin-bottom: 12px">How an exam session runs</div>
+<h2 class="serif h2" style="font-size: 44px; line-height: 1.1; font-weight: 600; color: #0F2D56; margin: 0; max-width: 15em">From our side of the desk, start to finish.</h2></div>
+<div style="display: flex; flex-direction: column; align-items: flex-end; gap: 18px">
+<div class="omr" aria-hidden="true"><div style="display: flex; justify-content: space-between; font-size: 12px; color: #4B5563; margin-bottom: 6px"><span style="font-weight: 700; color: #0F2D56">Session record</span><span>Sheet 01</span></div><div class="r"><span>Plan</span><span class="bub on" style="animation-range: entry 20% cover 32%">A</span><span class="bub">B</span><span class="bub">C</span><span class="bub">D</span></div><div class="r"><span>Check</span><span class="bub">A</span><span class="bub">B</span><span class="bub on" style="animation-range: entry 32% cover 38%">C</span><span class="bub">D</span></div><div class="r"><span>Run</span><span class="bub">A</span><span class="bub on" style="animation-range: entry 44% cover 44%">B</span><span class="bub">C</span><span class="bub">D</span></div><div class="r"><span>Report</span><span class="bub">A</span><span class="bub">B</span><span class="bub">C</span><span class="bub on" style="animation-range: entry 56% cover 50%">D</span></div><span class="stamp">Verified</span></div>
+<a class="ul" href="#">See exam management</a>
+</div>
+</div>
+<div style="position: relative">
+<div class="hide-sm" style="position: absolute; left: 28px; right: 28px; top: 28px; height: 2px; background: #E6E1D8"><div class="line" style="height: 2px; background: #7A1F3D"></div></div>
+<div class="g4" style="position: relative">
+<div><div style="width: 56px; height: 56px; border-radius: 50%; background: #0F2D56; color: #FFFFFF; display: flex; align-items: center; justify-content: center; border: 4px solid #FAF7F2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect pathLength="100" x="3" y="4" width="18" height="18" rx="2"></rect><path pathLength="100" d="M16 2v4M8 2v4M3 10h18"></path></svg></div><div style="font-size: 13px; color: #7A1F3D; font-weight: 700; margin: 20px 0 4px">Step 1</div><h3 class="serif" style="font-size: 22px; color: #0F2D56; margin: 0 0 8px; font-weight: 600">We agree the plan</h3><p style="margin: 0; font-size: 15px">Requirements, venues and schedules, settled with your team.</p></div>
+<div><div style="width: 56px; height: 56px; border-radius: 50%; background: #0F2D56; color: #FFFFFF; display: flex; align-items: center; justify-content: center; border: 4px solid #FAF7F2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect pathLength="100" x="3" y="3" width="7" height="7"></rect><rect pathLength="100" x="14" y="3" width="7" height="7"></rect><rect pathLength="100" x="3" y="14" width="7" height="7"></rect><path pathLength="100" d="M14 14h3v3M21 14v7h-7"></path></svg></div><div style="font-size: 13px; color: #7A1F3D; font-weight: 700; margin: 20px 0 4px">Step 2</div><h3 class="serif" style="font-size: 22px; color: #0F2D56; margin: 0 0 8px; font-weight: 600">We check the room</h3><p style="margin: 0; font-size: 15px">Candidates, materials and the room, before the first paper opens.</p></div>
+<div><div style="width: 56px; height: 56px; border-radius: 50%; background: #0F2D56; color: #FFFFFF; display: flex; align-items: center; justify-content: center; border: 4px solid #FAF7F2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle pathLength="100" cx="12" cy="12" r="3"></circle></svg></div><div style="font-size: 13px; color: #7A1F3D; font-weight: 700; margin: 20px 0 4px">Step 3</div><h3 class="serif" style="font-size: 22px; color: #0F2D56; margin: 0 0 8px; font-weight: 600">We run the session</h3><p style="margin: 0; font-size: 15px">Calm, impartial supervision from start to finish.</p></div>
+<div><div style="width: 56px; height: 56px; border-radius: 50%; background: #7A1F3D; color: #FFFFFF; display: flex; align-items: center; justify-content: center; border: 4px solid #FAF7F2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M3 3v18h18"></path><path pathLength="100" d="m7 15 4-4 3 3 5-6"></path></svg></div><div style="font-size: 13px; color: #7A1F3D; font-weight: 700; margin: 20px 0 4px">Step 4</div><h3 class="serif" style="font-size: 22px; color: #0F2D56; margin: 0 0 8px; font-weight: 600">You see what happened</h3><p style="margin: 0; font-size: 15px">Attendance, incidents and evidence, back to you as one record.</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- venue -->
+<section style="padding: 0 0 104px">
+<div class="wrap g2" style="gap: 56px; align-items: stretch">
+<div class="ph" style="min-height: 420px; height: 100%; background: #0F2D56">
+<video src="assets/ita-venue-walkthrough.mp4" poster="assets/ita-venue-poster.jpg" autoplay="" muted="" loop="" playsinline="" aria-label="Walkthrough of an ITA exam venue, from the entrance to the exam hall" style="display: block; width: 100%; height: 100%; object-fit: cover"></video>
+<span class="glass" style="position: absolute; left: 16px; top: 16px; display: flex; align-items: center; gap: 8px; padding: 6px 12px; font-size: 13px; font-weight: 700; color: #FFFFFF"><svg width="14" height="14" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>Venue walkthrough</span>
+</div>
+<div>
+<div style="font-size: 14px; font-weight: 700; color: #7A1F3D; margin-bottom: 12px">Inside an ITA venue</div>
+<h2 class="serif h2" style="font-size: 44px; line-height: 1.1; font-weight: 600; color: #0F2D56; margin: 0 0 16px">The room is ready before the first candidate arrives.</h2>
+<p style="margin: 0 0 28px; font-size: 16px">Halls set, rules posted and desks numbered, the same way at every centre.</p>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
+<figure style="margin: 0"><div class="ph" style="height: 150px"><img src="assets/ita-hall-desks.jpg" alt="Exam hall with spaced desks and chairs"></div><figcaption style="font-size: 14px; margin-top: 8px; color: #0F2D56; font-weight: 600">Spaced, numbered desks</figcaption></figure>
+<figure style="margin: 0"><div class="ph" style="height: 150px"><img src="assets/ita-signage.jpg" alt="Exam rules board at the hall entrance"></div><figcaption style="font-size: 14px; margin-top: 8px; color: #0F2D56; font-weight: 600">Rules at every entrance</figcaption></figure>
+<figure style="margin: 0"><div class="ph" style="height: 150px"><img src="assets/ita-row-desk.jpg" alt="Row marker on an exam desk"></div><figcaption style="font-size: 14px; margin-top: 8px; color: #0F2D56; font-weight: 600">Clear seating plans</figcaption></figure>
+<figure style="margin: 0"><div class="ph" style="height: 150px"><img src="assets/ita-hall-wide.jpg" alt="Exam hall set up before a sitting"></div><figcaption style="font-size: 14px; margin-top: 8px; color: #0F2D56; font-weight: 600">Halls set in advance</figcaption></figure>
+</div>
+</div>
+</div>
+</section>
+
+<!-- four pillars -->
+<section style="background: #FFFFFF; padding: 104px 0; border-top: 1px solid #E6E1D8; border-bottom: 1px solid #E6E1D8">
+<div class="wrap g2" style="gap: 64px">
+<div style="position: relative; display: flex; justify-content: center">
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; width: 100%"><div class="flip" tabindex="0" style="height: 230px"><div class="flip-in"><div class="ph face" style="height: 230px"><img src="assets/ita-registration.jpg" alt="Invigilators at a candidate desk"><span class="glass" style="position: absolute; left: 12px; bottom: 12px; padding: 6px 12px; font-size: 13px; font-weight: 700; color: #FFFFFF">Invigilation</span></div><div class="face back"><h3 class="serif" style="font-size: 22px; font-weight: 600">Invigilation</h3><span style="font-size: 14px; line-height: 1.5">Trained, conflict-free invigilators deliver every session to awarding-body protocols.</span></div></div></div><div class="flip" tabindex="0" style="height: 230px"><div class="flip-in"><div class="ph face" style="height: 230px"><img src="assets/ita-security-gate.jpg" alt="Walk-through security gate at a venue entrance"><span class="glass" style="position: absolute; left: 12px; bottom: 12px; padding: 6px 12px; font-size: 13px; font-weight: 700; color: #FFFFFF">Venue security</span></div><div class="face back"><h3 class="serif" style="font-size: 22px; font-weight: 600">Venue security</h3><span style="font-size: 14px; line-height: 1.5">Controlled venues, CCTV, secure storage and a documented chain of custody.</span></div></div></div><div class="flip" tabindex="0" style="height: 230px"><div class="flip-in"><div class="ph face" style="height: 230px"><img src="assets/ita-briefing.jpg" alt="Invigilator briefing at a whiteboard"><span class="glass" style="position: absolute; left: 12px; bottom: 12px; padding: 6px 12px; font-size: 13px; font-weight: 700; color: #FFFFFF">Training</span></div><div class="face back"><h3 class="serif" style="font-size: 22px; font-weight: 600">Training</h3><span style="font-size: 14px; line-height: 1.5">Structured training and competency checks, so every centre runs the same way.</span></div></div></div><div class="flip" tabindex="0" style="height: 230px"><div class="flip-in"><div class="ph face" style="height: 230px"><img src="assets/ita-laptops.jpg" alt="Staff using laptops for digital check-in"><span class="glass" style="position: absolute; left: 12px; bottom: 12px; padding: 6px 12px; font-size: 13px; font-weight: 700; color: #FFFFFF">Technology</span></div><div class="face back"><h3 class="serif" style="font-size: 22px; font-weight: 600">Technology</h3><span style="font-size: 14px; line-height: 1.5">Digital ID checks, QR verification and real-time incident reporting.</span></div></div></div></div>
+</div>
+<div>
+<div style="font-size: 14px; font-weight: 700; color: #7A1F3D; margin-bottom: 12px">What we do</div>
+<h2 class="serif h2" style="font-size: 44px; line-height: 1.1; font-weight: 600; color: #0F2D56; margin: 0 0 32px">A four-pillar model built for exam integrity.</h2>
+<div style="display: grid; gap: 22px">
+<div style="border-bottom: 1px solid #E6E1D8; padding-bottom: 20px"><h3 style="margin: 0 0 4px; font-size: 18px; color: #0F2D56">Independent invigilation</h3><p style="margin: 0; font-size: 15px">Trained, conflict-free invigilators deliver every session to awarding-body protocols.</p></div>
+<div style="border-bottom: 1px solid #E6E1D8; padding-bottom: 20px"><h3 style="margin: 0 0 4px; font-size: 18px; color: #0F2D56">Venue security and infrastructure</h3><p style="margin: 0; font-size: 15px">Controlled venues, CCTV, secure storage and a documented chain of custody.</p></div>
+<div style="border-bottom: 1px solid #E6E1D8; padding-bottom: 20px"><h3 style="margin: 0 0 4px; font-size: 18px; color: #0F2D56">Training and standards</h3><p style="margin: 0; font-size: 15px">Structured training and competency checks, so every centre runs the same way.</p></div>
+<div><h3 style="margin: 0 0 4px; font-size: 18px; color: #0F2D56">Technology-enhanced compliance</h3><p style="margin: 0; font-size: 15px">Digital ID checks, QR verification and real-time incident reporting.</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- footprint numbers -->
+<section style="padding: 104px 0 88px">
+<div class="wrap">
+<div class="g2" style="align-items: end; margin-bottom: 48px">
+<h2 class="serif h2" style="font-size: 44px; line-height: 1.1; font-weight: 600; color: #0F2D56; margin: 0">Proven in Pakistan. Launching worldwide.</h2>
+<p style="margin: 0; font-size: 17px">Our record is built at home. As we open in new countries, every centre runs to the same standard.</p>
+</div>
+<div class="fp">
+<div>
+<div style="position: relative; background: #0F2D56; border-radius: 12px; padding: 28px 24px 24px; overflow: hidden" role="img" aria-label="Map showing ITA active in Pakistan and the UAE, with planned launches in Bahrain, Saudi Arabia, Iraq, Egypt, Uzbekistan, Malaysia and the UK">
+<div style="display: flex; justify-content: space-between; align-items: center; color: #FFFFFF; margin-bottom: 8px; position: relative">
+<div><div style="font-size: 13px; color: #A9C3E6">Where we deliver</div><div class="serif" style="font-size: 22px; font-weight: 600">Pakistan first, the world next</div></div>
+<div style="display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; background: rgba(255,255,255,.08); border-radius: 999px; padding: 6px 12px"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5" r="4" fill="#6B9FD6"></circle></svg>Expanding</div>
+</div>
+<div style="position: relative">
+<img src="assets/map-a.svg" alt="" style="display: block; width: 100%; height: auto">
+<svg viewBox="0 0 1040 600" style="position: absolute; inset: 0; width: 100%; height: 100%" aria-hidden="true">
+<path class="arc" style="animation-delay: .9s" d="M651 285 Q599 245 547 337"></path>
+<path class="arc2" style="animation-delay: 1.05s" d="M651 285 Q583 220 515 316"></path>
+<path class="arc2" style="animation-delay: 1.2s" d="M651 285 Q562 215 474 336"></path>
+<path class="arc2" style="animation-delay: 1.35s" d="M651 285 Q556 180 462 258"></path>
+<path class="arc2" style="animation-delay: 1.5s" d="M651 285 Q507 165 363 314"></path>
+<path class="arc2" style="animation-delay: 1.65s" d="M651 285 Q648 215 589 184"></path>
+<path class="arc2" style="animation-delay: 1.8s" d="M651 285 Q820 290 930 500"></path>
+<path class="arc2" style="animation-delay: 1.95s" d="M651 285 Q390 20 133 78"></path>
+<circle class="pin" style="animation-delay: 2.1s" cx="547" cy="337" r="6" fill="#FFFFFF"></circle>
+<circle class="pin" style="animation-delay: 2.2s" cx="515" cy="316" r="6" fill="#0F2D56" stroke="#DCE7F5" stroke-width="2.5"></circle>
+<circle class="pin" style="animation-delay: 2.3s" cx="474" cy="336" r="6" fill="#0F2D56" stroke="#DCE7F5" stroke-width="2.5"></circle>
+<circle class="pin" style="animation-delay: 2.4s" cx="462" cy="258" r="6" fill="#0F2D56" stroke="#DCE7F5" stroke-width="2.5"></circle>
+<circle class="pin" style="animation-delay: 2.5s" cx="363" cy="314" r="6" fill="#0F2D56" stroke="#DCE7F5" stroke-width="2.5"></circle>
+<circle class="pin" style="animation-delay: 2.6s" cx="589" cy="184" r="6" fill="#0F2D56" stroke="#DCE7F5" stroke-width="2.5"></circle>
+<circle class="pin" style="animation-delay: 2.7s" cx="930" cy="500" r="6" fill="#0F2D56" stroke="#DCE7F5" stroke-width="2.5"></circle>
+<circle class="pin" style="animation-delay: 2.8s" cx="133" cy="78" r="6" fill="#0F2D56" stroke="#DCE7F5" stroke-width="2.5"></circle>
+<circle class="pinring" cx="651" cy="285" r="10"></circle>
+<circle class="pinring" style="animation-delay: 1.4s" cx="651" cy="285" r="10"></circle>
+<circle cx="651" cy="285" r="11" fill="#7A1F3D" stroke="#FFFFFF" stroke-width="3"></circle>
+<text x="672" y="292" fill="#FFFFFF" font-family="Open Sans, sans-serif" font-size="22" font-weight="700">Pakistan</text>
+<text x="152" y="70" fill="#DCE7F5" font-family="Open Sans, sans-serif" font-size="19">UK</text>
+<text x="380" y="345" fill="#DCE7F5" font-family="Open Sans, sans-serif" font-size="19">Egypt</text>
+<text x="560" y="370" fill="#DCE7F5" font-family="Open Sans, sans-serif" font-size="19">UAE</text>
+<text x="604" y="170" fill="#DCE7F5" font-family="Open Sans, sans-serif" font-size="19">Uzbekistan</text>
+<text x="850" y="535" fill="#DCE7F5" font-family="Open Sans, sans-serif" font-size="19">Malaysia</text>
+</svg>
+</div>
+<div style="display: flex; gap: 22px; flex-wrap: wrap; margin-top: 14px; font-size: 13px; color: #DCE7F5"><span style="display: flex; gap: 8px; align-items: center"><span style="width: 10px; height: 10px; border-radius: 50%; background: #FFFFFF"></span>Active: Pakistan, UAE</span><span style="display: flex; gap: 8px; align-items: center"><span style="width: 10px; height: 10px; border-radius: 50%; border: 2px solid #DCE7F5"></span>Launching</span><span style="display: flex; gap: 8px; align-items: center"><span style="width: 22px; border-top: 2px dashed #A9C3E6"></span>Planned route</span></div>
+</div>
+</div>
+<div style="border-bottom: 1px solid #E6E1D8"><div style="padding: 20px 0; border-top: 1px solid #E6E1D8; display: flex; align-items: baseline; gap: 18px"><span class="serif" style="font-size: 48px; line-height: 1; color: #0F2D56; font-weight: 600; min-width: 2.6em"><span class="cnt" style="--to: 4"><span class="st">4</span></span></span><span style="font-size: 15px">Offices in Karachi, Islamabad, Lahore and Dubai</span></div><div style="padding: 20px 0; border-top: 1px solid #E6E1D8; display: flex; align-items: baseline; gap: 18px"><span class="serif" style="font-size: 48px; line-height: 1; color: #0F2D56; font-weight: 600; min-width: 2.6em"><span class="cnt" style="--to: 9"><span class="st">9</span></span></span><span style="font-size: 15px">Cities in Pakistan</span></div><div style="padding: 20px 0; border-top: 1px solid #E6E1D8; display: flex; align-items: baseline; gap: 18px"><span class="serif" style="font-size: 48px; line-height: 1; color: #0F2D56; font-weight: 600; min-width: 2.6em"><span class="cnt" style="--to: 20"><span class="st">20</span></span>+</span><span style="font-size: 15px">Examination centres</span></div><div style="padding: 20px 0; border-top: 1px solid #E6E1D8; display: flex; align-items: baseline; gap: 18px"><span class="serif" style="font-size: 48px; line-height: 1; color: #0F2D56; font-weight: 600; min-width: 2.6em"><span class="cnt" style="--to: 100"><span class="st">100</span></span>k+</span><span style="font-size: 15px">Candidates served</span></div><div style="padding: 20px 0; border-top: 1px solid #E6E1D8; display: flex; align-items: baseline; gap: 18px"><span class="serif" style="font-size: 48px; line-height: 1; color: #0F2D56; font-weight: 600; min-width: 2.6em"><span class="cnt" style="--to: 5"><span class="st">5</span></span></span><span style="font-size: 15px">Years of experience</span></div></div>
+</div>
+<div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 28px; align-items: center">
+<span style="font-size: 14px; font-weight: 700; color: #0F2D56; margin-right: 4px">Active</span><span class="chip" style="background: #0F2D56; color: #FFFFFF; border-color: #0F2D56">Pakistan</span><span class="chip" style="background: #0F2D56; color: #FFFFFF; border-color: #0F2D56">UAE</span><span style="font-size: 14px; font-weight: 700; color: #0F2D56; margin: 0 4px 0 18px">Launching</span><span class="chip" style="border-style: dashed; color: #374151; font-weight: 500">United Kingdom</span><span class="chip" style="border-style: dashed; color: #374151; font-weight: 500">Saudi Arabia</span><span class="chip" style="border-style: dashed; color: #374151; font-weight: 500">Bahrain</span><span class="chip" style="border-style: dashed; color: #374151; font-weight: 500">Iraq</span><span class="chip" style="border-style: dashed; color: #374151; font-weight: 500">Egypt</span><span class="chip" style="border-style: dashed; color: #374151; font-weight: 500">Uzbekistan</span><span class="chip" style="border-style: dashed; color: #374151; font-weight: 500">Malaysia</span></div>
+<p style="font-size: 13px; margin: 20px 0 0">Figures reflect the ITS group track record in Pakistan. [Client to confirm launch countries and order.]</p>
+</div>
+</section>
+
+<!-- case study -->
+<section style="padding: 0 0 104px">
+<div class="wrap">
+<div class="spot" style="background: #0F2D56; border-radius: 12px; overflow: hidden; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))">
+<div style="padding: 56px; color: #DCE7F5">
+<div style="font-size: 14px; font-weight: 700; color: #A9C3E6; margin-bottom: 12px">Case study</div>
+<h2 class="serif h2" style="font-size: 44px; line-height: 1.1; font-weight: 600; color: #FFFFFF; margin: 0 0 18px">University of Greenwich. Six cities, one set of rules.</h2>
+<p style="margin: 0 0 32px; font-size: 16px">Through Denning Campuses, we deliver Greenwich exams with the same checks and reporting in every city, so the university sees one picture, not six.</p>
+<div style="display: flex; gap: 48px; margin-bottom: 36px; flex-wrap: wrap">
+<div><div class="serif" style="font-size: 52px; line-height: 1; color: #FFFFFF; font-weight: 600"><span class="cnt" style="--to: 4"><span class="st">4</span></span>,000+</div><div style="font-size: 14px; margin-top: 8px">Candidates</div></div>
+<div><div class="serif" style="font-size: 52px; line-height: 1; color: #FFFFFF; font-weight: 600"><span class="cnt" style="--to: 15"><span class="st">15</span></span>,000</div><div style="font-size: 14px; margin-top: 8px">Exam sittings</div></div>
+</div>
+<a class="btn btn-w" href="#">Read the case study</a>
+</div>
+<div style="background: #163A6B; padding: 56px; display: flex; flex-direction: column; justify-content: flex-start; gap: 0">
+<img src="assets/ita-greenwich.jpg" alt="Students walking outside the University of Greenwich" style="display: block; width: calc(100% + 112px); max-width: none; margin: -56px -56px 32px; height: 240px; object-fit: cover">
+<div style="font-size: 13px; color: #A9C3E6; margin-bottom: 12px">Delivery footprint</div>
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid rgba(169,195,230,.2); color: #FFFFFF; font-weight: 600">Islamabad<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B9FD6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M20 6 9 17l-5-5"></path></svg></div>
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid rgba(169,195,230,.2); color: #FFFFFF; font-weight: 600">Rawalpindi<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B9FD6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M20 6 9 17l-5-5"></path></svg></div>
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid rgba(169,195,230,.2); color: #FFFFFF; font-weight: 600">Gujranwala<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B9FD6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M20 6 9 17l-5-5"></path></svg></div>
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid rgba(169,195,230,.2); color: #FFFFFF; font-weight: 600">Multan<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B9FD6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M20 6 9 17l-5-5"></path></svg></div>
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid rgba(169,195,230,.2); color: #FFFFFF; font-weight: 600">Hyderabad<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B9FD6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M20 6 9 17l-5-5"></path></svg></div>
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0; color: #FFFFFF; font-weight: 600">Karachi<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B9FD6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M20 6 9 17l-5-5"></path></svg></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- recognition + milestones -->
+<section style="background: #F4F6FA; padding: 104px 0">
+<div class="wrap">
+<div class="g2" style="align-items: start; gap: 56px">
+<div>
+<h2 class="serif h2" style="font-size: 44px; line-height: 1.1; font-weight: 600; color: #0F2D56; margin: 0 0 28px">Formally registered, formally recognised.</h2>
+<div style="display: grid; gap: 16px">
+<div style="background: #FFFFFF; border: 1px solid #E6E1D8; border-radius: 12px; padding: 24px">
+<div style="display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: center"><h3 style="margin: 0; font-size: 17px; color: #0F2D56">IBCC Certificate of Registration</h3><span style="display: inline-flex; gap: 6px; align-items: center; background: #F6EDF0; color: #7A1F3D; border-radius: 999px; padding: 3px 10px; font-size: 12px; font-weight: 700"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7A1F3D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M20 6 9 17l-5-5"></path></svg>Verified</span></div>
+<div style="font-size: 14px; margin-top: 8px">Reg No. IBCC/RC-1/Impl-2/2025/758, valid June 2025 to June 2029</div>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E6E1D8; border-radius: 12px; padding: 24px">
+<div style="display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: center"><h3 style="margin: 0; font-size: 17px; color: #0F2D56">IBCC Notification Letter</h3><span style="display: inline-flex; gap: 6px; align-items: center; background: #F6EDF0; color: #7A1F3D; border-radius: 999px; padding: 3px 10px; font-size: 12px; font-weight: 700"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#7A1F3D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M20 6 9 17l-5-5"></path></svg>Verified</span></div>
+<div style="font-size: 14px; margin-top: 8px">Ref IBCC/RC-1/Impl-2/2025, dated 15 July 2025</div>
+</div>
+<figure style="margin: 0; background: #0F2D56; border-radius: 12px; padding: 28px; color: #DCE7F5">
+<blockquote class="serif" style="margin: 0 0 14px; font-size: 21px; line-height: 1.35; color: #FFFFFF; font-style: italic">Pakistan Bar Council names ITS as one of two approved agencies for foreign LLB examination delivery.</blockquote>
+<figcaption style="font-size: 13px">Directive of 9 September 2026, reported by Minute Mirror. Held by ITS group.</figcaption>
+</figure>
+</div>
+</div>
+<div>
+<h2 class="serif" style="font-size: 28px; font-weight: 600; color: #0F2D56; margin: 0 0 28px">Milestones</h2>
+<ol style="list-style: none; margin: 0; padding: 0 0 0 28px; border-left: 2px solid #C9D2E0; display: grid; gap: 30px">
+<li style="position: relative"><span style="position: absolute; left: -37px; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: #FFFFFF; border: 3px solid #0F2D56"></span><div style="font-size: 13px; font-weight: 700; color: #1F5AA6">April 2025</div><div style="font-weight: 700; color: #0F2D56">ITA incorporated</div><div style="font-size: 14px">As a subsidiary of International Testing Services.</div></li>
+<li style="position: relative"><span style="position: absolute; left: -37px; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: #FFFFFF; border: 3px solid #0F2D56"></span><div style="font-size: 13px; font-weight: 700; color: #1F5AA6">June 2025</div><div style="font-weight: 700; color: #0F2D56">IBCC registration</div><div style="font-size: 14px">ITS registered as an exam delivery partner.</div></li>
+<li style="position: relative"><span style="position: absolute; left: -37px; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: #FFFFFF; border: 3px solid #0F2D56"></span><div style="font-size: 13px; font-weight: 700; color: #1F5AA6">July 2025</div><div style="font-weight: 700; color: #0F2D56">IBCC notification</div><div style="font-size: 14px">Notification letter issued.</div></li>
+<li style="position: relative"><span style="position: absolute; left: -37px; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: #FFFFFF; border: 3px solid #0F2D56"></span><div style="font-size: 13px; font-weight: 700; color: #1F5AA6">2026</div><div style="font-weight: 700; color: #0F2D56">Greenwich delivery</div><div style="font-size: 14px">End-to-end compliance across Denning Campuses.</div></li>
+<li style="position: relative"><span style="position: absolute; left: -37px; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: #7A1F3D; border: 3px solid #7A1F3D"></span><div style="font-size: 13px; font-weight: 700; color: #7A1F3D">September 2026</div><div style="font-weight: 700; color: #0F2D56">Pakistan Bar Council approval</div><div style="font-size: 14px">ITS named for foreign LLB exam delivery.</div></li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+
+<!-- testimonial -->
+<section style="padding: 104px 0 0">
+<div class="wrap">
+<figure style="margin: 0; display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 28px; max-width: 980px">
+<svg width="64" height="52" viewBox="0 0 64 52" aria-hidden="true"><path d="M0 52V30C0 12 10 2 26 0l3 7C19 10 14 17 14 26h12v26zm35 0V30C35 12 45 2 61 0l3 7c-10 3-15 10-15 19h12v26z" fill="#7A1F3D" opacity=".85"></path></svg>
+<div>
+<blockquote class="serif" style="margin: 0 0 22px; font-size: 32px; line-height: 1.3; color: #0F2D56; font-weight: 500">[Partner testimonial to be supplied by ITA, ideally from an awarding body or university exams officer.]</blockquote>
+<figcaption style="display: flex; gap: 14px; align-items: center"><span style="width: 48px; height: 48px; border-radius: 50%; background: #E7EEF8; border: 1px dashed #9AA6B8"></span><span><span style="display: block; font-weight: 700; color: #0F2D56">[Name]</span><span style="font-size: 14px">[Role, organisation]</span></span></figcaption>
+</div>
+</figure>
+</div>
+</section>
+
+<!-- news -->
+<section style="padding: 104px 0 0">
+<div class="wrap">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-bottom: 36px">
+<h2 class="serif h2" style="font-size: 44px; line-height: 1.1; font-weight: 600; color: #0F2D56; margin: 0">News and press</h2>
+<a class="ul" href="#">All news</a>
+</div>
+<div class="g3">
+<a class="news" href="#"><div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 18px"><span style="font-weight: 700; color: #7A1F3D">Media coverage</span><span>September 2026</span></div><h3 class="serif" style="margin: 0 0 12px; font-size: 22px; line-height: 1.25; color: #0F2D56; font-weight: 600">Pakistan Bar Council recognises ITS as an approved exam delivery agency</h3><p style="margin: 0; font-size: 14px">One of two agencies approved for foreign LLB exams.</p></a>
+<a class="news" href="#"><div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 18px"><span style="font-weight: 700; color: #1F5AA6">Case study</span><span>2026</span></div><h3 class="serif" style="margin: 0 0 12px; font-size: 22px; line-height: 1.25; color: #0F2D56; font-weight: 600">Delivering University of Greenwich exams across six cities</h3><p style="margin: 0; font-size: 14px">From venue set-up to the final report, with Denning Campuses.</p></a>
+<a class="news" href="#"><div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 18px"><span style="font-weight: 700; color: #1F5AA6">Announcement</span><span>June 2025</span></div><h3 class="serif" style="margin: 0 0 12px; font-size: 22px; line-height: 1.25; color: #0F2D56; font-weight: 600">IBCC registers ITS as an exam delivery partner</h3><p style="margin: 0; font-size: 14px">Procedures confirmed as following IBCC standards.</p></a>
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section style="padding: 104px 0">
+<div class="wrap g2" style="gap: 56px">
+<div>
+<h2 class="serif h2" style="font-size: 48px; line-height: 1.08; font-weight: 600; color: #0F2D56; margin: 0 0 16px">Build trust into <span class="pencil">every session.<svg viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true"><path pathLength="100" d="M2 8 C 40 3, 70 11, 105 6 S 165 3, 198 7"></path></svg></span></h2>
+<p style="margin: 0 0 30px; font-size: 17px; max-width: 28em">Join our growing network and bring independent oversight and transparent reporting to your exam programme.</p>
+<div style="display: flex; gap: 14px; flex-wrap: wrap"><a class="btn btn-m" href="#">Become a partner</a><a class="btn btn-o" href="#">Download company profile</a></div>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E6E1D8; border-radius: 12px; padding: 32px">
+<h3 class="serif" style="font-size: 24px; color: #0F2D56; margin: 0 0 18px; font-weight: 600">Tell us about your exam</h3>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px">
+<div><label for="org" style="display: block; font-size: 14px; font-weight: 600; color: #0F2D56; margin-bottom: 6px">Organisation</label><input class="field" id="org" type="text" placeholder="Awarding body or institution"></div>
+<div><label for="ctry" style="display: block; font-size: 14px; font-weight: 600; color: #0F2D56; margin-bottom: 6px">Country</label><input class="field" id="ctry" type="text" placeholder="Where candidates sit"></div>
+</div>
+<label for="em" style="display: block; font-size: 14px; font-weight: 600; color: #0F2D56; margin: 16px 0 6px">Work email</label><input class="field" id="em" type="email" placeholder="name@organisation.com">
+<button class="btn btn-m" type="button" style="margin-top: 22px; width: 100%; justify-content: center">Send exam details</button>
+</div>
+</div>
+</section>
+
+<!-- footer -->
+<footer class="spot" style="background: #0F2D56; color: #DCE7F5; padding: 72px 0 32px; font-size: 14px">
+<div class="wrap">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px">
+<div><img src="assets/ita-logo-h-white.png" alt="International Testing Alliance" style="height: 50px; width: auto; display: block; margin-bottom: 18px"><p style="margin: 0; max-width: 22em">Independent exam delivery, invigilation and compliance for awarding bodies worldwide.</p></div>
+<div><div style="font-weight: 700; color: #FFFFFF; margin-bottom: 12px">Services</div><div style="display: grid; gap: 8px"><a href="#" style="color: #DCE7F5; text-decoration: none">Exam management</a><a href="#" style="color: #DCE7F5; text-decoration: none">Invigilation</a><a href="#" style="color: #DCE7F5; text-decoration: none">Secure venues</a><a href="#" style="color: #DCE7F5; text-decoration: none">Exam technology</a></div></div>
+<div><div style="font-weight: 700; color: #FFFFFF; margin-bottom: 12px">Dubai</div><p style="margin: 0 0 16px">Level 21, Al Habtoor Business Tower, Dubai Marina</p><div style="font-weight: 700; color: #FFFFFF; margin-bottom: 12px">Karachi</div><p style="margin: 0">101 Marine Point, DC-1, Block 9 Clifton</p></div>
+<div><div style="font-weight: 700; color: #FFFFFF; margin-bottom: 12px">Contact</div><div style="display: grid; gap: 8px"><span>UAN 111-482-111</span><span>+971 55 978 1353</span><span>WhatsApp +44 7401 137464</span><span>info@intltestingalliance.com</span></div></div>
+</div>
+<div style="border-top: 1px solid rgba(169,195,230,.25); margin-top: 48px; padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 13px; color: #A9C3E6"><span>© 2026 International Testing Alliance. A subsidiary of ITS.</span><span class="serif" style="font-style: italic; font-size: 17px; color: #DCE7F5">Trusted assessment. Delivered.</span></div>
+</div>
+</footer>
+
+</div>
+<nav class="optswitch" aria-label="Design options"><a href="index.html" class="on" aria-current="page">Option A</a><a href="option-b.html">Option B</a></nav>
+<script>
+
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // cursor glow
+  document.querySelectorAll('.spot').forEach(function(el){
+    el.addEventListener('mousemove', function(e){ var r = el.getBoundingClientRect(); el.style.setProperty('--mx', (e.clientX - r.left) + 'px'); el.style.setProperty('--my', (e.clientY - r.top) + 'px'); });
+  });
+  // tilt / parallax
+  document.querySelectorAll('[data-tilt]').forEach(function(el){
+    el.addEventListener('mousemove', function(e){ var r = el.getBoundingClientRect(); var x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+      el.style.setProperty('--rx', (x * 7).toFixed(2) + 'deg'); el.style.setProperty('--ry', (-y * 7).toFixed(2) + 'deg'); el.style.setProperty('--px', (x * -16).toFixed(1) + 'px'); el.style.setProperty('--py', (y * -16).toFixed(1) + 'px'); });
+    el.addEventListener('mouseleave', function(){ ['--rx','--ry'].forEach(function(k){ el.style.setProperty(k,'0deg'); }); ['--px','--py'].forEach(function(k){ el.style.setProperty(k,'0px'); }); });
+  });
+  // audience finder tabs
+  document.querySelectorAll('[data-aud]').forEach(function(b){
+    b.addEventListener('click', function(){ var v = b.getAttribute('data-aud');
+      document.querySelectorAll('[data-aud]').forEach(function(x){ x.classList.toggle('on', x === b); x.setAttribute('aria-selected', x === b ? 'true' : 'false'); });
+      document.querySelectorAll('[data-panel]').forEach(function(p){ p.hidden = p.getAttribute('data-panel') !== v; }); });
+  });
+  // counters
+  var els = Array.prototype.slice.call(document.querySelectorAll('.cnt'));
+  function run(el){ if (el.dataset.done) return; el.dataset.done = '1'; var to = parseInt(el.style.getPropertyValue('--to'), 10) || 0; var st = el.querySelector('.st'); if (!st || reduce) return;
+    var hero = el.getBoundingClientRect().top < window.innerHeight * 0.9 && window.scrollY < 50; var delay = hero ? 1700 : 0, dur = 1800; st.textContent = '0';
+    setTimeout(function(){ var t0 = performance.now(); function tick(now){ var p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - p, 3); st.textContent = String(Math.round(to * e)); if (p < 1) requestAnimationFrame(tick); } requestAnimationFrame(tick); }, delay); }
+  if ('IntersectionObserver' in window) { var io = new IntersectionObserver(function(en){ en.forEach(function(x){ if (x.isIntersecting) { run(x.target); io.unobserve(x.target); } }); }, { threshold: 0.4 }); els.forEach(function(el){ io.observe(el); }); } else { els.forEach(run); }
+})();
+
+
+(function(){
+  document.querySelectorAll('[data-model]').forEach(function(b){ b.addEventListener('click', function(){ var v = b.getAttribute('data-model');
+    document.querySelectorAll('[data-model]').forEach(function(x){ x.classList.toggle('on', x === b); });
+    document.querySelectorAll('[data-mpanel]').forEach(function(p){ p.hidden = p.getAttribute('data-mpanel') !== v; }); }); });
+  var secs = 8076, el = document.getElementById('clock');
+  function z(n){ return (n < 10 ? '0' : '') + n; }
+  if (el) setInterval(function(){ secs = Math.max(0, secs - 1); el.textContent = z(Math.floor(secs / 3600)) + ':' + z(Math.floor((secs % 3600) / 60)) + ':' + z(secs % 60); }, 1000);
+})();
+
+</script>
+</body>
+</html>
