@@ -12,6 +12,7 @@ a{color:#1F5AA6}a:hover{color:#0F2D56}
 .itb *{box-sizing:border-box}
 .wrap{max-width:1280px;margin:0 auto;padding:0 40px}
 .serif{font-family:'Playfair Display',Georgia,'Times New Roman',serif}
+.nl{display:flex}
 .nl a{color:#DCE7F5;text-decoration:none;font-weight:600;font-size:15px;padding:12px 2px;border-bottom:2px solid transparent}
 .nl a:hover{color:#FFFFFF;border-bottom-color:#C9A063}
 .btn{position:relative;isolation:isolate;overflow:hidden;display:inline-flex;white-space:nowrap;flex-shrink:0;justify-content:center;line-height:1.2;align-items:center;gap:10px;min-height:48px;padding:0 24px;border-radius:8px;font-weight:600;font-size:15px;text-decoration:none;font-family:inherit;cursor:pointer;border:1px solid transparent;transition:color .3s ease,border-color .3s ease,transform .25s ease,box-shadow .25s ease}
@@ -105,6 +106,8 @@ a:focus-visible,button:focus-visible{outline:3px solid #6B9FD6;outline-offset:2p
 @media (max-width: 640px){.nrow{grid-template-columns:minmax(0,1fr) 48px}.nrow .nd{grid-column:1 / -1}}
 @media (prefers-reduced-motion: reduce){.rise,.arc,.pin,.row{animation-duration:.01s !important;animation-delay:0s !important}.pr,.orbit,.breathe,.pulse,.cpin,.swap{animation:none}}
 @media (max-width: 1080px){.g2{grid-template-columns:minmax(0,1fr)}.g3{grid-template-columns:repeat(2,minmax(0,1fr))}.nl{display:none}.who a{grid-template-columns:96px minmax(0,1fr) 48px}.who a p{display:none}.heromap{opacity:.45}}
+/* header must fit 375px: logo + CTA */
+@media (max-width: 640px){header.wrap{gap:12px !important}header.wrap img{height:32px !important}header.wrap .btn{padding:0 16px}}
 @media (max-width: 640px){.wrap{padding:0 20px}.g3{grid-template-columns:minmax(0,1fr)}.h1{font-size:46px !important}.h2{font-size:34px !important}.hide-sm{display:none !important}.node{min-width:88px;font-size:12px;padding:0 10px}.who a{grid-template-columns:minmax(0,1fr) 48px}.who a .th{display:none}}
 /* ===== motion system: scroll-driven, subtle ===== */
 @property --n{syntax:'<integer>';inherits:false;initial-value:0}
@@ -244,7 +247,7 @@ h2.h2,.tile,.who a,.cell,.nrow,.chk,.spanel>div,figure,.bgrid>*{animation:rvUp l
 
 <header class="wrap" style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 96px; border-bottom: 1px solid rgba(169,195,230,.18)">
 <a href="#" aria-label="International Testing Alliance home" style="display: flex"><img src="assets/ita-logo-h-white.png" alt="International Testing Alliance" style="height: 52px; width: auto; display: block"></a>
-<nav class="nl" aria-label="Main" style="display: flex; gap: 30px">
+<nav class="nl" aria-label="Main" style="gap: 30px">
 <a href="#">About</a><a href="#">Services</a><a href="#">Awarding bodies</a><a href="#">Compliance</a><a href="#">Verify a result</a>
 </nav>
 <a class="btn btn-gold" href="#">Become a partner</a>

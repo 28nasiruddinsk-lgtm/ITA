@@ -12,6 +12,7 @@ a{color:#1F5AA6}a:hover{color:#0F2D56}
 .ita *{box-sizing:border-box}
 .wrap{max-width:1280px;margin:0 auto;padding:0 40px}
 .serif{font-family:'Playfair Display',Georgia,'Times New Roman',serif}
+.nav .links{display:flex}
 .nav a.nl{white-space:nowrap;color:#0F2D56;text-decoration:none;font-weight:600;font-size:15px;padding:30px 2px;border-bottom:2px solid transparent}
 .nav a.nl:hover,.nav a.nl.on{border-bottom-color:#7A1F3D}
 .btn{position:relative;isolation:isolate;overflow:hidden;display:inline-flex;white-space:nowrap;flex-shrink:0;justify-content:center;line-height:1.2;align-items:center;gap:10px;min-height:48px;padding:0 24px;border-radius:8px;font-weight:600;font-size:15px;text-decoration:none;font-family:inherit;cursor:pointer;border:1px solid transparent;transition:color .3s ease,border-color .3s ease,transform .25s ease,box-shadow .25s ease}
@@ -79,6 +80,8 @@ select.field{appearance:none;background-image:linear-gradient(45deg,transparent 
 @media (prefers-reduced-motion: reduce){.rise,.arc,.pin,.line{animation-duration:.01s !important;animation-delay:0s !important}.pinring,.float{animation:none}.float.rise{animation:none;opacity:1}.card:hover{transform:none}}
 @media (max-width: 1240px){.nav .links{display:none}}
 @media (max-width: 1080px){.hero,.g2{grid-template-columns:minmax(0,1fr)}.serve{grid-template-columns:minmax(0,1fr)}.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.nav .links{display:none}}
+/* header must fit 375px: logo + CTA */
+@media (max-width: 640px){.nav .wrap{gap:12px !important}.nav img{height:32px !important}.nav .btn{padding:0 16px}}
 @media (max-width: 640px){.wrap{padding:0 20px}.g4,.g3{grid-template-columns:minmax(0,1fr)}.h1{font-size:42px !important}.h2{font-size:32px !important}.hide-sm{display:none !important}.mapcards{display:none}}
 /* ===== motion system: scroll-driven, subtle ===== */
 @property --n{syntax:'<integer>';inherits:false;initial-value:0}
@@ -189,7 +192,7 @@ h2.h2,.card,.news,.trustbar>div,.g4>div,.qa a,figure,.fp>div,.chip,ol>li{animati
 <header class="nav" style="background: #FFFFFF; border-bottom: 1px solid #E6E1D8; position: sticky; top: 0; z-index: 5">
 <div class="wrap" style="display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 84px">
 <a href="#" aria-label="International Testing Alliance home" style="display: flex"><img src="assets/ita-logo-h.png" alt="International Testing Alliance" style="height: 52px; width: auto; display: block"></a>
-<nav class="links" aria-label="Main" style="display: flex; gap: 28px; flex-wrap: nowrap">
+<nav class="links" aria-label="Main" style="gap: 28px; flex-wrap: nowrap">
 <a class="nl" href="#">About</a><a class="nl" href="#">Services</a><a class="nl" href="#">Awarding bodies</a><a class="nl" href="#">Find a centre</a><a class="nl" href="#">Contact</a>
 </nav>
 <div style="display: flex; gap: 10px; align-items: center; flex-shrink: 0">
