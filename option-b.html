@@ -13,8 +13,11 @@ a{color:#1F5AA6}a:hover{color:#0F2D56}
 .wrap{max-width:1280px;margin:0 auto;padding:0 40px}
 .serif{font-family:'Playfair Display',Georgia,'Times New Roman',serif}
 .nl{display:flex}
-.nl a{color:#DCE7F5;text-decoration:none;font-weight:600;font-size:15px;padding:12px 2px;border-bottom:2px solid transparent}
-.nl a:hover{color:#FFFFFF;border-bottom-color:#C9A063}
+.nl a{color:#0F2D56;text-decoration:none;font-weight:600;font-size:15px;padding:12px 2px;border-bottom:2px solid transparent}
+.nl a:hover{color:#8A6631;border-bottom-color:#C9A063}
+.btn.btn-ink{background:transparent;color:#0F2D56;border-color:#CDBF9F}.btn.btn-ink::before{background:#0F2D56}.btn.btn-ink:hover{color:#FFFFFF;border-color:#0F2D56}
+/* light banner: map routes need ink colours */
+.heromap .arc{stroke:#8A6631}.heromap .arc2{stroke:#8A6631}
 .btn{position:relative;isolation:isolate;overflow:hidden;display:inline-flex;white-space:nowrap;flex-shrink:0;justify-content:center;line-height:1.2;align-items:center;gap:10px;min-height:48px;padding:0 24px;border-radius:8px;font-weight:600;font-size:15px;text-decoration:none;font-family:inherit;cursor:pointer;border:1px solid transparent;transition:color .3s ease,border-color .3s ease,transform .25s ease,box-shadow .25s ease}
 .btn::before{content:"";position:absolute;inset:0;z-index:-1;transform:scaleX(0);transform-origin:left center;transition:transform .35s cubic-bezier(.4,0,.2,1)}
 .btn:hover::before{transform:scaleX(1)}
@@ -30,19 +33,22 @@ a{color:#1F5AA6}a:hover{color:#0F2D56}
 .ln:hover{color:#8A6631;background-size:40% 2px}
 .ln svg{transition:transform .25s ease}.ln:hover svg{transform:translateX(4px)}
 .hgrid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:64px;align-items:center}
-.bento{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-rows:250px;gap:18px}
-.tile{position:relative;border-radius:12px;overflow:hidden;color:#FFFFFF;text-decoration:none;display:block;background:#0F2D56}
-.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,45,86,.05) 30%,rgba(15,45,86,.88) 100%);transition:background .35s ease}
-.tile:hover::after{background:linear-gradient(180deg,rgba(15,45,86,.2) 10%,rgba(15,45,86,.94) 100%)}
-.tile .tx{position:absolute;left:0;right:0;bottom:0;padding:26px;z-index:1}
-.tile .tx p{margin:6px 0 0;font-size:15px;color:#DCE7F5;max-width:30em}
-.tile .more{display:inline-flex;align-items:center;gap:8px;margin-top:12px;font-weight:600;font-size:14px;color:#C9A063}
+.bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:auto;gap:18px}
+.tile{position:relative;border-radius:12px;overflow:hidden;color:#FFFFFF;text-decoration:none;display:flex;flex-direction:column;background:#0F2D56}
+.tile img{position:relative;display:block;width:100%;height:180px;flex:none;object-fit:cover}
+.tile::after{content:none}
+
+.tile .tx{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;align-items:flex-start;padding:20px 20px 22px;background:#0F2D56}
+.tile .tx::before{content:"";display:block;width:28px;height:2px;background:#C9A063;border-radius:2px;margin-bottom:12px}
+.tile .tx h3{color:#FFFFFF}
+
+.tile .tx p{margin:6px 0 0;font-size:14px;line-height:1.5;color:#DCE7F5;max-width:30em}
+.tile .more{display:inline-flex;align-items:center;gap:8px;margin-top:auto;padding-top:14px;font-weight:600;font-size:14px;color:#C9A063}
 .tile .more svg{transition:transform .25s ease}.tile:hover .more svg{transform:translateX(4px)}
-.t-a{grid-column:span 7;grid-row:span 2}.t-b{grid-column:span 5}.t-c{grid-column:span 5}.t-d{grid-column:span 12;grid-row:span 1}
+.t-a,.t-b,.t-c,.t-d{grid-column:auto;grid-row:auto}
 .steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid #D9D3C7}
 .step{position:relative;min-height:84px;padding:18px 16px 16px 0;border:0;background:transparent;text-align:left;font:inherit;cursor:pointer;color:#4B5563}
-.step .n{display:block;font-size:13px;font-weight:700;color:#8A6631;margin-bottom:2px}
+.step .n{display:block;font-size:14px;font-weight:700;color:#8A6631;margin-bottom:2px}
 .step .nm{font-family:'Playfair Display',Georgia,serif;font-size:22px;font-weight:600;color:#4B5563;transition:color .25s ease}
 .step::before{content:"";position:absolute;left:0;right:12px;top:-1px;height:3px;background:#8A6631;transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.4,0,.2,1)}
 .step:hover .nm{color:#0F2D56}
@@ -52,7 +58,7 @@ a{color:#1F5AA6}a:hover{color:#0F2D56}
 .chk{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-top:1px solid #ECE7DD;font-size:15px}
 .cell{transition:background .3s ease}
 .cell:hover{background:#FBF8F3}
-@media (max-width: 1080px){.hgrid,.spanel{grid-template-columns:minmax(0,1fr)}.bento{grid-template-columns:minmax(0,1fr);grid-auto-rows:260px}.t-a,.t-b,.t-c,.t-d{grid-column:auto;grid-row:auto}.steps{grid-template-columns:repeat(5,minmax(120px,1fr));overflow-x:auto}}
+@media (max-width: 1080px){.hgrid,.spanel{grid-template-columns:minmax(0,1fr)}.bento{grid-template-columns:repeat(2,minmax(0,1fr))}.t-a,.t-b,.t-c,.t-d{grid-column:auto;grid-row:auto}.steps{grid-template-columns:repeat(5,minmax(120px,1fr));overflow-x:auto}}
 @media (prefers-reduced-motion: reduce){.btn,.btn::before,.btn svg,.step::before,.tile::after{transition:none}.btn:hover{transform:none}}
 a:focus-visible,button:focus-visible{outline:3px solid #6B9FD6;outline-offset:2px}
 .g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px;align-items:center}
@@ -98,7 +104,7 @@ a:focus-visible,button:focus-visible{outline:3px solid #6B9FD6;outline-offset:2p
 .btab:hover{color:#0F2D56}
 .btab.on{color:#0F2D56;border-bottom-color:#8A6631}
 .bgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;align-items:end}
-.blabel{display:block;font-size:13px;font-weight:600;color:#0F2D56;margin-bottom:6px}
+.blabel{display:block;font-size:14px;font-weight:600;color:#0F2D56;margin-bottom:6px}
 .bsel{width:100%;min-height:52px;border:0;border-bottom:2px solid #0F2D56;border-radius:0;background:transparent;font:inherit;font-size:17px;color:#0F2D56;padding:0 4px;appearance:none}
 .bsel:focus-visible{outline:3px solid #6B9FD6;outline-offset:2px}
 .nrow{display:grid;grid-template-columns:160px minmax(0,1fr) 48px;gap:32px;align-items:center;padding:28px 0;border-top:1px solid #D9D3C7;text-decoration:none;color:#374151}
@@ -106,9 +112,12 @@ a:focus-visible,button:focus-visible{outline:3px solid #6B9FD6;outline-offset:2p
 @media (max-width: 640px){.nrow{grid-template-columns:minmax(0,1fr) 48px}.nrow .nd{grid-column:1 / -1}}
 @media (prefers-reduced-motion: reduce){.rise,.arc,.pin,.row{animation-duration:.01s !important;animation-delay:0s !important}.pr,.orbit,.breathe,.pulse,.cpin,.swap{animation:none}}
 @media (max-width: 1080px){.g2{grid-template-columns:minmax(0,1fr)}.g3{grid-template-columns:repeat(2,minmax(0,1fr))}.nl{display:none}.who a{grid-template-columns:96px minmax(0,1fr) 48px}.who a p{display:none}.heromap{opacity:.45}}
+/* phones: lighter section rhythm */
+@media (max-width: 640px){section[style*="padding: 112px"]{padding-top:72px !important;padding-bottom:72px !important}}
 /* header must fit 375px: logo + CTA */
 @media (max-width: 640px){header.wrap{gap:12px !important}header.wrap img{height:32px !important}header.wrap .btn{padding:0 16px}}
-@media (max-width: 640px){.wrap{padding:0 20px}.g3{grid-template-columns:minmax(0,1fr)}.h1{font-size:38px !important}.h2{font-size:28px !important}.hide-sm{display:none !important}.node{min-width:88px;font-size:12px;padding:0 10px}.who a{grid-template-columns:minmax(0,1fr) 48px}.who a .th{display:none}}
+@media (max-width: 640px){.bento{grid-template-columns:minmax(0,1fr)}}
+@media (max-width: 640px){.wrap{padding:0 20px}.g3{grid-template-columns:minmax(0,1fr)}.h1{font-size:34px !important}.h2{font-size:24px !important}.hide-sm{display:none !important}.node{min-width:88px;font-size:14px;padding:0 10px}.who a{grid-template-columns:minmax(0,1fr) 48px}.who a .th{display:none}}
 /* ===== motion system: scroll-driven, subtle ===== */
 @property --n{syntax:'<integer>';inherits:false;initial-value:0}
 @keyframes wordUp{from{transform:translateY(120%)}to{transform:none}}
@@ -132,8 +141,6 @@ a:focus-visible,button:focus-visible{outline:3px solid #6B9FD6;outline-offset:2p
 @media (prefers-reduced-motion: no-preference){
 @supports (animation-timeline: view()){
 .progress{animation:prog linear both;animation-timeline:scroll(root)}
-h2.h2,.tile,.who a,.cell,.nrow,.chk,.spanel>div,figure,.bgrid>*{animation:rvUp linear both;animation-timeline:view();animation-range:entry 0% entry 55%}
-.ph{animation:rvMask linear both;animation-timeline:view();animation-range:entry 0% entry 60%}
 .ph img{animation:rvScale linear both;animation-timeline:view();animation-range:entry 0% cover 50%}
 .rule-in{transform-origin:left;animation:rvRule linear both;animation-timeline:view();animation-range:entry 10% cover 40%}
 }
@@ -158,7 +165,7 @@ h2.h2,.tile,.who a,.cell,.nrow,.chk,.spanel>div,figure,.bgrid>*{animation:rvUp l
 .back .bl{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.45}
 .back .bl::before{content:"";flex:none;width:7px;height:7px;margin-top:7px;border-radius:50%;background:#C9A063}
 .back a{color:#FFFFFF;font-weight:600;font-size:14px;text-decoration:none;border-bottom:2px solid #C9A063;align-self:flex-start;margin-top:6px}
-.fliphint{position:absolute;right:12px;top:12px;z-index:2;display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;color:#FFFFFF;padding:4px 10px}
+.fliphint{position:absolute;right:12px;top:12px;z-index:2;display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:#FFFFFF;padding:4px 10px}
 .tilt{transform:perspective(1000px) rotateX(var(--ry,0deg)) rotateY(var(--rx,0deg));transition:transform .35s ease;will-change:transform}
 @keyframes redraw{from{stroke-dasharray:100;stroke-dashoffset:100}to{stroke-dasharray:100;stroke-dashoffset:0}}
 :is(.trustbar>div,.qa a,.g4>div,.cell,.who a,.news,.chk,.btn,.nrow,.bgrid label,.ftab,.btab,.step):hover svg [pathLength="100"]{animation:redraw .9s ease}
@@ -195,9 +202,14 @@ h2.h2,.tile,.who a,.cell,.nrow,.chk,.spanel>div,figure,.bgrid>*{animation:rvUp l
 .step:hover .bub2{border-color:#8A6631}
 @media (prefers-reduced-motion: reduce){.heromap .arc,.heromap .arc2,.heromap .pin{animation:none;opacity:1;stroke-dashoffset:0}.trav{display:none}.tile img{transition:none}}
 
-.optswitch{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;gap:4px;padding:4px;border-radius:999px;background:rgba(15,45,86,.92);box-shadow:0 12px 30px -12px rgba(0,0,0,.5);font-family:'Open Sans',system-ui,sans-serif}
-.optswitch a{color:#DCE7F5;text-decoration:none;font-size:13px;font-weight:700;padding:8px 14px;border-radius:999px}
+.optswitch{position:fixed;left:16px;bottom:16px;z-index:60;display:flex;gap:4px;padding:4px;border-radius:999px;background:rgba(15,45,86,.92);box-shadow:0 12px 30px -12px rgba(0,0,0,.5);font-family:'Open Sans',system-ui,sans-serif}
+.optswitch a{color:#DCE7F5;text-decoration:none;font-size:14px;font-weight:700;padding:8px 14px;border-radius:999px}
 .optswitch a.on{background:#FFFFFF;color:#0F2D56}
+/* scroll reveal: parts show as they enter the screen and hide again when they leave (JS adds .rv/.in) */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+/* every heading in Playfair Display */
+h1,h2,h3,h4,.fhead{font-family:'Playfair Display',Georgia,'Times New Roman',serif}
 </style>
 </head>
 <body>
@@ -210,16 +222,16 @@ h2.h2,.tile,.who a,.cell,.nrow,.chk,.spanel>div,figure,.bgrid>*{animation:rvUp l
 <div class="itb" style="font-family: 'Open Sans', system-ui, sans-serif; color: #374151; background: #FAF7F2; font-size: 16px; line-height: 1.6">
 
 <!-- announcement -->
-<div style="background: #0A2242; color: #DCE7F5; font-size: 13px">
+<div style="background: #0A2242; color: #DCE7F5; font-size: 14px">
 <div class="wrap" style="display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 42px; flex-wrap: wrap">
 <span style="display: flex; gap: 12px; align-items: center"><span style="color: #C9A063; font-weight: 700">September 2026</span>Pakistan Bar Council approves ITS for foreign LLB exam delivery<a href="#" style="color: #FFFFFF; font-weight: 600">Read</a></span>
-<span class="hide-sm" style="display: flex; gap: 24px; align-items: center"><a href="#" style="color: #FFFFFF; text-decoration: none; font-weight: 600">Candidate portal</a><button type="button" aria-label="Change region and language" style="display: inline-flex; align-items: center; gap: 8px; min-height: 32px; background: transparent; border: 1px solid rgba(201,160,99,.5); border-radius: 8px; color: #FFFFFF; font: inherit; font-size: 13px; padding: 0 12px; cursor: pointer"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C9A063" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle pathLength="100" cx="12" cy="12" r="10"></circle><path pathLength="100" d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"></path></svg>Pakistan, English</button></span>
+<span class="hide-sm" style="display: flex; gap: 24px; align-items: center"><button type="button" aria-label="Change region and language" style="display: inline-flex; align-items: center; gap: 8px; min-height: 32px; background: transparent; border: 1px solid rgba(201,160,99,.5); border-radius: 8px; color: #FFFFFF; font: inherit; font-size: 14px; padding: 0 12px; cursor: pointer"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C9A063" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle pathLength="100" cx="12" cy="12" r="10"></circle><path pathLength="100" d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"></path></svg>Pakistan, English</button></span>
 </div>
 </div>
 
 <!-- HERO -->
-<section class="spot" style="background: #0F2D56; color: #DCE7F5; position: relative; overflow: hidden">
-<div class="heromap" style="position: absolute; left: -8%; top: 120px; width: 72%; min-width: 620px; opacity: .55" aria-hidden="true">
+<section class="spot" style="background: #FAF6EE; color: #374151; position: relative; overflow: hidden">
+<div class="heromap" style="position: absolute; right: -6%; top: 110px; width: 66%; min-width: 620px; opacity: .22; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 45%); mask-image: linear-gradient(90deg, transparent 0%, #000 45%)" aria-hidden="true">
 <div class="drift" style="position: relative">
 <img src="assets/map-b.svg" alt="" style="display: block; width: 100%; height: auto">
 <svg viewBox="0 0 1040 600" style="position: absolute; inset: 0; width: 100%; height: 100%">
@@ -231,7 +243,7 @@ h2.h2,.tile,.who a,.cell,.nrow,.chk,.spanel>div,figure,.bgrid>*{animation:rvUp l
 <path class="arc2" style="animation-delay: 3.05s" d="M651 285 Q648 215 589 184"></path>
 <path class="arc2" style="animation-delay: 3.20s" d="M651 285 Q820 290 930 500"></path>
 <path class="arc2" style="animation-delay: 3.35s" d="M651 285 Q390 20 133 78"></path>
-<circle class="pin" style="animation-delay: 3.50s" cx="547" cy="337" r="5" fill="#FFFFFF"></circle>
+<circle class="pin" style="animation-delay: 3.50s" cx="547" cy="337" r="5" fill="#8A6631"></circle>
 <circle class="pin" style="animation-delay: 3.60s" cx="515" cy="316" r="5" fill="#0F2D56" stroke="#C9A063" stroke-width="2.5"></circle>
 <circle class="pin" style="animation-delay: 3.70s" cx="474" cy="336" r="5" fill="#0F2D56" stroke="#C9A063" stroke-width="2.5"></circle>
 <circle class="pin" style="animation-delay: 3.80s" cx="462" cy="258" r="5" fill="#0F2D56" stroke="#C9A063" stroke-width="2.5"></circle>
@@ -245,8 +257,8 @@ h2.h2,.tile,.who a,.cell,.nrow,.chk,.spanel>div,figure,.bgrid>*{animation:rvUp l
 </div>
 </div>
 
-<header class="wrap" style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 96px; border-bottom: 1px solid rgba(169,195,230,.18)">
-<a href="#" aria-label="International Testing Alliance home" style="display: flex"><img src="assets/ita-logo-h-white.png" alt="International Testing Alliance" style="height: 52px; width: auto; display: block"></a>
+<header class="wrap" style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 96px; border-bottom: 1px solid #E6DFD0">
+<a href="#" aria-label="International Testing Alliance home" style="display: flex"><img src="assets/ita-logo-h.png" alt="International Testing Alliance" style="height: 52px; width: auto; display: block"></a>
 <nav class="nl" aria-label="Main" style="gap: 30px">
 <a href="#">About</a><a href="#">Services</a><a href="#">Awarding bodies</a><a href="#">Compliance</a><a href="#">Verify a result</a>
 </nav>
@@ -255,34 +267,34 @@ h2.h2,.tile,.who a,.cell,.nrow,.chk,.spanel>div,figure,.bgrid>*{animation:rvUp l
 
 <div class="wrap hgrid" style="position: relative; padding-top: 80px; padding-bottom: 80px">
 <div>
-<div class="rise" style="animation-delay: 1.35s; display: flex; align-items: center; gap: 14px; font-size: 15px; color: #C9A063; font-weight: 600"><span class="rule-in" style="width: 40px; height: 1px; background: #C9A063; display: block"></span>Proven in Pakistan, launching worldwide</div>
-<h1 class="serif h1" style="font-size: 56px; line-height: 1.02; font-weight: 600; color: #FFFFFF; margin: 24px 0 24px; letter-spacing: -1px"><span class="wl"><span style="animation-delay: 1.45s">Trusted assessment.</span></span><span class="wl"><span style="animation-delay: 1.65s; font-style: italic; font-weight: 500; color: #E2C391">Delivered.</span></span></h1>
-<p class="rise" style="animation-delay: 1.60s; font-size: 16px; max-width: 30em; margin: 0 0 36px; color: #DCE7F5">Secure venues, trained invigilators and full reporting for awarding bodies and universities. We follow your rules and have no stake in the results.</p>
+<div class="rise" style="animation-delay: 1.35s; display: flex; align-items: center; gap: 14px; font-size: 15px; color: #8A6631; font-weight: 600"><span class="rule-in" style="width: 40px; height: 1px; background: #8A6631; display: block"></span>Proven in Pakistan, launching worldwide</div>
+<h1 class="serif h1" style="font-size: 48px; line-height: 1.12; font-weight: 500; color: #0F2D56; margin: 24px 0 24px; letter-spacing: -0.2px"><span class="wl"><span style="animation-delay: 1.45s">Recognised qualifications.</span></span><span class="wl"><span style="animation-delay: 1.65s; font-style: italic; font-weight: 500; color: #8A6631">Greater opportunities.</span></span></h1>
+<p class="rise" style="animation-delay: 1.60s; font-size: 16px; max-width: 30em; margin: 0 0 36px; color: #374151">Secure venues, trained invigilators and full reporting for awarding bodies and universities. We follow your rules and have no stake in the results.</p>
 <div class="rise" style="animation-delay: 1.75s; display: flex; gap: 14px; flex-wrap: wrap">
 <a class="btn btn-gold" href="#">Become a partner <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-<a class="btn btn-line" href="#">Book an exam</a>
+<a class="btn btn-ink" href="#">Book an exam</a>
 </div>
-<div class="rise" style="animation-delay: 1.90s; display: flex; gap: 28px; flex-wrap: wrap; margin-top: 40px; font-size: 14px; color: #DCE7F5">
-<span style="display: flex; gap: 8px; align-items: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A063" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path pathLength="100" d="m9 12 2 2 4-4"></path></svg>IBCC-registered</span>
-<span style="display: flex; gap: 8px; align-items: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A063" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M9 11l3 3L22 4"></path><path pathLength="100" d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>ISO-style audit trail</span>
-<span style="display: flex; gap: 8px; align-items: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A063" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M12 3v18M5 7h14M5 7l-3 7a4 4 0 0 0 6 0zM19 7l-3 7a4 4 0 0 0 6 0z"></path></svg>No stake in results</span>
+<div class="rise" style="animation-delay: 1.90s; display: flex; gap: 28px; flex-wrap: wrap; margin-top: 40px; font-size: 14px; color: #374151">
+<span style="display: flex; gap: 8px; align-items: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8A6631" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path pathLength="100" d="m9 12 2 2 4-4"></path></svg>IBCC-registered</span>
+<span style="display: flex; gap: 8px; align-items: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8A6631" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M9 11l3 3L22 4"></path><path pathLength="100" d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>ISO-style audit trail</span>
+<span style="display: flex; gap: 8px; align-items: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8A6631" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M12 3v18M5 7h14M5 7l-3 7a4 4 0 0 0 6 0zM19 7l-3 7a4 4 0 0 0 6 0z"></path></svg>No stake in results</span>
 </div>
 </div>
 
 <div class="rise" style="animation-delay: 1.55s; position: relative">
-<div class="wipe tilt" data-tilt="" style="position: relative; height: 420px; border-radius: 12px; overflow: hidden; box-shadow: 0 40px 80px -40px rgba(0,0,0,.7)">
-<img src="assets/ita-hall-exam.jpg" alt="Candidates sitting an exam in an ITA-managed hall" style="display: block; width: 100%; height: 100%; object-fit: cover">
+<div class="wipe tilt" data-tilt="" style="position: relative; height: 420px; border-radius: 12px; overflow: hidden; box-shadow: 0 30px 60px -36px rgba(15,45,86,.45)">
+<img src="assets/dummy-d1-hero.jpg" alt="Candidates sitting an exam in an ITA-managed hall" style="display: block; width: 100%; height: 100%; object-fit: cover">
 <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,45,86,0) 55%, rgba(15,45,86,.6) 100%)"></div>
-<span class="glass" style="position: absolute; top: 20px; right: 20px; display: flex; align-items: center; gap: 8px; padding: 6px 12px; font-size: 12px; font-weight: 700; color: #FFFFFF"><span class="breathe" style="width: 7px; height: 7px; border-radius: 50%; background: #E2C391"></span>Session in progress</span>
+<span class="glass" style="position: absolute; top: 20px; right: 20px; display: flex; align-items: center; gap: 8px; padding: 6px 12px; font-size: 14px; font-weight: 700; color: #FFFFFF"><span class="breathe" style="width: 7px; height: 7px; border-radius: 50%; background: #E2C391"></span>Session in progress</span>
 </div>
 <div class="rule-in" style="position: absolute; top: 28px; left: -18px; width: 4px; height: 120px; background: #C9A063; border-radius: 2px; transform-origin: top" aria-hidden="true"></div>
 
 <!-- register card -->
-<div class="rise hide-sm" style="animation-delay: 2.30s; position: absolute; left: -48px; bottom: -40px; width: 280px; background: #FAF7F2; color: #374151; border-radius: 12px; padding: 20px 22px 14px; box-shadow: 0 40px 80px -30px rgba(0,0,0,.6)" role="img" aria-label="Illustration of a sitting register logging sessions in different countries">
-<div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px"><div class="serif" style="font-size: 18px; color: #0F2D56; font-weight: 600">Today’s sittings</div><div style="font-size: 12px; color: #8A6631; font-weight: 700">Audit trail on</div></div>
-<div class="row" style="animation-delay: 2.80s; display: grid; grid-template-columns: 48px minmax(0,1fr) auto; gap: 10px; align-items: center; padding: 9px 0; border-bottom: 1px solid #ECE7DD; font-size: 13px"><span style="color: #0F2D56; font-weight: 700">08:30</span><span>Karachi</span><span style="font-size: 11px; font-weight: 700; color: #0F2D56; background: #E7EEF8; border-radius: 999px; padding: 2px 9px">Sealed</span></div>
-<div class="row" style="animation-delay: 3.05s; display: grid; grid-template-columns: 48px minmax(0,1fr) auto; gap: 10px; align-items: center; padding: 9px 0; border-bottom: 1px solid #ECE7DD; font-size: 13px"><span style="color: #0F2D56; font-weight: 700">09:00</span><span>Dubai</span><span style="font-size: 11px; font-weight: 700; color: #0F2D56; background: #E7EEF8; border-radius: 999px; padding: 2px 9px">IDs checked</span></div>
-<div class="row" style="animation-delay: 3.30s; display: grid; grid-template-columns: 48px minmax(0,1fr) auto; gap: 10px; align-items: center; padding: 9px 0; font-size: 13px"><span style="color: #0F2D56; font-weight: 700">09:30</span><span>Lahore</span><span style="display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; color: #FFFFFF; background: #8A6631; border-radius: 999px; padding: 2px 9px"><span class="breathe" style="width: 6px; height: 6px; border-radius: 50%; background: #FFFFFF"></span>In progress</span></div>
+<div class="rise hide-sm" style="animation-delay: 2.30s; position: absolute; left: -48px; bottom: -40px; width: 280px; background: #FFFFFF; color: #374151; border: 1px solid #ECE7DD; border-radius: 12px; padding: 20px 22px 14px; box-shadow: 0 30px 60px -30px rgba(15,45,86,.35)" role="img" aria-label="Illustration of a sitting register logging sessions in different countries">
+<div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px"><div class="serif" style="font-size: 18px; color: #0F2D56; font-weight: 600">Today’s sittings</div><div style="font-size: 14px; color: #8A6631; font-weight: 700">Audit trail on</div></div>
+<div class="row" style="animation-delay: 2.80s; display: grid; grid-template-columns: 48px minmax(0,1fr) auto; gap: 10px; align-items: center; padding: 9px 0; border-bottom: 1px solid #ECE7DD; font-size: 14px"><span style="color: #0F2D56; font-weight: 700">08:30</span><span>Karachi</span><span style="font-size: 14px; font-weight: 700; color: #0F2D56; background: #E7EEF8; border-radius: 999px; padding: 2px 9px">Sealed</span></div>
+<div class="row" style="animation-delay: 3.05s; display: grid; grid-template-columns: 48px minmax(0,1fr) auto; gap: 10px; align-items: center; padding: 9px 0; border-bottom: 1px solid #ECE7DD; font-size: 14px"><span style="color: #0F2D56; font-weight: 700">09:00</span><span>Dubai</span><span style="font-size: 14px; font-weight: 700; color: #0F2D56; background: #E7EEF8; border-radius: 999px; padding: 2px 9px">IDs checked</span></div>
+<div class="row" style="animation-delay: 3.30s; display: grid; grid-template-columns: 48px minmax(0,1fr) auto; gap: 10px; align-items: center; padding: 9px 0; font-size: 14px"><span style="color: #0F2D56; font-weight: 700">09:30</span><span>Lahore</span><span style="display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 700; color: #FFFFFF; background: #8A6631; border-radius: 999px; padding: 2px 9px"><span class="breathe" style="width: 6px; height: 6px; border-radius: 50%; background: #FFFFFF"></span>In progress</span></div>
 </div>
 </div>
 </div>
@@ -290,18 +302,18 @@ h2.h2,.tile,.who a,.cell,.nrow,.chk,.spanel>div,figure,.bgrid>*{animation:rvUp l
 <!-- number bar -->
 <div class="wrap" style="position: relative">
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); border-top: 1px solid rgba(201,160,99,.5)">
-<div style="padding: 28px 20px 36px 0"><div class="serif" style="font-size: 36px; line-height: 1; color: #FFFFFF; font-weight: 600"><span class="cnt" style="--to: 9"><span class="st">9</span></span></div><div style="font-size: 14px; margin-top: 8px">Cities in Pakistan</div></div>
-<div style="padding: 28px 20px 36px"><div class="serif" style="font-size: 36px; line-height: 1; color: #FFFFFF; font-weight: 600"><span class="cnt" style="--to: 20"><span class="st">20</span></span>+</div><div style="font-size: 14px; margin-top: 8px">Examination centres</div></div>
-<div style="padding: 28px 20px 36px"><div class="serif" style="font-size: 36px; line-height: 1; color: #FFFFFF; font-weight: 600"><span class="cnt" style="--to: 100"><span class="st">100</span></span>k+</div><div style="font-size: 14px; margin-top: 8px">Candidates served</div></div>
-<div style="padding: 28px 20px 36px"><div class="serif" style="font-size: 36px; line-height: 1; color: #FFFFFF; font-weight: 600"><span class="cnt" style="--to: 5"><span class="st">5</span></span></div><div style="font-size: 14px; margin-top: 8px">Years of experience</div></div>
-<div style="padding: 28px 20px 36px"><div class="serif" style="font-size: 36px; line-height: 1; color: #C9A063; font-weight: 600">IBCC</div><div style="font-size: 14px; margin-top: 8px">Registered delivery partner</div></div>
+<div style="padding: 28px 20px 36px 0"><div class="serif" style="font-size: 36px; line-height: 1; color: #0F2D56; font-weight: 600"><span class="cnt" style="--to: 9"><span class="st">9</span></span></div><div style="font-size: 14px; margin-top: 8px">Cities in Pakistan</div></div>
+<div style="padding: 28px 20px 36px"><div class="serif" style="font-size: 36px; line-height: 1; color: #0F2D56; font-weight: 600"><span class="cnt" style="--to: 20"><span class="st">20</span></span>+</div><div style="font-size: 14px; margin-top: 8px">Examination centres</div></div>
+<div style="padding: 28px 20px 36px"><div class="serif" style="font-size: 36px; line-height: 1; color: #0F2D56; font-weight: 600"><span class="cnt" style="--to: 100"><span class="st">100</span></span>k+</div><div style="font-size: 14px; margin-top: 8px">Candidates served</div></div>
+<div style="padding: 28px 20px 36px"><div class="serif" style="font-size: 36px; line-height: 1; color: #0F2D56; font-weight: 600"><span class="cnt" style="--to: 5"><span class="st">5</span></span></div><div style="font-size: 14px; margin-top: 8px">Years of experience</div></div>
+<div style="padding: 28px 20px 36px"><div class="serif" style="font-size: 36px; line-height: 1; color: #8A6631; font-weight: 600">IBCC</div><div style="font-size: 14px; margin-top: 8px">Registered delivery partner</div></div>
 </div>
 </div>
 </section>
 
 <!-- expansion -->
 <section style="background: #0A2242; color: #DCE7F5">
-<div class="wrap" style="display: flex; align-items: center; gap: 28px; flex-wrap: wrap; padding-top: 22px; padding-bottom: 22px; font-size: 14px">
+<div class="wrap" style="display: flex; align-items: center; gap: 28px; flex-wrap: wrap; padding-top: 32px; padding-bottom: 32px; font-size: 14px">
 <span style="font-weight: 700; color: #FFFFFF">Active in Pakistan and the UAE</span>
 <span style="width: 1px; height: 22px; background: rgba(201,160,99,.5)" aria-hidden="true"></span>
 <span style="color: #C9A063; font-weight: 600">Launching next</span>
@@ -310,8 +322,9 @@ h2.h2,.tile,.who a,.cell,.nrow,.chk,.spanel>div,figure,.bgrid>*{animation:rvUp l
 </section>
 
 <!-- audience finder -->
-<section style="background: #FFFFFF; border-bottom: 1px solid #D9D3C7">
-<div class="wrap" style="padding-top: 20px; padding-bottom: 40px">
+<section style="background: #FFFFFF; border-top: 1px solid #D9D3C7; border-bottom: 1px solid #D9D3C7">
+<div class="wrap" style="padding-top: 96px; padding-bottom: 96px">
+<div style="text-align: center; margin-bottom: 36px"><div style="font-size: 14px; font-weight: 700; color: #8A6631; margin-bottom: 10px">Get started</div><h2 class="serif h2" style="font-size: 28px; line-height: 1.15; font-weight: 600; color: #0F2D56; margin: 0">Find what you need</h2></div>
 <div role="tablist" aria-label="Choose who you are" style="display: flex; flex-wrap: wrap; margin-bottom: 26px; border-bottom: 1px solid #ECE7DD">
 <button type="button" role="tab" class="btab on" data-aud="cand" aria-selected="true">I’m sitting an exam</button>
 <button type="button" role="tab" class="btab" data-aud="body" aria-selected="false">I run exams for an institution</button>
@@ -345,12 +358,12 @@ h2.h2,.tile,.who a,.cell,.nrow,.chk,.spanel>div,figure,.bgrid>*{animation:rvUp l
 
 <!-- partners -->
 <section style="border-bottom: 1px solid #D9D3C7">
-<div class="wrap" style="display: flex; align-items: center; gap: 44px; flex-wrap: wrap; justify-content: space-between; padding-top: 34px; padding-bottom: 34px">
+<div class="wrap" style="display: flex; align-items: center; gap: 44px; flex-wrap: wrap; justify-content: space-between; padding-top: 72px; padding-bottom: 72px">
 <span style="font-size: 14px">Awarding bodies we deliver for</span>
-<span class="serif" style="font-size: 21px; color: #4B5563">University of Greenwich</span>
-<span class="serif" style="font-size: 21px; color: #4B5563">NCC Education</span>
-<span class="serif" style="font-size: 21px; color: #4B5563">City &amp; Guilds</span>
-<span class="serif" style="font-size: 21px; color: #4B5563">Denning Campuses</span>
+<span class="serif" style="font-size: 18px; color: #4B5563">University of Greenwich</span>
+<span class="serif" style="font-size: 18px; color: #4B5563">NCC Education</span>
+<span class="serif" style="font-size: 18px; color: #4B5563">City &amp; Guilds</span>
+<span class="serif" style="font-size: 18px; color: #4B5563">Denning Campuses</span>
 </div>
 </section>
 
@@ -359,14 +372,14 @@ h2.h2,.tile,.who a,.cell,.nrow,.chk,.spanel>div,figure,.bgrid>*{animation:rvUp l
 <div class="wrap">
 <div class="g2" style="align-items: end; margin-bottom: 44px">
 <div><div style="font-size: 15px; font-weight: 600; color: #8A6631; margin-bottom: 12px">What we do</div>
-<h2 class="serif h2" style="font-size: 36px; line-height: 1.06; font-weight: 600; color: #0F2D56; margin: 0">One exam day. Four things done properly.</h2></div>
+<h2 class="serif h2" style="font-size: 28px; line-height: 1.06; font-weight: 600; color: #0F2D56; margin: 0">One exam day. Four things done properly.</h2></div>
 <p style="margin: 0; font-size: 16px; max-width: 30em">Take one service or hand us the whole sitting. Together they remove conflicts of interest at every stage.</p>
 </div>
 <div class="bento">
-<a class="tile t-a" href="#" data-tilt=""><img src="assets/ita-hall-exam.jpg" alt="Candidates sitting an exam under supervision"><div class="tx"><h3 class="serif" style="margin: 0; font-size: 36px; font-weight: 600; line-height: 1.15">Independent invigilation</h3><p>Trained, conflict-free invigilators deliver every session to awarding-body protocols.</p><span class="more">Explore<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div></a>
-<a class="tile t-b" href="#" data-tilt=""><img src="assets/ita-security-gate.jpg" alt="Walk-through security gate at a venue entrance"><div class="tx"><h3 class="serif" style="margin: 0; font-size: 28px; font-weight: 600; line-height: 1.15">Venue security</h3><p>Controlled venues, CCTV, secure storage and a documented chain of custody.</p><span class="more">Explore<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div></a>
-<a class="tile t-c" href="#" data-tilt=""><img src="assets/ita-briefing.jpg" alt="Invigilator briefing at a whiteboard"><div class="tx"><h3 class="serif" style="margin: 0; font-size: 28px; font-weight: 600; line-height: 1.15">Training and standards</h3><p>Structured training and competency checks, so every centre runs the same way.</p><span class="more">Explore<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div></a>
-<a class="tile t-d" href="#" data-tilt=""><img src="assets/ita-checkin.jpg" alt="Staff checking candidates in on laptops"><div class="tx"><h3 class="serif" style="margin: 0; font-size: 28px; font-weight: 600; line-height: 1.15">Technology-enhanced compliance</h3><p>Digital ID checks, QR verification and real-time incident reporting create an auditable record of every sitting.</p><span class="more">Explore<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div></a>
+<a class="tile t-a" href="#" data-tilt=""><img src="assets/dummy-d1-hero.jpg" alt="Candidates sitting an exam under supervision"><div class="tx"><h3 class="serif" style="margin: 0; font-size: 20px; font-weight: 600; line-height: 1.15">Independent invigilation</h3><p>Trained, conflict-free invigilators deliver every session to awarding-body protocols.</p><span class="more">Explore<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div></a>
+<a class="tile t-b" href="#" data-tilt=""><img src="assets/dummy-d8-hall.jpg" alt="Walk-through security gate at a venue entrance"><div class="tx"><h3 class="serif" style="margin: 0; font-size: 20px; font-weight: 600; line-height: 1.15">Venue security</h3><p>Controlled venues, CCTV, secure storage and a documented chain of custody.</p><span class="more">Explore<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div></a>
+<a class="tile t-c" href="#" data-tilt=""><img src="assets/dummy-d6-rows-left.jpg" alt="Invigilator briefing at a whiteboard"><div class="tx"><h3 class="serif" style="margin: 0; font-size: 20px; font-weight: 600; line-height: 1.15">Training and standards</h3><p>Structured training and competency checks, so every centre runs the same way.</p><span class="more">Explore<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div></a>
+<a class="tile t-d" href="#" data-tilt=""><img src="assets/dummy-d4-candidates.jpg" alt="Staff checking candidates in on laptops"><div class="tx"><h3 class="serif" style="margin: 0; font-size: 20px; font-weight: 600; line-height: 1.15">Technology-enhanced compliance</h3><p>Digital ID checks, QR verification and real-time incident reporting create an auditable record of every sitting.</p><span class="more">Explore<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div></a>
 </div>
 </div>
 </section>
@@ -376,7 +389,7 @@ h2.h2,.tile,.who a,.cell,.nrow,.chk,.spanel>div,figure,.bgrid>*{animation:rvUp l
 <div class="wrap">
 <div class="g2" style="align-items: end; margin-bottom: 40px">
 <div><div style="font-size: 15px; font-weight: 600; color: #8A6631; margin-bottom: 12px">Exam management</div>
-<h2 class="serif h2" style="font-size: 36px; line-height: 1.06; font-weight: 600; color: #0F2D56; margin: 0">One team, from the first plan to the final report.</h2></div>
+<h2 class="serif h2" style="font-size: 28px; line-height: 1.06; font-weight: 600; color: #0F2D56; margin: 0">One team, from the first plan to the final report.</h2></div>
 <p style="margin: 0; font-size: 16px; max-width: 30em">You always know where a session stands. Select a stage to see what happens and what you get.</p>
 </div>
 <div class="steps" role="tablist" aria-label="Exam session stages">
@@ -388,9 +401,9 @@ h2.h2,.tile,.who a,.cell,.nrow,.chk,.spanel>div,figure,.bgrid>*{animation:rvUp l
 
 </div>
 <div class="spanel swap" id="spanel">
-<div class="ph" style="height: 420px"><img id="st-img" src="assets/ita-briefing.jpg" alt="Invigilator briefing at a whiteboard"></div>
+<div class="ph" style="height: 420px"><img id="st-img" src="assets/dummy-d6-rows-left.jpg" alt="Invigilator briefing at a whiteboard"></div>
 <div>
-<div style="font-size: 13px; font-weight: 700; color: #8A6631">Stage <span id="st-n">1</span> of 5</div>
+<div style="font-size: 14px; font-weight: 700; color: #8A6631">Stage <span id="st-n">1</span> of 5</div>
 <h3 class="serif" style="font-size: 30px; line-height: 1.1; color: #0F2D56; margin: 6px 0 14px; font-weight: 600"><span id="st-name">Plan</span></h3>
 <p style="margin: 0 0 24px; font-size: 16px" id="st-text">We settle requirements, venues and schedules with your team.</p>
 <div style="font-size: 14px; font-weight: 700; color: #0F2D56; margin-bottom: 4px">What you get</div>
@@ -409,7 +422,7 @@ h2.h2,.tile,.who a,.cell,.nrow,.chk,.spanel>div,figure,.bgrid>*{animation:rvUp l
 <div style="background: #ECE7DD; padding: 96px max(40px, calc((100vw - 1280px) / 2 + 40px)) 96px max(40px, calc((100vw - 1280px) / 2 + 40px))">
 <div style="max-width: 520px; margin-left: auto">
 <div style="font-size: 15px; font-weight: 600; color: #4B5563; margin-bottom: 14px">The traditional model</div>
-<h2 class="serif h2" style="font-size: 36px; line-height: 1.1; font-weight: 600; color: #4B5563; margin: 0 0 22px">One centre teaches, registers and invigilates.</h2>
+<h2 class="serif h2" style="font-size: 28px; line-height: 1.1; font-weight: 600; color: #4B5563; margin: 0 0 22px">One centre teaches, registers and invigilates.</h2>
 <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 22px">
 <span style="border: 1px solid #A8A091; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #374151; text-decoration: line-through">Teaches</span>
 <span style="border: 1px solid #A8A091; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #374151; text-decoration: line-through">Registers</span>
@@ -421,7 +434,7 @@ h2.h2,.tile,.who a,.cell,.nrow,.chk,.spanel>div,figure,.bgrid>*{animation:rvUp l
 <div class="spot" style="background: #0F2D56; color: #DCE7F5; padding: 96px 40px">
 <div style="max-width: 520px">
 <div style="font-size: 15px; font-weight: 600; color: #C9A063; margin-bottom: 14px">The ITA model</div>
-<h2 class="serif h2" style="font-size: 36px; line-height: 1.1; font-weight: 600; color: #FFFFFF; margin: 0 0 22px">You set the standard. <span class="hl">We apply it the same way every time.</span></h2>
+<h2 class="serif h2" style="font-size: 28px; line-height: 1.1; font-weight: 600; color: #FFFFFF; margin: 0 0 22px">You set the standard. We apply it the same way every time.</h2>
 <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 22px; font-size: 14px">
 <span style="border: 1px solid rgba(169,195,230,.45); border-radius: 8px; padding: 8px 14px; color: #FFFFFF">Institution</span>
 <svg width="24" height="14" viewBox="0 0 24 14" fill="none" stroke="#C9A063" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path pathLength="100" d="M2 7h18M15 2l5 5-5 5"></path></svg>
@@ -438,28 +451,29 @@ h2.h2,.tile,.who a,.cell,.nrow,.chk,.spanel>div,figure,.bgrid>*{animation:rvUp l
 <section style="padding: 112px 0">
 <div class="wrap">
 <div class="g2" style="align-items: end; margin-bottom: 40px">
-<h2 class="serif h2" style="font-size: 36px; line-height: 1.06; font-weight: 600; color: #0F2D56; margin: 0">Built for the people who set the standard.</h2>
+<h2 class="serif h2" style="font-size: 28px; line-height: 1.06; font-weight: 600; color: #0F2D56; margin: 0">Built for the people who set the standard.</h2>
 <p style="margin: 0; font-size: 16px">Fair, reliable, internationally aligned exams, whoever you are.</p>
 </div>
 <div class="who">
-<a href="#"><span class="ph th" style="height: 92px"><img src="assets/ita-invigilator-hall.jpg" alt="Invigilator in a prepared exam hall"></span><h3 class="serif" style="margin: 0; font-size: 22px; color: #0F2D56; font-weight: 600">Awarding bodies</h3><p style="margin: 0">Every session delivered to your protocols, with trained, conflict-free invigilators.</p><span class="arr"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
-<a href="#"><span class="ph th" style="height: 92px"><img src="assets/ita-greenwich.jpg" alt="University of Greenwich campus"></span><h3 class="serif" style="margin: 0; font-size: 22px; color: #0F2D56; font-weight: 600">Universities</h3><p style="margin: 0">Consistent visibility across a distributed examination network, city by city.</p><span class="arr"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
-<a href="#"><span class="ph th" style="height: 92px"><img src="assets/ita-checkin.jpg" alt="Candidate check-in on laptops"></span><h3 class="serif" style="margin: 0; font-size: 22px; color: #0F2D56; font-weight: 600">Training organisations</h3><p style="margin: 0">A neutral layer between institution and candidate, with a record of every sitting.</p><span class="arr"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
-<a href="#" style="border-bottom: 1px solid #D9D3C7"><span class="ph th" style="height: 92px"><img src="assets/ita-registration.jpg" alt="Invigilators at a registration desk"></span><h3 class="serif" style="margin: 0; font-size: 22px; color: #0F2D56; font-weight: 600">Partner campuses</h3><p style="margin: 0">Local institutes delivering international qualifications to their students.</p><span class="arr"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+<a href="#"><span class="ph th" style="height: 92px"><img src="assets/dummy-d3-invigilator.jpg" alt="Invigilator in a prepared exam hall"></span><h3 class="serif" style="margin: 0; font-size: 22px; color: #0F2D56; font-weight: 600">Awarding bodies</h3><p style="margin: 0">Every session delivered to your protocols, with trained, conflict-free invigilators.</p><span class="arr"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+<a href="#"><span class="ph th" style="height: 92px"><img src="assets/dummy-d2-wide.jpg" alt="University of Greenwich campus"></span><h3 class="serif" style="margin: 0; font-size: 22px; color: #0F2D56; font-weight: 600">Universities</h3><p style="margin: 0">Consistent visibility across a distributed examination network, city by city.</p><span class="arr"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+<a href="#"><span class="ph th" style="height: 92px"><img src="assets/dummy-d4-candidates.jpg" alt="Candidate check-in on laptops"></span><h3 class="serif" style="margin: 0; font-size: 22px; color: #0F2D56; font-weight: 600">Training organisations</h3><p style="margin: 0">A neutral layer between institution and candidate, with a record of every sitting.</p><span class="arr"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
+<a href="#" style="border-bottom: 1px solid #D9D3C7"><span class="ph th" style="height: 92px"><img src="assets/dummy-d5-writing.jpg" alt="Invigilators at a registration desk"></span><h3 class="serif" style="margin: 0; font-size: 22px; color: #0F2D56; font-weight: 600">Partner campuses</h3><p style="margin: 0">Local institutes delivering international qualifications to their students.</p><span class="arr"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
 </div>
 </div>
 </section>
 
 <!-- venue video -->
-<section style="position: relative; min-height: 380px; overflow: hidden; background: #0F2D56; display: flex; align-items: flex-end">
+<section style="background: #F3E7D3; padding: 112px 0">
+<div class="wrap g2" style="gap: 56px; align-items: center">
+<div>
+<div style="font-size: 15px; font-weight: 600; color: #8A6631; margin-bottom: 12px">Inside an ITA venue</div>
+<h2 class="serif h2" style="font-size: 28px; line-height: 1.1; font-weight: 600; color: #0F2D56; margin: 0 0 16px">The room is ready before the first candidate arrives.</h2>
+<p style="margin: 0; font-size: 16px; max-width: 30em">Halls set, rules posted and desks numbered, the same way at every centre.</p>
+</div>
+<div class="ph" style="position: relative; height: 320px; border-radius: 12px; overflow: hidden; background: #0F2D56">
 <video src="assets/ita-venue-walkthrough.mp4" poster="assets/ita-venue-poster.jpg" autoplay="" muted="" loop="" playsinline="" aria-label="Walkthrough of an ITA exam venue" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover"></video>
-<div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(15,45,86,.82) 0%, rgba(15,45,86,.3) 55%, rgba(15,45,86,0) 100%)"></div>
-<div class="wrap" style="position: relative; width: 100%; padding-top: 64px; padding-bottom: 56px; color: #DCE7F5">
-<div style="max-width: 560px">
-<div style="font-size: 15px; font-weight: 600; color: #C9A063; margin-bottom: 12px">Inside an ITA venue</div>
-<h2 class="serif h2" style="font-size: 36px; line-height: 1.06; font-weight: 600; color: #FFFFFF; margin: 0 0 18px">The room is ready before the first candidate arrives.</h2>
-<p style="margin: 0 0 28px; font-size: 16px">Halls set, rules posted and desks numbered, the same way at every centre.</p>
-<span class="glass" style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 16px; font-size: 14px; font-weight: 600; color: #FFFFFF"><svg width="14" height="14" viewBox="0 0 24 24" fill="#C9A063" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>Venue walkthrough, filmed at an ITA centre</span>
+<span class="glass" style="position: absolute; left: 16px; top: 16px; display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; font-size: 14px; font-weight: 700; color: #FFFFFF"><svg width="14" height="14" viewBox="0 0 24 24" fill="#E2C391" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>Venue walkthrough</span>
 </div>
 </div>
 </section>
@@ -467,15 +481,15 @@ h2.h2,.tile,.who a,.cell,.nrow,.chk,.spanel>div,figure,.bgrid>*{animation:rvUp l
 <!-- compliance -->
 <section style="background: #F4F6FA; padding: 112px 0">
 <div class="wrap">
-<h2 class="serif h2" style="font-size: 36px; line-height: 1.06; font-weight: 600; color: #0F2D56; margin: 0 0 12px">Every standard, in one place.</h2>
+<h2 class="serif h2" style="font-size: 28px; line-height: 1.06; font-weight: 600; color: #0F2D56; margin: 0 0 12px">Every standard, in one place.</h2>
 <p style="margin: 0 0 56px; font-size: 16px">The same safeguards run through every ITA-managed session.</p>
 <div class="g3" style="row-gap: 0; column-gap: 0; border-top: 1px solid #C9D2E0; border-left: 1px solid #C9D2E0">
-<div class="flip" tabindex="0" style="height: 236px; border-right: 1px solid #C9D2E0; border-bottom: 1px solid #C9D2E0"><div class="flip-in"><div class="face cell" style="padding: 32px; background: #FFFFFF; border-radius: 0"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1F5AA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg><h3 style="margin: 16px 0 6px; font-size: 18px; color: #0F2D56">IBCC-aligned SOPs</h3><p style="margin: 0; font-size: 15px">Procedures developed and enforced in line with IBCC regulations.</p></div><div class="face back" style="border-radius: 0; padding: 32px"><div style="font-size: 13px; font-weight: 700; color: #C9A063">Why it matters</div><h3 class="serif" style="font-size: 26px; font-weight: 600; line-height: 1.2">Your sessions meet a recognised national standard.</h3><span style="font-size: 14px; color: #A9C3E6">IBCC-aligned SOPs</span></div></div></div>
-<div class="flip" tabindex="0" style="height: 236px; border-right: 1px solid #C9D2E0; border-bottom: 1px solid #C9D2E0"><div class="flip-in"><div class="face cell" style="padding: 32px; background: #FFFFFF; border-radius: 0"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1F5AA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M9 11l3 3L22 4"></path><path pathLength="100" d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg><h3 style="margin: 16px 0 6px; font-size: 18px; color: #0F2D56">ISO-style audit trail</h3><p style="margin: 0; font-size: 15px">Auditable from candidate registration to post-exam reporting.</p></div><div class="face back" style="border-radius: 0; padding: 32px"><div style="font-size: 13px; font-weight: 700; color: #C9A063">Why it matters</div><h3 class="serif" style="font-size: 26px; font-weight: 600; line-height: 1.2">Any result can be traced back and checked.</h3><span style="font-size: 14px; color: #A9C3E6">ISO-style audit trail</span></div></div></div>
-<div class="flip" tabindex="0" style="height: 236px; border-right: 1px solid #C9D2E0; border-bottom: 1px solid #C9D2E0"><div class="flip-in"><div class="face cell" style="padding: 32px; background: #FFFFFF; border-radius: 0"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1F5AA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M23 7l-7 5 7 5V7z"></path><rect pathLength="100" x="1" y="5" width="15" height="14" rx="2"></rect></svg><h3 style="margin: 16px 0 6px; font-size: 18px; color: #0F2D56">CCTV surveillance</h3><p style="margin: 0; font-size: 15px">Mandatory camera coverage of all exam zones.</p></div><div class="face back" style="border-radius: 0; padding: 32px"><div style="font-size: 13px; font-weight: 700; color: #C9A063">Why it matters</div><h3 class="serif" style="font-size: 26px; font-weight: 600; line-height: 1.2">Every exam zone is observed, start to finish.</h3><span style="font-size: 14px; color: #A9C3E6">CCTV surveillance</span></div></div></div>
-<div class="flip" tabindex="0" style="height: 236px; border-right: 1px solid #C9D2E0; border-bottom: 1px solid #C9D2E0"><div class="flip-in"><div class="face cell" style="padding: 32px; background: #FFFFFF; border-radius: 0"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1F5AA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect pathLength="100" x="3" y="3" width="7" height="7"></rect><rect pathLength="100" x="14" y="3" width="7" height="7"></rect><rect pathLength="100" x="3" y="14" width="7" height="7"></rect><path pathLength="100" d="M14 14h3v3M21 14v7h-7"></path></svg><h3 style="margin: 16px 0 6px; font-size: 18px; color: #0F2D56">QR verification</h3><p style="margin: 0; font-size: 15px">QR attendance and candidate checks to prevent impersonation.</p></div><div class="face back" style="border-radius: 0; padding: 32px"><div style="font-size: 13px; font-weight: 700; color: #C9A063">Why it matters</div><h3 class="serif" style="font-size: 26px; font-weight: 600; line-height: 1.2">The person in the seat is the person who registered.</h3><span style="font-size: 14px; color: #A9C3E6">QR verification</span></div></div></div>
-<div class="flip" tabindex="0" style="height: 236px; border-right: 1px solid #C9D2E0; border-bottom: 1px solid #C9D2E0"><div class="flip-in"><div class="face cell" style="padding: 32px; background: #FFFFFF; border-radius: 0"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1F5AA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect pathLength="100" x="3" y="11" width="18" height="11" rx="2"></rect><path pathLength="100" d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg><h3 style="margin: 16px 0 6px; font-size: 18px; color: #0F2D56">Secure custody logs</h3><p style="margin: 0; font-size: 15px">A chain of custody for every paper and piece of equipment.</p></div><div class="face back" style="border-radius: 0; padding: 32px"><div style="font-size: 13px; font-weight: 700; color: #C9A063">Why it matters</div><h3 class="serif" style="font-size: 26px; font-weight: 600; line-height: 1.2">Papers and devices never move without a record.</h3><span style="font-size: 14px; color: #A9C3E6">Secure custody logs</span></div></div></div>
-<div class="flip" tabindex="0" style="height: 236px; border-right: 1px solid #C9D2E0; border-bottom: 1px solid #C9D2E0"><div class="flip-in"><div class="face cell" style="padding: 32px; background: #FFFFFF; border-radius: 0"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1F5AA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"></path><path pathLength="100" d="M12 9v4M12 17h.01"></path></svg><h3 style="margin: 16px 0 6px; font-size: 18px; color: #0F2D56">Incident reporting</h3><p style="margin: 0; font-size: 15px">A permanent, auditable incident reporting system.</p></div><div class="face back" style="border-radius: 0; padding: 32px"><div style="font-size: 13px; font-weight: 700; color: #C9A063">Why it matters</div><h3 class="serif" style="font-size: 26px; font-weight: 600; line-height: 1.2">Problems are logged on the spot, not remembered later.</h3><span style="font-size: 14px; color: #A9C3E6">Incident reporting</span></div></div></div>
+<div class="flip" tabindex="0" style="height: 236px; border-right: 1px solid #C9D2E0; border-bottom: 1px solid #C9D2E0"><div class="flip-in"><div class="face cell" style="padding: 32px; background: #FFFFFF; border-radius: 0"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1F5AA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg><h3 style="margin: 16px 0 6px; font-size: 18px; color: #0F2D56">IBCC-aligned SOPs</h3><p style="margin: 0; font-size: 15px">Procedures developed and enforced in line with IBCC regulations.</p></div><div class="face back" style="border-radius: 0; padding: 32px"><div style="font-size: 14px; font-weight: 700; color: #C9A063">Why it matters</div><h3 class="serif" style="font-size: 26px; font-weight: 600; line-height: 1.2">Your sessions meet a recognised national standard.</h3><span style="font-size: 14px; color: #A9C3E6">IBCC-aligned SOPs</span></div></div></div>
+<div class="flip" tabindex="0" style="height: 236px; border-right: 1px solid #C9D2E0; border-bottom: 1px solid #C9D2E0"><div class="flip-in"><div class="face cell" style="padding: 32px; background: #FFFFFF; border-radius: 0"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1F5AA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M9 11l3 3L22 4"></path><path pathLength="100" d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg><h3 style="margin: 16px 0 6px; font-size: 18px; color: #0F2D56">ISO-style audit trail</h3><p style="margin: 0; font-size: 15px">Auditable from candidate registration to post-exam reporting.</p></div><div class="face back" style="border-radius: 0; padding: 32px"><div style="font-size: 14px; font-weight: 700; color: #C9A063">Why it matters</div><h3 class="serif" style="font-size: 26px; font-weight: 600; line-height: 1.2">Any result can be traced back and checked.</h3><span style="font-size: 14px; color: #A9C3E6">ISO-style audit trail</span></div></div></div>
+<div class="flip" tabindex="0" style="height: 236px; border-right: 1px solid #C9D2E0; border-bottom: 1px solid #C9D2E0"><div class="flip-in"><div class="face cell" style="padding: 32px; background: #FFFFFF; border-radius: 0"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1F5AA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M23 7l-7 5 7 5V7z"></path><rect pathLength="100" x="1" y="5" width="15" height="14" rx="2"></rect></svg><h3 style="margin: 16px 0 6px; font-size: 18px; color: #0F2D56">CCTV surveillance</h3><p style="margin: 0; font-size: 15px">Mandatory camera coverage of all exam zones.</p></div><div class="face back" style="border-radius: 0; padding: 32px"><div style="font-size: 14px; font-weight: 700; color: #C9A063">Why it matters</div><h3 class="serif" style="font-size: 26px; font-weight: 600; line-height: 1.2">Every exam zone is observed, start to finish.</h3><span style="font-size: 14px; color: #A9C3E6">CCTV surveillance</span></div></div></div>
+<div class="flip" tabindex="0" style="height: 236px; border-right: 1px solid #C9D2E0; border-bottom: 1px solid #C9D2E0"><div class="flip-in"><div class="face cell" style="padding: 32px; background: #FFFFFF; border-radius: 0"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1F5AA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect pathLength="100" x="3" y="3" width="7" height="7"></rect><rect pathLength="100" x="14" y="3" width="7" height="7"></rect><rect pathLength="100" x="3" y="14" width="7" height="7"></rect><path pathLength="100" d="M14 14h3v3M21 14v7h-7"></path></svg><h3 style="margin: 16px 0 6px; font-size: 18px; color: #0F2D56">QR verification</h3><p style="margin: 0; font-size: 15px">QR attendance and candidate checks to prevent impersonation.</p></div><div class="face back" style="border-radius: 0; padding: 32px"><div style="font-size: 14px; font-weight: 700; color: #C9A063">Why it matters</div><h3 class="serif" style="font-size: 26px; font-weight: 600; line-height: 1.2">The person in the seat is the person who registered.</h3><span style="font-size: 14px; color: #A9C3E6">QR verification</span></div></div></div>
+<div class="flip" tabindex="0" style="height: 236px; border-right: 1px solid #C9D2E0; border-bottom: 1px solid #C9D2E0"><div class="flip-in"><div class="face cell" style="padding: 32px; background: #FFFFFF; border-radius: 0"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1F5AA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect pathLength="100" x="3" y="11" width="18" height="11" rx="2"></rect><path pathLength="100" d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg><h3 style="margin: 16px 0 6px; font-size: 18px; color: #0F2D56">Secure custody logs</h3><p style="margin: 0; font-size: 15px">A chain of custody for every paper and piece of equipment.</p></div><div class="face back" style="border-radius: 0; padding: 32px"><div style="font-size: 14px; font-weight: 700; color: #C9A063">Why it matters</div><h3 class="serif" style="font-size: 26px; font-weight: 600; line-height: 1.2">Papers and devices never move without a record.</h3><span style="font-size: 14px; color: #A9C3E6">Secure custody logs</span></div></div></div>
+<div class="flip" tabindex="0" style="height: 236px; border-right: 1px solid #C9D2E0; border-bottom: 1px solid #C9D2E0"><div class="flip-in"><div class="face cell" style="padding: 32px; background: #FFFFFF; border-radius: 0"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1F5AA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"></path><path pathLength="100" d="M12 9v4M12 17h.01"></path></svg><h3 style="margin: 16px 0 6px; font-size: 18px; color: #0F2D56">Incident reporting</h3><p style="margin: 0; font-size: 15px">A permanent, auditable incident reporting system.</p></div><div class="face back" style="border-radius: 0; padding: 32px"><div style="font-size: 14px; font-weight: 700; color: #C9A063">Why it matters</div><h3 class="serif" style="font-size: 26px; font-weight: 600; line-height: 1.2">Problems are logged on the spot, not remembered later.</h3><span style="font-size: 14px; color: #A9C3E6">Incident reporting</span></div></div></div>
 </div>
 </div>
 </section>
@@ -486,14 +500,14 @@ h2.h2,.tile,.who a,.cell,.nrow,.chk,.spanel>div,figure,.bgrid>*{animation:rvUp l
 <div class="g2" style="align-items: end; margin-bottom: 48px">
 <div>
 <div style="font-size: 15px; font-weight: 600; color: #8A6631; margin-bottom: 12px">Case study, University of Greenwich</div>
-<h2 class="serif h2" style="font-size: 36px; line-height: 1.06; font-weight: 600; color: #0F2D56; margin: 0">Six cities, one set of rules.</h2>
+<h2 class="serif h2" style="font-size: 28px; line-height: 1.06; font-weight: 600; color: #0F2D56; margin: 0">Six cities, one set of rules.</h2>
 </div>
 <div style="display: flex; gap: 56px; flex-wrap: wrap">
 <div><div class="serif" style="font-size: 48px; line-height: 1; color: #0F2D56; font-weight: 600"><span class="cnt" style="--to: 4"><span class="st">4</span></span>,000+</div><div style="font-size: 14px; margin-top: 8px">Candidates</div></div>
 <div><div class="serif" style="font-size: 48px; line-height: 1; color: #0F2D56; font-weight: 600"><span class="cnt" style="--to: 15"><span class="st">15</span></span>,000</div><div style="font-size: 14px; margin-top: 8px">Exam sittings</div></div>
 </div>
 </div>
-<div class="ph" style="height: 380px; margin-bottom: 20px"><img src="assets/ita-greenwich.jpg" alt="Students outside the University of Greenwich"><span class="glass" style="position: absolute; left: 20px; bottom: 20px; padding: 8px 14px; font-size: 14px; font-weight: 700; color: #FFFFFF">University of Greenwich</span></div>
+<div class="ph" style="height: 380px; margin-bottom: 20px"><img src="assets/dummy-d2-wide.jpg" alt="Students outside the University of Greenwich"><span class="glass" style="position: absolute; left: 20px; bottom: 20px; padding: 8px 14px; font-size: 14px; font-weight: 700; color: #FFFFFF">University of Greenwich</span></div>
 <div class="spot" style="background: #0F2D56; border-radius: 12px; padding: 44px 48px 40px; color: #DCE7F5">
 <div style="position: relative; height: 14px; margin: 0 7px">
 <div style="position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(201,160,99,.45)"></div>
@@ -516,13 +530,13 @@ h2.h2,.tile,.who a,.cell,.nrow,.chk,.spanel>div,figure,.bgrid>*{animation:rvUp l
 <!-- recognition timeline -->
 <section style="padding: 0 0 112px">
 <div class="wrap">
-<h2 class="serif h2" style="font-size: 36px; line-height: 1.1; font-weight: 600; color: #0F2D56; margin: 0 0 40px">Formally registered, formally recognised.</h2>
+<h2 class="serif h2" style="font-size: 28px; line-height: 1.1; font-weight: 600; color: #0F2D56; margin: 0 0 40px">Formally registered, formally recognised.</h2>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; border-top: 2px solid #0F2D56">
-<div style="padding: 24px 24px 0 0; border-right: 1px solid #D9D3C7"><div style="font-size: 13px; font-weight: 700; color: #8A6631">April 2025</div><h3 style="margin: 6px 0; font-size: 16px; color: #0F2D56">ITA incorporated</h3><p style="margin: 0; font-size: 14px">As a subsidiary of ITS.</p></div>
-<div style="padding: 24px 24px 0; border-right: 1px solid #D9D3C7"><div style="font-size: 13px; font-weight: 700; color: #8A6631">June 2025</div><h3 style="margin: 6px 0; font-size: 16px; color: #0F2D56">IBCC registration</h3><p style="margin: 0; font-size: 14px">Reg No. IBCC/RC-1/Impl-2/2025/758, valid to 2029.</p></div>
-<div style="padding: 24px 24px 0; border-right: 1px solid #D9D3C7"><div style="font-size: 13px; font-weight: 700; color: #8A6631">July 2025</div><h3 style="margin: 6px 0; font-size: 16px; color: #0F2D56">IBCC notification</h3><p style="margin: 0; font-size: 14px">Letter dated 15 July 2025.</p></div>
-<div style="padding: 24px 24px 0; border-right: 1px solid #D9D3C7"><div style="font-size: 13px; font-weight: 700; color: #8A6631">2026</div><h3 style="margin: 6px 0; font-size: 16px; color: #0F2D56">Greenwich delivery</h3><p style="margin: 0; font-size: 14px">End-to-end compliance across Denning Campuses.</p></div>
-<div style="padding: 24px 0 0 24px"><div style="font-size: 13px; font-weight: 700; color: #8A6631">September 2026</div><h3 style="margin: 6px 0; font-size: 16px; color: #0F2D56">Pakistan Bar Council</h3><p style="margin: 0; font-size: 14px">ITS one of two approved agencies for foreign LLB exams.</p></div>
+<div style="padding: 24px 24px 0 0; border-right: 1px solid #D9D3C7"><div style="font-size: 14px; font-weight: 700; color: #8A6631">April 2025</div><h3 style="margin: 6px 0; font-size: 16px; color: #0F2D56">ITA incorporated</h3><p style="margin: 0; font-size: 14px">As a subsidiary of ITS.</p></div>
+<div style="padding: 24px 24px 0; border-right: 1px solid #D9D3C7"><div style="font-size: 14px; font-weight: 700; color: #8A6631">June 2025</div><h3 style="margin: 6px 0; font-size: 16px; color: #0F2D56">IBCC registration</h3><p style="margin: 0; font-size: 14px">Reg No. IBCC/RC-1/Impl-2/2025/758, valid to 2029.</p></div>
+<div style="padding: 24px 24px 0; border-right: 1px solid #D9D3C7"><div style="font-size: 14px; font-weight: 700; color: #8A6631">July 2025</div><h3 style="margin: 6px 0; font-size: 16px; color: #0F2D56">IBCC notification</h3><p style="margin: 0; font-size: 14px">Letter dated 15 July 2025.</p></div>
+<div style="padding: 24px 24px 0; border-right: 1px solid #D9D3C7"><div style="font-size: 14px; font-weight: 700; color: #8A6631">2026</div><h3 style="margin: 6px 0; font-size: 16px; color: #0F2D56">Greenwich delivery</h3><p style="margin: 0; font-size: 14px">End-to-end compliance across Denning Campuses.</p></div>
+<div style="padding: 24px 0 0 24px"><div style="font-size: 14px; font-weight: 700; color: #8A6631">September 2026</div><h3 style="margin: 6px 0; font-size: 16px; color: #0F2D56">Pakistan Bar Council</h3><p style="margin: 0; font-size: 14px">ITS one of two approved agencies for foreign LLB exams.</p></div>
 </div>
 </div>
 </section>
@@ -548,7 +562,7 @@ h2.h2,.tile,.who a,.cell,.nrow,.chk,.spanel>div,figure,.bgrid>*{animation:rvUp l
 <footer class="spot" style="background: #0F2D56; color: #DCE7F5">
 <div class="wrap" style="padding-top: 104px; padding-bottom: 80px; border-bottom: 1px solid rgba(169,195,230,.18)">
 <div class="g2">
-<h2 class="serif h2" style="font-size: 36px; line-height: 1.02; font-weight: 600; color: #FFFFFF; margin: 0">Build trust into <span class="pencil">every session.<svg viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true"><path pathLength="100" d="M2 8 C 40 3, 70 11, 105 6 S 165 3, 198 7"></path></svg></span></h2>
+<h2 class="serif h2" style="font-size: 28px; line-height: 1.02; font-weight: 600; color: #FFFFFF; margin: 0">Build trust into every session.</h2>
 <div>
 <p style="margin: 0 0 26px; font-size: 18px">Join our growing network. Tell us what you’re running, where and when, and we’ll come back with a plan.</p>
 <div style="display: flex; gap: 14px; flex-wrap: wrap"><a class="btn btn-gold" href="#">Send your exam details</a><a class="btn btn-line" href="#">Download company profile</a></div>
@@ -557,11 +571,11 @@ h2.h2,.tile,.who a,.cell,.nrow,.chk,.spanel>div,figure,.bgrid>*{animation:rvUp l
 </div>
 <div class="wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; padding-top: 56px; padding-bottom: 32px; font-size: 14px">
 <div><img src="assets/ita-logo-h-white.png" alt="International Testing Alliance" style="height: 50px; width: auto; display: block; margin-bottom: 16px"><span>A subsidiary of International Testing Services (ITS)</span></div>
-<div><div style="font-weight: 700; color: #FFFFFF; margin-bottom: 10px">Dubai</div><p style="margin: 0">Level 21, Al Habtoor Business Tower, Dubai Marina</p></div>
-<div><div style="font-weight: 700; color: #FFFFFF; margin-bottom: 10px">Karachi</div><p style="margin: 0">101 Marine Point, DC-1, Block 9 Clifton</p></div>
-<div style="display: grid; gap: 6px; align-content: start"><div style="font-weight: 700; color: #FFFFFF; margin-bottom: 4px">Contact</div><span>UAN 111-482-111</span><span>+971 55 978 1353</span><span>WhatsApp +44 7401 137464</span></div>
+<div><div class="fhead" style="font-weight: 700; color: #FFFFFF; margin-bottom: 10px; font-size: 16px">Dubai</div><p style="margin: 0">Level 21, Al Habtoor Business Tower, Dubai Marina</p></div>
+<div><div class="fhead" style="font-weight: 700; color: #FFFFFF; margin-bottom: 10px; font-size: 16px">Karachi</div><p style="margin: 0">101 Marine Point, DC-1, Block 9 Clifton</p></div>
+<div style="display: grid; gap: 6px; align-content: start"><div class="fhead" style="font-weight: 700; color: #FFFFFF; margin-bottom: 4px; font-size: 16px">Contact</div><span>UAN 111-482-111</span><span>+971 55 978 1353</span><span>WhatsApp +44 7401 137464</span></div>
 </div>
-<div class="wrap" style="padding-bottom: 28px; font-size: 13px; color: #A9C3E6">© 2026 International Testing Alliance</div>
+<div class="wrap" style="padding-bottom: 28px; font-size: 14px; color: #A9C3E6">© 2026 International Testing Alliance</div>
 </footer>
 
 </div>
@@ -595,7 +609,7 @@ h2.h2,.tile,.who a,.cell,.nrow,.chk,.spanel>div,figure,.bgrid>*{animation:rvUp l
 })();
 
 (function(){
-  var data = [{"name": "Plan", "text": "We settle requirements, venues and schedules with your team.", "img": "assets/ita-briefing.jpg", "alt": "Invigilator briefing at a whiteboard", "gets": [{"t": "Requirements agreed in writing before the day"}, {"t": "A schedule for every venue and city"}]}, {"name": "Prepare", "text": "Venues are set and invigilators briefed on your rules, in every city.", "img": "assets/ita-hall-wide.jpg", "alt": "Exam hall set up before a sitting", "gets": [{"t": "Halls set with spaced, numbered desks"}, {"t": "Invigilators briefed on your protocols"}]}, {"name": "Verify", "text": "Candidates, materials and the room are checked before the first paper opens.", "img": "assets/ita-security-gate.jpg", "alt": "Candidates passing a security gate", "gets": [{"t": "Photo ID and QR checks at the door"}, {"t": "Sealed papers and the room inspected"}]}, {"name": "Deliver", "text": "Our invigilators supervise calmly and impartially from start to finish.", "img": "assets/ita-hall-exam.jpg", "alt": "Candidates sitting an exam under supervision", "gets": [{"t": "Live supervision with CCTV coverage"}, {"t": "Incidents logged as they happen"}]}, {"name": "Report", "text": "Attendance, incidents and evidence come back to you as one record.", "img": "assets/ita-laptops.jpg", "alt": "Staff recording attendance on laptops", "gets": [{"t": "Attendance and incident record"}, {"t": "Evidence and a full audit trail"}]}];
+  var data = [{"name": "Plan", "text": "We settle requirements, venues and schedules with your team.", "img": "assets/dummy-d6-rows-left.jpg", "alt": "Invigilator briefing at a whiteboard", "gets": [{"t": "Requirements agreed in writing before the day"}, {"t": "A schedule for every venue and city"}]}, {"name": "Prepare", "text": "Venues are set and invigilators briefed on your rules, in every city.", "img": "assets/dummy-d9-aisle.jpg", "alt": "Exam hall set up before a sitting", "gets": [{"t": "Halls set with spaced, numbered desks"}, {"t": "Invigilators briefed on your protocols"}]}, {"name": "Verify", "text": "Candidates, materials and the room are checked before the first paper opens.", "img": "assets/dummy-d8-hall.jpg", "alt": "Candidates passing a security gate", "gets": [{"t": "Photo ID and QR checks at the door"}, {"t": "Sealed papers and the room inspected"}]}, {"name": "Deliver", "text": "Our invigilators supervise calmly and impartially from start to finish.", "img": "assets/dummy-d1-hero.jpg", "alt": "Candidates sitting an exam under supervision", "gets": [{"t": "Live supervision with CCTV coverage"}, {"t": "Incidents logged as they happen"}]}, {"name": "Report", "text": "Attendance, incidents and evidence come back to you as one record.", "img": "assets/dummy-d7-back-rows.jpg", "alt": "Staff recording attendance on laptops", "gets": [{"t": "Attendance and incident record"}, {"t": "Evidence and a full audit trail"}]}];
   var tpl = "<div class=\"chk\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#8A6631\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" style=\"flex: none; margin-top: 2px\"><path pathLength=\"100\" d=\"M20 6 9 17l-5-5\"></path></svg><span>{{ g.t }}</span></div>";
 
   var cur = 0, panel = document.getElementById('spanel');
@@ -610,6 +624,22 @@ h2.h2,.tile,.who a,.cell,.nrow,.chk,.spanel>div,figure,.bgrid>*{animation:rvUp l
   document.querySelector('[data-next]').addEventListener('click', function(){ show(cur + 1); });
 })();
 
+
+(function(){
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var sel = 'h2, section p, figure, blockquote, .card, .flip, .tile, .news, .trustbar>div, .qa a, .g4>div, .chip, .ph, ol>li, .who a, .nrow, .step, .cell, .chk, [role="tablist"], .fgrid, .bgrid';
+  var hero = document.querySelector('.hero, .hgrid'); hero = hero && hero.closest('section');
+  var els = [].filter.call(document.querySelectorAll(sel), function(el){ return !(hero && hero.contains(el)) && !el.closest('footer'); });
+  // animate the outermost match only, so a card and its photo don't both slide
+  els = els.filter(function(el){ return !els.some(function(o){ return o !== el && o.contains(el); }); });
+  var set = new Set(els);
+  var io = new IntersectionObserver(function(en){ en.forEach(function(x){ x.target.classList.toggle('in', x.isIntersecting); }); }, { threshold: 0.12 });
+  els.forEach(function(el){
+    var sib = [].filter.call(el.parentNode.children, function(c){ return set.has(c); });
+    el.style.transitionDelay = (sib.indexOf(el) % 4) * 90 + 'ms';
+    el.classList.add('rv'); io.observe(el);
+  });
+})();
 </script>
 </body>
 </html>
