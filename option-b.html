@@ -30,16 +30,16 @@ a{color:#1F5AA6}a:hover{color:#0F2D56}
 .ln:hover{color:#8A6631;background-size:40% 2px}
 .ln svg{transition:transform .25s ease}.ln:hover svg{transform:translateX(4px)}
 .hgrid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:64px;align-items:center}
-.bento{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-rows:250px;gap:18px}
+.bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:340px;gap:18px}
 .tile{position:relative;border-radius:12px;overflow:hidden;color:#FFFFFF;text-decoration:none;display:block;background:#0F2D56}
 .tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,45,86,.05) 30%,rgba(15,45,86,.88) 100%);transition:background .35s ease}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,45,86,0) 25%,rgba(15,45,86,.7) 55%,rgba(15,45,86,.94) 100%);transition:background .35s ease}
 .tile:hover::after{background:linear-gradient(180deg,rgba(15,45,86,.2) 10%,rgba(15,45,86,.94) 100%)}
-.tile .tx{position:absolute;left:0;right:0;bottom:0;padding:26px;z-index:1}
+.tile .tx{position:absolute;left:0;right:0;bottom:0;padding:22px;z-index:1}
 .tile .tx p{margin:6px 0 0;font-size:14px;color:#DCE7F5;max-width:30em}
 .tile .more{display:inline-flex;align-items:center;gap:8px;margin-top:12px;font-weight:600;font-size:14px;color:#C9A063}
 .tile .more svg{transition:transform .25s ease}.tile:hover .more svg{transform:translateX(4px)}
-.t-a{grid-column:span 7;grid-row:span 2}.t-b{grid-column:span 5}.t-c{grid-column:span 5}.t-d{grid-column:span 12;grid-row:span 1}
+.t-a,.t-b,.t-c,.t-d{grid-column:auto;grid-row:auto}
 .steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid #D9D3C7}
 .step{position:relative;min-height:84px;padding:18px 16px 16px 0;border:0;background:transparent;text-align:left;font:inherit;cursor:pointer;color:#4B5563}
 .step .n{display:block;font-size:13px;font-weight:700;color:#8A6631;margin-bottom:2px}
@@ -52,7 +52,7 @@ a{color:#1F5AA6}a:hover{color:#0F2D56}
 .chk{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-top:1px solid #ECE7DD;font-size:15px}
 .cell{transition:background .3s ease}
 .cell:hover{background:#FBF8F3}
-@media (max-width: 1080px){.hgrid,.spanel{grid-template-columns:minmax(0,1fr)}.bento{grid-template-columns:minmax(0,1fr);grid-auto-rows:260px}.t-a,.t-b,.t-c,.t-d{grid-column:auto;grid-row:auto}.steps{grid-template-columns:repeat(5,minmax(120px,1fr));overflow-x:auto}}
+@media (max-width: 1080px){.hgrid,.spanel{grid-template-columns:minmax(0,1fr)}.bento{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:300px}.t-a,.t-b,.t-c,.t-d{grid-column:auto;grid-row:auto}.steps{grid-template-columns:repeat(5,minmax(120px,1fr));overflow-x:auto}}
 @media (prefers-reduced-motion: reduce){.btn,.btn::before,.btn svg,.step::before,.tile::after{transition:none}.btn:hover{transform:none}}
 a:focus-visible,button:focus-visible{outline:3px solid #6B9FD6;outline-offset:2px}
 .g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px;align-items:center}
@@ -110,6 +110,7 @@ a:focus-visible,button:focus-visible{outline:3px solid #6B9FD6;outline-offset:2p
 @media (max-width: 640px){section[style*="padding: 112px"]{padding-top:72px !important;padding-bottom:72px !important}}
 /* header must fit 375px: logo + CTA */
 @media (max-width: 640px){header.wrap{gap:12px !important}header.wrap img{height:32px !important}header.wrap .btn{padding:0 16px}}
+@media (max-width: 640px){.bento{grid-template-columns:minmax(0,1fr)}}
 @media (max-width: 640px){.wrap{padding:0 20px}.g3{grid-template-columns:minmax(0,1fr)}.h1{font-size:34px !important}.h2{font-size:26px !important}.hide-sm{display:none !important}.node{min-width:88px;font-size:12px;padding:0 10px}.who a{grid-template-columns:minmax(0,1fr) 48px}.who a .th{display:none}}
 /* ===== motion system: scroll-driven, subtle ===== */
 @property --n{syntax:'<integer>';inherits:false;initial-value:0}
@@ -215,7 +216,7 @@ h2.h2,.tile,.who a,.cell,.nrow,.chk,.spanel>div,figure,.bgrid>*{animation:rvUp l
 <div style="background: #0A2242; color: #DCE7F5; font-size: 13px">
 <div class="wrap" style="display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 42px; flex-wrap: wrap">
 <span style="display: flex; gap: 12px; align-items: center"><span style="color: #C9A063; font-weight: 700">September 2026</span>Pakistan Bar Council approves ITS for foreign LLB exam delivery<a href="#" style="color: #FFFFFF; font-weight: 600">Read</a></span>
-<span class="hide-sm" style="display: flex; gap: 24px; align-items: center"><a href="#" style="color: #FFFFFF; text-decoration: none; font-weight: 600">Candidate portal</a><button type="button" aria-label="Change region and language" style="display: inline-flex; align-items: center; gap: 8px; min-height: 32px; background: transparent; border: 1px solid rgba(201,160,99,.5); border-radius: 8px; color: #FFFFFF; font: inherit; font-size: 13px; padding: 0 12px; cursor: pointer"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C9A063" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle pathLength="100" cx="12" cy="12" r="10"></circle><path pathLength="100" d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"></path></svg>Pakistan, English</button></span>
+<span class="hide-sm" style="display: flex; gap: 24px; align-items: center"><button type="button" aria-label="Change region and language" style="display: inline-flex; align-items: center; gap: 8px; min-height: 32px; background: transparent; border: 1px solid rgba(201,160,99,.5); border-radius: 8px; color: #FFFFFF; font: inherit; font-size: 13px; padding: 0 12px; cursor: pointer"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C9A063" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle pathLength="100" cx="12" cy="12" r="10"></circle><path pathLength="100" d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"></path></svg>Pakistan, English</button></span>
 </div>
 </div>
 
@@ -366,7 +367,7 @@ h2.h2,.tile,.who a,.cell,.nrow,.chk,.spanel>div,figure,.bgrid>*{animation:rvUp l
 <p style="margin: 0; font-size: 16px; max-width: 30em">Take one service or hand us the whole sitting. Together they remove conflicts of interest at every stage.</p>
 </div>
 <div class="bento">
-<a class="tile t-a" href="#" data-tilt=""><img src="assets/ita-hall-exam.jpg" alt="Candidates sitting an exam under supervision"><div class="tx"><h3 class="serif" style="margin: 0; font-size: 24px; font-weight: 600; line-height: 1.15">Independent invigilation</h3><p>Trained, conflict-free invigilators deliver every session to awarding-body protocols.</p><span class="more">Explore<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div></a>
+<a class="tile t-a" href="#" data-tilt=""><img src="assets/ita-hall-exam.jpg" alt="Candidates sitting an exam under supervision"><div class="tx"><h3 class="serif" style="margin: 0; font-size: 20px; font-weight: 600; line-height: 1.15">Independent invigilation</h3><p>Trained, conflict-free invigilators deliver every session to awarding-body protocols.</p><span class="more">Explore<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div></a>
 <a class="tile t-b" href="#" data-tilt=""><img src="assets/ita-security-gate.jpg" alt="Walk-through security gate at a venue entrance"><div class="tx"><h3 class="serif" style="margin: 0; font-size: 20px; font-weight: 600; line-height: 1.15">Venue security</h3><p>Controlled venues, CCTV, secure storage and a documented chain of custody.</p><span class="more">Explore<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div></a>
 <a class="tile t-c" href="#" data-tilt=""><img src="assets/ita-briefing.jpg" alt="Invigilator briefing at a whiteboard"><div class="tx"><h3 class="serif" style="margin: 0; font-size: 20px; font-weight: 600; line-height: 1.15">Training and standards</h3><p>Structured training and competency checks, so every centre runs the same way.</p><span class="more">Explore<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div></a>
 <a class="tile t-d" href="#" data-tilt=""><img src="assets/ita-checkin.jpg" alt="Staff checking candidates in on laptops"><div class="tx"><h3 class="serif" style="margin: 0; font-size: 20px; font-weight: 600; line-height: 1.15">Technology-enhanced compliance</h3><p>Digital ID checks, QR verification and real-time incident reporting create an auditable record of every sitting.</p><span class="more">Explore<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M5 12h14M13 6l6 6-6 6"></path></svg></span></div></a>
