@@ -30,7 +30,7 @@ a{color:#1F5AA6}a:hover{color:#0F2D56}
 .ul:hover{background-size:100% 2px}
 .btn:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #6B9FD6;outline-offset:2px}
 .ul{color:#0F2D56;font-weight:600;text-decoration:none;border-bottom:2px solid #7A1F3D;padding-bottom:2px}.ul:hover{color:#7A1F3D}
-.hero{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:48px;align-items:center}
+.hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:48px;align-items:center}
 .g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
 .g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
 .g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px;align-items:center}
@@ -45,7 +45,7 @@ a{color:#1F5AA6}a:hover{color:#0F2D56}
 .ftab:hover{color:#0F2D56}
 .ftab.on{color:#0F2D56;border-bottom-color:#7A1F3D;background:#FBF8F3}
 .fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;align-items:end}
-.flabel{display:block;font-size:13px;font-weight:600;color:#0F2D56;margin-bottom:6px}
+.flabel{display:block;font-size:14px;font-weight:600;color:#0F2D56;margin-bottom:6px}
 select.field{appearance:none;background-image:linear-gradient(45deg,transparent 50%,#1F5AA6 50%),linear-gradient(135deg,#1F5AA6 50%,transparent 50%);background-position:calc(100% - 20px) 21px,calc(100% - 15px) 21px;background-size:5px 5px;background-repeat:no-repeat;padding-right:36px}
 .kb{animation:kb 22s ease-in-out infinite alternate}
 @keyframes kb{from{transform:scale(1)}to{transform:scale(1.07)}}
@@ -84,7 +84,7 @@ select.field{appearance:none;background-image:linear-gradient(45deg,transparent 
 @media (max-width: 640px){.ita>section{padding-top:72px !important;padding-bottom:72px !important}}
 /* header must fit 375px: logo + CTA */
 @media (max-width: 640px){.nav .wrap{gap:12px !important}.nav img{height:32px !important}.nav .btn{padding:0 16px}}
-@media (max-width: 640px){.wrap{padding:0 20px}.g4,.g3{grid-template-columns:minmax(0,1fr)}.h1{font-size:34px !important}.h2{font-size:26px !important}.hide-sm{display:none !important}.mapcards{display:none}}
+@media (max-width: 640px){.wrap{padding:0 20px}.g4,.g3{grid-template-columns:minmax(0,1fr)}.h1{font-size:34px !important}.h2{font-size:24px !important}.hide-sm{display:none !important}.mapcards{display:none}}
 /* ===== motion system: scroll-driven, subtle ===== */
 @property --n{syntax:'<integer>';inherits:false;initial-value:0}
 @keyframes wordUp{from{transform:translateY(120%)}to{transform:none}}
@@ -136,7 +136,7 @@ select.field{appearance:none;background-image:linear-gradient(45deg,transparent 
 .back .bl{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.45}
 .back .bl::before{content:"";flex:none;width:7px;height:7px;margin-top:7px;border-radius:50%;background:#7A1F3D}
 .back a{color:#FFFFFF;font-weight:600;font-size:14px;text-decoration:none;border-bottom:2px solid #7A1F3D;align-self:flex-start;margin-top:6px}
-.fliphint{position:absolute;right:12px;top:12px;z-index:2;display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;color:#FFFFFF;padding:4px 10px}
+.fliphint{position:absolute;right:12px;top:12px;z-index:2;display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:#FFFFFF;padding:4px 10px}
 .tilt{transform:perspective(1000px) rotateX(var(--ry,0deg)) rotateY(var(--rx,0deg));transition:transform .35s ease;will-change:transform}
 @keyframes redraw{from{stroke-dasharray:100;stroke-dashoffset:100}to{stroke-dasharray:100;stroke-dashoffset:0}}
 :is(.trustbar>div,.qa a,.g4>div,.cell,.who a,.news,.chk,.btn,.nrow,.bgrid label,.ftab,.btab,.step):hover svg [pathLength="100"]{animation:redraw .9s ease}
@@ -158,16 +158,16 @@ select.field{appearance:none;background-image:linear-gradient(45deg,transparent 
 @media (prefers-reduced-motion: reduce){.loader{display:none}.flip-in{transition:none}.tilt{transform:none}:is(.trustbar>div,.qa a,.g4>div,.cell,.who a,.news,.chk,.btn,.nrow,.bgrid label,.ftab,.btab,.step):hover svg [pathLength="100"]{animation:none}}
 
 .omr{background:#FFFFFF;border:1px solid #E6E1D8;border-radius:12px;padding:20px 22px;min-width:300px;position:relative}
-.omr .r{display:grid;grid-template-columns:64px repeat(4,26px);gap:10px;align-items:center;padding:6px 0;font-size:13px;color:#0F2D56;font-weight:600}
-.bub{width:26px;height:26px;border-radius:50%;border:1.5px solid #9AA6B8;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#4B5563}
+.omr .r{display:grid;grid-template-columns:64px repeat(4,26px);gap:10px;align-items:center;padding:6px 0;font-size:14px;color:#0F2D56;font-weight:600}
+.bub{width:26px;height:26px;border-radius:50%;border:1.5px solid #9AA6B8;display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#4B5563}
 .bub.on{background:#0F2D56;border-color:#0F2D56;color:#FFFFFF}
-.stamp{position:absolute;right:-14px;bottom:-16px;transform:rotate(-8deg);border:2px solid #7A1F3D;color:#7A1F3D;background:#FFFFFF;border-radius:8px;padding:4px 12px;font-size:13px;font-weight:800;letter-spacing:.5px}
+.stamp{position:absolute;right:-14px;bottom:-16px;transform:rotate(-8deg);border:2px solid #7A1F3D;color:#7A1F3D;background:#FFFFFF;border-radius:8px;padding:4px 12px;font-size:14px;font-weight:800;letter-spacing:.5px}
 @keyframes bubFill{from{background:transparent;border-color:#9AA6B8;color:#4B5563}to{background:#0F2D56;border-color:#0F2D56;color:#FFFFFF}}
 @keyframes stampIn{from{opacity:0;transform:rotate(-8deg) scale(1.6)}to{opacity:1;transform:rotate(-8deg) scale(1)}}
 @media (prefers-reduced-motion: no-preference){@supports (animation-timeline: view()){.bub.on{animation:bubFill linear both;animation-timeline:view()}.stamp{animation:stampIn linear both;animation-timeline:view();animation-range:entry 90% cover 45%}}}
 
 .optswitch{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;gap:4px;padding:4px;border-radius:999px;background:rgba(15,45,86,.92);box-shadow:0 12px 30px -12px rgba(0,0,0,.5);font-family:'Open Sans',system-ui,sans-serif}
-.optswitch a{color:#DCE7F5;text-decoration:none;font-size:13px;font-weight:700;padding:8px 14px;border-radius:999px}
+.optswitch a{color:#DCE7F5;text-decoration:none;font-size:14px;font-weight:700;padding:8px 14px;border-radius:999px}
 .optswitch a.on{background:#FFFFFF;color:#0F2D56}
 /* scroll reveal: parts show as they enter the screen and hide again when they leave (JS adds .rv/.in) */
 .rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
@@ -186,10 +186,10 @@ h1,h2,h3,h4,.fhead{font-family:'Playfair Display',Georgia,'Times New Roman',seri
 <div class="ita" style="font-family: 'Open Sans', system-ui, sans-serif; color: #374151; background: #FAF7F2; font-size: 16px; line-height: 1.6">
 
 <!-- utility bar -->
-<div style="background: #0F2D56; color: #DCE7F5; font-size: 13px">
+<div style="background: #0F2D56; color: #DCE7F5; font-size: 14px">
 <div class="wrap" style="display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 40px; flex-wrap: wrap">
-<span style="display: flex; gap: 12px; align-items: center"><span style="background: #7A1F3D; color: #FFFFFF; border-radius: 999px; padding: 1px 10px; font-size: 12px; font-weight: 700">News</span>Pakistan Bar Council approves ITS for foreign LLB exam delivery<a href="#" style="color: #FFFFFF; font-weight: 600">Read</a></span>
-<span class="hide-sm" style="display: flex; gap: 24px; align-items: center"><button type="button" aria-label="Change region and language" style="display: inline-flex; align-items: center; gap: 8px; min-height: 32px; background: transparent; border: 1px solid rgba(220,231,245,.35); border-radius: 8px; color: #FFFFFF; font: inherit; font-size: 13px; padding: 0 12px; cursor: pointer"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle pathLength="100" cx="12" cy="12" r="10"></circle><path pathLength="100" d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"></path></svg>Pakistan, English</button></span>
+<span style="display: flex; gap: 12px; align-items: center"><span style="background: #7A1F3D; color: #FFFFFF; border-radius: 999px; padding: 1px 10px; font-size: 14px; font-weight: 700">News</span>Pakistan Bar Council approves ITS for foreign LLB exam delivery<a href="#" style="color: #FFFFFF; font-weight: 600">Read</a></span>
+<span class="hide-sm" style="display: flex; gap: 24px; align-items: center"><button type="button" aria-label="Change region and language" style="display: inline-flex; align-items: center; gap: 8px; min-height: 32px; background: transparent; border: 1px solid rgba(220,231,245,.35); border-radius: 8px; color: #FFFFFF; font: inherit; font-size: 14px; padding: 0 12px; cursor: pointer"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle pathLength="100" cx="12" cy="12" r="10"></circle><path pathLength="100" d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"></path></svg>Pakistan, English</button></span>
 </div>
 </div>
 
@@ -211,11 +211,11 @@ h1,h2,h3,h4,.fhead{font-family:'Playfair Display',Georgia,'Times New Roman',seri
 <section style="padding: 96px 0; overflow: hidden; background: #FAF7F2">
 <div class="wrap hero">
 <div style="padding-bottom: 40px">
-<div class="rise" style="animation-delay: 1.35s; display: inline-flex; align-items: center; gap: 10px; background: #FFFFFF; border: 1px solid #E6E1D8; border-radius: 999px; padding: 6px 16px 6px 6px; font-size: 13px; font-weight: 600; color: #0F2D56">
+<div class="rise" style="animation-delay: 1.35s; display: inline-flex; align-items: center; gap: 10px; background: #FFFFFF; border: 1px solid #E6E1D8; border-radius: 999px; padding: 6px 16px 6px 6px; font-size: 14px; font-weight: 600; color: #0F2D56">
 <span style="width: 26px; height: 26px; border-radius: 50%; background: #7A1F3D; display: inline-flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M20 6 9 17l-5-5"></path></svg></span>
 IBCC-registered exam delivery partner
 </div>
-<h1 class="serif h1" style="font-size: 44px; line-height: 1.12; font-weight: 500; color: #0F2D56; margin: 26px 0 22px; letter-spacing: -0.2px"><span class="wl"><span style="animation-delay: 1.45s">Recognised qualifications.</span></span><span class="wl"><span style="animation-delay: 1.60s; font-style: italic; font-weight: 500; color: #7A1F3D">Greater opportunities.</span></span></h1>
+<h1 class="serif h1" style="font-size: 48px; line-height: 1.12; font-weight: 500; color: #0F2D56; margin: 26px 0 22px; letter-spacing: -0.2px"><span class="wl"><span style="animation-delay: 1.45s">Recognised qualifications.</span></span><span class="wl"><span style="animation-delay: 1.60s; font-style: italic; font-weight: 500; color: #7A1F3D">Greater opportunities.</span></span></h1>
 <p class="rise" style="animation-delay: 1.60s; font-size: 16px; max-width: 28em; margin: 0 0 34px">Independent exam delivery for awarding bodies, universities and training providers, proven across Pakistan and the UAE, and now launching in new countries.</p>
 <div class="rise" style="animation-delay: 1.75s; display: flex; gap: 14px; flex-wrap: wrap; align-items: center">
 <a class="btn btn-m" href="#">Become a partner <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
@@ -231,19 +231,19 @@ IBCC-registered exam delivery partner
 <img class="kb" src="assets/dummy-d1-hero.jpg" alt="Candidates sitting an exam in an ITA-managed hall" style="display: block; width: 100%; height: 100%; object-fit: cover">
 <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,45,86,0) 40%, rgba(15,45,86,.78) 100%)"></div>
 <svg style="position: absolute; inset: 22px; width: calc(100% - 44px); height: calc(100% - 44px)" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><g fill="none" stroke="#FFFFFF" stroke-width="2" vector-effect="non-scaling-stroke" opacity=".85"><path d="M0 8V0h6" vector-effect="non-scaling-stroke"></path><path d="M94 0h6v8" vector-effect="non-scaling-stroke"></path></g></svg>
-<div class="glass" style="position: absolute; top: 36px; left: 36px; display: flex; align-items: center; gap: 8px; padding: 6px 12px; font-size: 12px; font-weight: 700; color: #FFFFFF"><span class="recdot"></span>CCTV recording</div>
+<div class="glass" style="position: absolute; top: 36px; left: 36px; display: flex; align-items: center; gap: 8px; padding: 6px 12px; font-size: 14px; font-weight: 700; color: #FFFFFF"><span class="recdot"></span>CCTV recording</div>
 </div>
 <!-- floating cards -->
 <div class="mapcards" style="position: absolute; left: -48px; bottom: 32px; width: 230px">
 <div class="float rise" style="animation-delay: 3.10s; background: #FFFFFF; border-radius: 12px; padding: 18px; box-shadow: 0 24px 48px -20px rgba(15,45,86,.45); border: 1px solid #E6E1D8; display: flex; gap: 14px; align-items: center">
 <div style="width: 46px; height: 46px; border-radius: 8px; background: #F6EDF0; display: flex; align-items: center; justify-content: center; flex: none"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7A1F3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path pathLength="100" d="m9 12 2 2 4-4"></path></svg></div>
-<div><div style="font-weight: 700; color: #0F2D56; font-size: 15px">Candidate verified</div><div style="font-size: 13px">QR and photo ID matched</div></div>
+<div><div style="font-weight: 700; color: #0F2D56; font-size: 15px">Candidate verified</div><div style="font-size: 14px">QR and photo ID matched</div></div>
 </div>
 </div>
 <div class="mapcards" style="position: absolute; right: -20px; top: -26px; width: 236px">
 <div class="float rise" style="animation-delay: 3.50s; animation-duration: .8s, 7s; background: #FFFFFF; border-radius: 12px; padding: 14px 16px; box-shadow: 0 24px 48px -20px rgba(15,45,86,.45); border: 1px solid #E6E1D8; display: flex; gap: 12px; align-items: center">
 <div style="width: 40px; height: 40px; border-radius: 8px; background: #EEF3FA; display: flex; align-items: center; justify-content: center; flex: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1F5AA6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect pathLength="100" x="3" y="11" width="18" height="11" rx="2"></rect><path pathLength="100" d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></div>
-<div><div style="font-weight: 700; color: #0F2D56; font-size: 14px">Paper pack sealed</div><div style="font-size: 12px">Chain of custody logged</div></div>
+<div><div style="font-weight: 700; color: #0F2D56; font-size: 14px">Paper pack sealed</div><div style="font-size: 14px">Chain of custody logged</div></div>
 </div>
 </div>
 </div>
@@ -255,7 +255,7 @@ IBCC-registered exam delivery partner
 <div class="wrap">
 <div style="text-align: center; margin-bottom: 36px">
 <div style="font-size: 14px; font-weight: 700; color: #7A1F3D; margin-bottom: 10px">Get started</div>
-<h2 class="serif h2" style="font-size: 30px; line-height: 1.15; font-weight: 600; color: #0F2D56; margin: 0">Find what you need</h2>
+<h2 class="serif h2" style="font-size: 28px; line-height: 1.15; font-weight: 600; color: #0F2D56; margin: 0">Find what you need</h2>
 </div>
 <div style="background: #FFFFFF; border: 1px solid #E6E1D8; border-radius: 16px; box-shadow: 0 24px 60px -36px rgba(15,45,86,.35); overflow: hidden">
 <div role="tablist" aria-label="Choose who you are" style="display: flex; flex-wrap: wrap; border-bottom: 1px solid #E6E1D8">
@@ -323,7 +323,7 @@ IBCC-registered exam delivery partner
 <div class="g2" style="align-items: end; gap: 48px; margin-bottom: 56px">
 <div>
 <div style="font-size: 14px; font-weight: 700; color: #7A1F3D; margin-bottom: 12px">Who we work with</div>
-<h2 class="serif h2" style="font-size: 30px; line-height: 1.1; font-weight: 600; color: #0F2D56; margin: 0">Fair, reliable, internationally aligned exams.</h2>
+<h2 class="serif h2" style="font-size: 28px; line-height: 1.1; font-weight: 600; color: #0F2D56; margin: 0">Fair, reliable, internationally aligned exams.</h2>
 </div>
 <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap">
 <p style="margin: 0; font-size: 16px; max-width: 24em">Whoever sets the standard, we apply it the same way every time.</p>
@@ -338,7 +338,7 @@ IBCC-registered exam delivery partner
 <div class="ph" style="height: 210px; border-radius: 0"><img src="assets/dummy-d3-invigilator.jpg" alt="Invigilator supervising a scholarship exam hall"></div>
 <div style="padding: 22px"><h3 class="serif" style="font-size: 18px; color: #0F2D56; margin: 0 0 6px; font-weight: 600">Awarding bodies</h3><p style="margin: 0; font-size: 14px">Every session to your protocols, with conflict-free invigilators.</p></div>
 <span class="glass fliphint"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5"></path></svg>Hover for details</span></div>
-<div class="face back"><div style="font-size: 13px; font-weight: 700; color: #A9C3E6">For awarding bodies</div><h3 class="serif" style="font-size: 20px; font-weight: 600; line-height: 1.15">What we handle for you</h3><span class="bl">Your protocols applied at every sitting</span><span class="bl">Trained, conflict-free invigilators</span><span class="bl">A full report after each session</span><a href="#">See how it works</a></div>
+<div class="face back"><div style="font-size: 14px; font-weight: 700; color: #A9C3E6">For awarding bodies</div><h3 class="serif" style="font-size: 20px; font-weight: 600; line-height: 1.15">What we handle for you</h3><span class="bl">Your protocols applied at every sitting</span><span class="bl">Trained, conflict-free invigilators</span><span class="bl">A full report after each session</span><a href="#">See how it works</a></div>
 </div>
 </article>
 <article class="flip" tabindex="0" style="height: 380px">
@@ -347,7 +347,7 @@ IBCC-registered exam delivery partner
 <div class="ph" style="height: 210px; border-radius: 0"><img src="assets/dummy-d2-wide.jpg" alt="Students outside a University of Greenwich building"></div>
 <div style="padding: 22px"><h3 class="serif" style="font-size: 18px; color: #0F2D56; margin: 0 0 6px; font-weight: 600">Universities</h3><p style="margin: 0; font-size: 14px">One consistent picture across a distributed exam network.</p></div>
 <span class="glass fliphint"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5"></path></svg>Hover for details</span></div>
-<div class="face back"><div style="font-size: 13px; font-weight: 700; color: #A9C3E6">For universities</div><h3 class="serif" style="font-size: 20px; font-weight: 600; line-height: 1.15">What we handle for you</h3><span class="bl">The same checks in every city</span><span class="bl">One consistent record across campuses</span><span class="bl">Controlled venues with CCTV</span><a href="#">See how it works</a></div>
+<div class="face back"><div style="font-size: 14px; font-weight: 700; color: #A9C3E6">For universities</div><h3 class="serif" style="font-size: 20px; font-weight: 600; line-height: 1.15">What we handle for you</h3><span class="bl">The same checks in every city</span><span class="bl">One consistent record across campuses</span><span class="bl">Controlled venues with CCTV</span><a href="#">See how it works</a></div>
 </div>
 </article>
 <article class="flip" tabindex="0" style="height: 380px">
@@ -356,7 +356,7 @@ IBCC-registered exam delivery partner
 <div class="ph" style="height: 210px; border-radius: 0"><img src="assets/dummy-d4-candidates.jpg" alt="ITA staff checking candidates in on laptops"></div>
 <div style="padding: 22px"><h3 class="serif" style="font-size: 18px; color: #0F2D56; margin: 0 0 6px; font-weight: 600">Training providers</h3><p style="margin: 0; font-size: 14px">A neutral layer, with an auditable record of every sitting.</p></div>
 <span class="glass fliphint"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5"></path></svg>Hover for details</span></div>
-<div class="face back"><div style="font-size: 13px; font-weight: 700; color: #A9C3E6">For training providers</div><h3 class="serif" style="font-size: 20px; font-weight: 600; line-height: 1.15">What we handle for you</h3><span class="bl">A neutral layer between you and candidates</span><span class="bl">An auditable record of every sitting</span><span class="bl">Photo ID and QR checks at the door</span><a href="#">See how it works</a></div>
+<div class="face back"><div style="font-size: 14px; font-weight: 700; color: #A9C3E6">For training providers</div><h3 class="serif" style="font-size: 20px; font-weight: 600; line-height: 1.15">What we handle for you</h3><span class="bl">A neutral layer between you and candidates</span><span class="bl">An auditable record of every sitting</span><span class="bl">Photo ID and QR checks at the door</span><a href="#">See how it works</a></div>
 </div>
 </article>
 </div>
@@ -369,7 +369,7 @@ IBCC-registered exam delivery partner
 </nav>
 <a href="#" style="margin: 14px; background: #7A1F3D; color: #FFFFFF; border-radius: 8px; padding: 16px; text-decoration: none; display: flex; gap: 12px; align-items: center">
 <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path pathLength="100" d="m9 12 2 2 4-4"></path></svg>
-<span><span style="display: block; font-weight: 700">Verify a result</span><span style="font-size: 13px; color: #F3DCE4">Check a certificate in seconds</span></span>
+<span><span style="display: block; font-weight: 700">Verify a result</span><span style="font-size: 14px; color: #F3DCE4">Check a certificate in seconds</span></span>
 </a>
 </aside>
 </div>
@@ -381,7 +381,7 @@ IBCC-registered exam delivery partner
 <div class="wrap g2" style="gap: 72px">
 <div>
 <div style="font-size: 14px; font-weight: 700; color: #A9C3E6; margin-bottom: 14px">Why choose ITA</div>
-<h2 class="serif h2" style="font-size: 30px; line-height: 1.1; font-weight: 600; color: #FFFFFF; margin: 0 0 20px">An independent invigilation partner, not a conflicted one.</h2>
+<h2 class="serif h2" style="font-size: 28px; line-height: 1.1; font-weight: 600; color: #FFFFFF; margin: 0 0 20px">An independent invigilation partner, not a conflicted one.</h2>
 <p style="font-size: 16px; margin: 0 0 32px; max-width: 30em">When the same centre teaches, registers and invigilates, nobody can call the result fully impartial. We sit between you and your candidates.</p>
 <div style="display: flex; gap: 10px; flex-wrap: wrap">
 <button class="tab" type="button" data-model="trad">Traditional model</button>
@@ -412,7 +412,7 @@ IBCC-registered exam delivery partner
 <div style="border: 1px solid rgba(169,195,230,.45); border-radius: 8px; padding: 14px 20px; font-weight: 700; color: #FFFFFF">Candidate</div>
 </div>
 <p class="serif" style="margin: 8px 0 0; font-size: 22px; font-style: italic; text-align: center; color: #FFFFFF">You set the standard. We apply it the same way every time.</p>
-<div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; font-size: 13px; color: #DCE7F5">
+<div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; font-size: 14px; color: #DCE7F5">
 <span style="border: 1px solid rgba(169,195,230,.35); border-radius: 999px; padding: 4px 12px">IBCC-aligned SOPs</span>
 <span style="border: 1px solid rgba(169,195,230,.35); border-radius: 999px; padding: 4px 12px">ISO-style audit trail</span>
 <span style="border: 1px solid rgba(169,195,230,.35); border-radius: 999px; padding: 4px 12px">Objective oversight</span>
@@ -429,14 +429,14 @@ IBCC-registered exam delivery partner
 <div class="g2" style="align-items: end; gap: 48px; margin-bottom: 40px">
 <div>
 <div style="font-size: 14px; font-weight: 700; color: #7A1F3D; margin-bottom: 12px">Inside an ITA venue</div>
-<h2 class="serif h2" style="font-size: 30px; line-height: 1.1; font-weight: 600; color: #0F2D56; margin: 0">The room is ready before the first candidate arrives.</h2>
+<h2 class="serif h2" style="font-size: 28px; line-height: 1.1; font-weight: 600; color: #0F2D56; margin: 0">The room is ready before the first candidate arrives.</h2>
 </div>
 <p style="margin: 0; font-size: 16px">Halls set, rules posted and desks numbered, the same way at every centre.</p>
 </div>
 <div class="g2" style="gap: 24px; align-items: stretch">
 <div class="ph" style="min-height: 300px; background: #0F2D56">
 <video src="assets/ita-venue-walkthrough.mp4" poster="assets/ita-venue-poster.jpg" autoplay="" muted="" loop="" playsinline="" aria-label="Walkthrough of an ITA exam venue, from the entrance to the exam hall" style="position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover"></video>
-<span class="glass" style="position: absolute; left: 16px; top: 16px; display: flex; align-items: center; gap: 8px; padding: 6px 12px; font-size: 13px; font-weight: 700; color: #FFFFFF"><svg width="14" height="14" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>Venue walkthrough</span>
+<span class="glass" style="position: absolute; left: 16px; top: 16px; display: flex; align-items: center; gap: 8px; padding: 6px 12px; font-size: 14px; font-weight: 700; color: #FFFFFF"><svg width="14" height="14" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>Venue walkthrough</span>
 </div>
 <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
 <figure style="margin: 0"><div class="ph" style="height: 130px"><img src="assets/ita-hall-desks.jpg" alt="Exam hall with spaced desks and chairs"></div><figcaption style="font-size: 14px; margin-top: 8px; color: #0F2D56; font-weight: 600">Spaced, numbered desks</figcaption></figure>
@@ -454,7 +454,7 @@ IBCC-registered exam delivery partner
 <div class="spot" style="background: #0F2D56; border-radius: 12px; overflow: hidden; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))">
 <div style="padding: 56px; color: #DCE7F5; display: flex; flex-direction: column; justify-content: center">
 <div style="font-size: 14px; font-weight: 700; color: #A9C3E6; margin-bottom: 12px">Case study</div>
-<h2 class="serif h2" style="font-size: 30px; line-height: 1.1; font-weight: 600; color: #FFFFFF; margin: 0 0 18px">University of Greenwich. Six cities, one set of rules.</h2>
+<h2 class="serif h2" style="font-size: 28px; line-height: 1.1; font-weight: 600; color: #FFFFFF; margin: 0 0 18px">University of Greenwich. Six cities, one set of rules.</h2>
 <p style="margin: 0 0 32px; font-size: 16px">We deliver Greenwich exams with the same checks and reporting in every city, so the university sees one picture, not six.</p>
 <div style="display: flex; gap: 48px; margin-bottom: 36px; flex-wrap: wrap">
 <div><div class="serif" style="font-size: 34px; line-height: 1; color: #FFFFFF; font-weight: 600"><span class="cnt" style="--to: 4"><span class="st">4</span></span>,000+</div><div style="font-size: 14px; margin-top: 8px">Candidates</div></div>
@@ -464,7 +464,7 @@ IBCC-registered exam delivery partner
 </div>
 <div style="background: #163A6B; padding: 56px; display: flex; flex-direction: column; justify-content: flex-start; gap: 0">
 <img src="assets/dummy-d2-wide.jpg" alt="Students walking outside the University of Greenwich" style="display: block; width: calc(100% + 112px); max-width: none; margin: -56px -56px 32px; height: 200px; object-fit: cover">
-<div style="font-size: 13px; color: #A9C3E6; margin-bottom: 12px">Delivery footprint</div>
+<div style="font-size: 14px; color: #A9C3E6; margin-bottom: 12px">Delivery footprint</div>
 <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px">
 <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid rgba(169,195,230,.2); color: #FFFFFF; font-weight: 600">Islamabad<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B9FD6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M20 6 9 17l-5-5"></path></svg></div>
 <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid rgba(169,195,230,.2); color: #FFFFFF; font-weight: 600">Rawalpindi<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B9FD6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M20 6 9 17l-5-5"></path></svg></div>
@@ -487,7 +487,7 @@ IBCC-registered exam delivery partner
 <div><div class="fhead" style="font-weight: 700; color: #FFFFFF; margin-bottom: 12px; font-size: 16px">Dubai</div><p style="margin: 0 0 16px">Level 21, Al Habtoor Business Tower, Dubai Marina</p><div class="fhead" style="font-weight: 700; color: #FFFFFF; margin-bottom: 12px; font-size: 16px">Karachi</div><p style="margin: 0">101 Marine Point, DC-1, Block 9 Clifton</p></div>
 <div><div class="fhead" style="font-weight: 700; color: #FFFFFF; margin-bottom: 12px; font-size: 16px">Contact</div><div style="display: grid; gap: 8px"><span>UAN 111-482-111</span><span>+971 55 978 1353</span><span>WhatsApp +44 7401 137464</span><span>info@intltestingalliance.com</span></div></div>
 </div>
-<div style="border-top: 1px solid rgba(169,195,230,.25); margin-top: 48px; padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 13px; color: #A9C3E6"><span>© 2026 International Testing Alliance. A subsidiary of ITS.</span><span class="serif" style="font-style: italic; font-size: 16px; color: #DCE7F5">Trusted assessment. Delivered.</span></div>
+<div style="border-top: 1px solid rgba(169,195,230,.25); margin-top: 48px; padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 14px; color: #A9C3E6"><span>© 2026 International Testing Alliance. A subsidiary of ITS.</span><span class="serif" style="font-style: italic; font-size: 16px; color: #DCE7F5">Trusted assessment. Delivered.</span></div>
 </div>
 </footer>
 
