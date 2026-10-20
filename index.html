@@ -112,8 +112,6 @@ select.field{appearance:none;background-image:linear-gradient(45deg,transparent 
 .fp .pin{animation:dotIn linear both;animation-timeline:view();animation-range:cover 30% cover 50%}
 .line{animation:fill linear both;animation-timeline:view();animation-range:entry 30% cover 50%}
 .progress{animation:prog linear both;animation-timeline:scroll(root)}
-h2.h2,.card,.news,.trustbar>div,.g4>div,.qa a,figure,.fp>div,.chip,ol>li{animation:rvUp linear both;animation-timeline:view();animation-range:entry 0% entry 55%}
-.ph{animation:rvMask linear both;animation-timeline:view();animation-range:entry 0% entry 60%}
 .ph img{animation:rvScale linear both;animation-timeline:view();animation-range:entry 0% cover 50%}
 .rule-in{transform-origin:left;animation:rvRule linear both;animation-timeline:view();animation-range:entry 10% cover 40%}
 }
@@ -171,6 +169,9 @@ h2.h2,.card,.news,.trustbar>div,.g4>div,.qa a,figure,.fp>div,.chip,ol>li{animati
 .optswitch{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;gap:4px;padding:4px;border-radius:999px;background:rgba(15,45,86,.92);box-shadow:0 12px 30px -12px rgba(0,0,0,.5);font-family:'Open Sans',system-ui,sans-serif}
 .optswitch a{color:#DCE7F5;text-decoration:none;font-size:13px;font-weight:700;padding:8px 14px;border-radius:999px}
 .optswitch a.on{background:#FFFFFF;color:#0F2D56}
+/* scroll reveal: parts show as they enter the screen and hide again when they leave (JS adds .rv/.in) */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
 </style>
 </head>
 <body>
@@ -528,6 +529,22 @@ IBCC-registered exam delivery partner
   if (el) setInterval(function(){ secs = Math.max(0, secs - 1); el.textContent = z(Math.floor(secs / 3600)) + ':' + z(Math.floor((secs % 3600) / 60)) + ':' + z(secs % 60); }, 1000);
 })();
 
+
+(function(){
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var sel = 'h2, section p, figure, blockquote, .card, .flip, .tile, .news, .trustbar>div, .qa a, .g4>div, .chip, .ph, ol>li, .who a, .nrow, .step, .cell, .chk, [role="tablist"], .fgrid, .bgrid';
+  var hero = document.querySelector('.hero, .hgrid'); hero = hero && hero.closest('section');
+  var els = [].filter.call(document.querySelectorAll(sel), function(el){ return !(hero && hero.contains(el)) && !el.closest('footer'); });
+  // animate the outermost match only, so a card and its photo don't both slide
+  els = els.filter(function(el){ return !els.some(function(o){ return o !== el && o.contains(el); }); });
+  var set = new Set(els);
+  var io = new IntersectionObserver(function(en){ en.forEach(function(x){ x.target.classList.toggle('in', x.isIntersecting); }); }, { threshold: 0.12 });
+  els.forEach(function(el){
+    var sib = [].filter.call(el.parentNode.children, function(c){ return set.has(c); });
+    el.style.transitionDelay = (sib.indexOf(el) % 4) * 90 + 'ms';
+    el.classList.add('rv'); io.observe(el);
+  });
+})();
 </script>
 </body>
 </html>
