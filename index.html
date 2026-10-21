@@ -219,11 +219,15 @@ h1,h2,h3,h4,.fhead{font-family:'Playfair Display',Georgia,'Times New Roman',seri
 .depth .card:not(.face):hover,.depth aside:hover,.depth figure:hover .ph{transform:translateY(-4px);box-shadow:0 2px 4px rgba(15,45,86,.06),0 14px 26px -12px rgba(15,45,86,.2),0 40px 60px -32px rgba(15,45,86,.34) !important}
 @media (prefers-reduced-motion: reduce){.depth .card:not(.face):hover,.depth aside:hover,.depth figure:hover .ph{transform:none}}
 
-/* hero video background: white wash on the text side keeps the white base and navy copy readable */
-.hero-v{position:relative;overflow:hidden;background:#FFFFFF;padding:140px 0 150px;isolation:isolate}
-.hero-bg{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover}
-.hero-ov{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(255,255,255,.97) 0%,rgba(255,255,255,.9) 40%,rgba(255,255,255,.4) 72%,rgba(255,255,255,.12) 100%)}
-@media (max-width: 760px){.hero-ov{background:rgba(255,255,255,.88)}.hero-v{padding:96px 0}}
+/* hero: copy left, framed services video right */
+.hero-v{position:relative;overflow:hidden;background:#FFFFFF;padding:96px 0 104px}
+.hero-g{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:56px;align-items:center}
+.hero-vid{position:relative;border-radius:16px;overflow:hidden;background:#0F2D56;aspect-ratio:16 / 9;border:1px solid #E3EAF4;box-shadow:0 2px 4px rgba(15,45,86,.06),0 30px 60px -30px rgba(15,45,86,.4)}
+.hero-vid video{display:block;width:100%;height:100%;object-fit:cover}
+.vbtn{position:absolute;right:14px;bottom:14px;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.6);background:rgba(15,45,86,.72);color:#FFFFFF;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+.vbtn:hover{background:#0F2D56}
+@media (max-width: 1080px){.hero-g{grid-template-columns:minmax(0,1fr);gap:40px}}
+@media (max-width: 640px){.hero-v{padding:64px 0 72px}}
 /* stats */
 .kpis{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));background:#FFFFFF;border:1px solid #E3EAF4;border-radius:16px;box-shadow:0 24px 48px -36px rgba(15,45,86,.35)}
 .kpi{padding:30px 24px}.kpi+.kpi{border-left:1px solid #E3EAF4}
@@ -269,12 +273,10 @@ h1,h2,h3,h4,.fhead{font-family:'Playfair Display',Georgia,'Times New Roman',seri
 </div>
 </header>
 
-<!-- HERO: video background -->
+<!-- HERO: copy + services video -->
 <section class="hero-v">
-<video class="hero-bg" src="assets/ita-venue-walkthrough.mp4" poster="assets/ita-venue-poster.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
-<div class="hero-ov" aria-hidden="true"></div>
-<div class="wrap" style="position: relative">
-<div style="max-width: 640px">
+<div class="wrap hero-g">
+<div>
 <div class="rise" style="animation-delay: 1.35s; display: inline-flex; align-items: center; gap: 10px; background: #FFFFFF; border: 1px solid #E3EAF4; border-radius: 999px; padding: 6px 16px 6px 6px; font-size: 14px; font-weight: 600; color: #0F2D56">
 <span style="width: 26px; height: 26px; border-radius: 50%; background: #660033; display: inline-flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M20 6 9 17l-5-5"></path></svg></span>
 IBCC-registered exam delivery partner
@@ -286,6 +288,13 @@ IBCC-registered exam delivery partner
 </div>
 <div class="rise serif" style="animation-delay: 2.00s; margin-top: 44px; font-style: italic; font-size: 18px; color: #6B7280; display: flex; align-items: center; gap: 16px">
 <span class="rule-in" style="height: 1px; width: 56px; background: #C9CDD4; display: block"></span>Trusted assessment. Delivered.</div>
+</div>
+<div class="rise hero-vid" style="animation-delay: 1.5s">
+<video id="svc" autoplay muted loop playsinline preload="metadata" poster="assets/ita-services-poster.jpg" aria-label="ITA services overview: exam management, professional invigilation, exam venues, technology and customised services">
+<source src="assets/ita-services.webm" type="video/webm">
+<source src="assets/ita-services.mp4" type="video/mp4">
+</video>
+<button type="button" class="vbtn" id="svc-snd" aria-pressed="false" aria-label="Turn sound on"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"></path><path class="x" d="m23 9-6 6M17 9l6 6"></path><path class="w" d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14" style="display: none"></path></svg></button>
 </div>
 </div>
 </section>
@@ -609,8 +618,12 @@ IBCC-registered exam delivery partner
 })();
 
 (function(){
-  var v = document.querySelector('.hero-bg');
-  if (v && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { v.removeAttribute('autoplay'); v.pause(); }
+  var v = document.getElementById('svc'), b = document.getElementById('svc-snd');
+  if (!v) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { v.removeAttribute('autoplay'); v.pause(); v.controls = true; }
+  if (b) b.addEventListener('click', function(){ v.muted = !v.muted; if (!v.muted) v.play();
+    b.setAttribute('aria-pressed', v.muted ? 'false' : 'true'); b.setAttribute('aria-label', v.muted ? 'Turn sound on' : 'Turn sound off');
+    b.querySelector('.x').style.display = v.muted ? '' : 'none'; b.querySelector('.w').style.display = v.muted ? 'none' : ''; });
 })();
 </script>
 </body>
