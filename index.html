@@ -168,9 +168,6 @@ select.field{appearance:none;background-image:linear-gradient(45deg,transparent 
 @keyframes stampIn{from{opacity:0;transform:rotate(-8deg) scale(1.6)}to{opacity:1;transform:rotate(-8deg) scale(1)}}
 @media (prefers-reduced-motion: no-preference){@supports (animation-timeline: view()){.bub.on{animation:bubFill linear both;animation-timeline:view()}.stamp{animation:stampIn linear both;animation-timeline:view();animation-range:entry 90% cover 45%}}}
 
-.optswitch{position:fixed;left:16px;bottom:16px;z-index:60;display:flex;gap:4px;padding:4px;border-radius:999px;background:rgba(15,45,86,.92);box-shadow:0 12px 30px -12px rgba(0,0,0,.5);font-family:'Open Sans',system-ui,sans-serif}
-.optswitch a{color:#DCE7F5;text-decoration:none;font-size:14px;font-weight:700;padding:8px 14px;border-radius:999px}
-.optswitch a.on{background:#FFFFFF;color:#0F2D56}
 /* scroll reveal: parts show as they enter the screen and hide again when they leave (JS adds .rv/.in) */
 .rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
 .rv.in{opacity:1;transform:none}
@@ -592,7 +589,6 @@ IBCC-registered exam delivery partner
 </footer>
 
 </div>
-<nav class="optswitch" aria-label="Design options"><a href="index.html" class="on" aria-current="page">Option A</a><a href="option-b.html">Option B</a></nav>
 <script>
 
 (function(){
