@@ -183,7 +183,14 @@ h1,h2,h3,h4,.fhead{font-family:'Playfair Display',Georgia,'Times New Roman',seri
 .nav::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:0;right:0;background:#0F2D56;border-radius:0;box-shadow:0 0 0 rgba(15,45,86,0);transition:top .6s cubic-bezier(.22,1,.36,1),bottom .6s cubic-bezier(.22,1,.36,1),left .6s cubic-bezier(.22,1,.36,1),right .6s cubic-bezier(.22,1,.36,1),border-radius .6s cubic-bezier(.22,1,.36,1),box-shadow .6s ease}
 .nav.scrolled::before{top:8px;bottom:8px;left:max(24px,calc((100% - 1240px) / 2));right:max(24px,calc((100% - 1240px) / 2));border-radius:20px;box-shadow:0 18px 40px -18px rgba(15,45,86,.5)}
 @media (max-width: 640px){.nav.scrolled::before{left:8px;right:8px}}
-@media (prefers-reduced-motion: reduce){.nav::before{transition:none}}
+/* contents shrink with the pill: transform only, so it stays as smooth as the bar */
+.nav>.wrap>a:first-child,.nav .links,.nav>.wrap>div:last-child{transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.nav>.wrap>a:first-child{transform-origin:left center}.nav>.wrap>div:last-child{transform-origin:right center}
+.nav.scrolled>.wrap>a:first-child{transform:scale(.8)}
+.nav.scrolled .links{transform:scale(.92)}
+.nav.scrolled>.wrap>div:last-child{transform:scale(.84)}
+.nav.scrolled::before{top:10px;bottom:10px}
+@media (prefers-reduced-motion: reduce){.nav::before,.nav>.wrap>a:first-child,.nav .links,.nav>.wrap>div:last-child{transition:none}}
 .card{border-radius:16px;transition:border-color .25s ease,box-shadow .25s ease,transform .25s ease}
 .card:hover{transform:translateY(-4px);box-shadow:0 22px 40px -26px rgba(15,45,86,.35)}
 .eyebrow{font-size:14px;font-weight:700;color:#6B7280;margin-bottom:12px}
