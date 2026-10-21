@@ -212,37 +212,16 @@ h1,h2,h3,h4,.fhead{font-family:'Playfair Display',Georgia,'Times New Roman',seri
 .mq:hover .mq-track{animation-play-state:paused}
 .mq-track span{font-family:'Playfair Display',Georgia,serif;font-size:22px;color:#6B7280;white-space:nowrap}
 @keyframes mq{to{transform:translateX(-50%)}}
-/* numbers band */
-.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid #E8E8E5;border-bottom:1px solid #E8E8E5}
-.stats>div{padding:32px 24px}.stats>div+div{border-left:1px solid #E8E8E5}
-.stats b{display:block;font-family:'Playfair Display',Georgia,serif;font-weight:500;font-size:50px;line-height:1;color:#0F2D56}
-.stats>div>span{display:block;margin-top:10px;font-size:15px;color:#6B7280}
-/* session tabs */
-.stepper{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:48px;align-items:start}
-.stp{position:relative;display:block;width:100%;text-align:left;background:transparent;border:0;border-top:1px solid #E1E1DD;padding:22px 0 22px 56px;font:inherit;color:#374151;cursor:pointer}
-.stp .n{position:absolute;left:0;top:22px;width:36px;height:36px;border-radius:50%;border:1px solid #D5D9DF;display:flex;align-items:center;justify-content:center;font-weight:700;color:#6B7280;transition:all .3s ease}
-.stp h3{margin:0;font-size:20px;color:#6B7280;font-weight:600;transition:color .3s ease}
-.stp p{margin:6px 0 0;font-size:15px;max-height:0;overflow:hidden;opacity:0;transition:max-height .4s ease,opacity .4s ease}
-.stp.on .n{background:#0F2D56;border-color:#0F2D56;color:#FFFFFF}
-.stp.on h3{color:#0F2D56}.stp.on p{max-height:80px;opacity:1}
-.stp::after{content:"";position:absolute;left:0;top:-1px;height:2px;width:100%;background:#0F2D56;transform:scaleX(0);transform-origin:left}
-.stp.on::after{animation:fill 5s linear forwards}
-.ui{background:#FFFFFF;border:1px solid #E8E8E5;border-radius:16px;padding:24px;box-shadow:0 30px 60px -40px rgba(15,45,86,.35);animation:rise .5s ease}
-.ui-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;font-weight:700;color:#0F2D56}
-.ui-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-top:1px solid #F0F0EE;font-size:15px}
-.ui-row span:first-child{color:#6B7280}.ui-row b{color:#0F2D56;font-weight:600;text-align:right}
-/* bento */
-.bento{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.bt{background:#FFFFFF;border:1px solid #E8E8E5;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:18px;transition:transform .25s ease,box-shadow .25s ease}
-.bt:hover{transform:translateY(-4px);box-shadow:0 22px 40px -26px rgba(15,45,86,.35)}
-.bt.wide{grid-column:span 2}
-.bt h3{margin:0 0 6px;font-size:22px;color:#0F2D56;font-weight:600}.bt p{margin:0;font-size:15px}
-.mini{background:#F7F7F5;border:1px solid #EEEEEB;border-radius:12px;padding:16px;margin-top:auto}
-.chips{display:flex;gap:8px;flex-wrap:wrap}
-.chips span{font-size:14px;background:#FFFFFF;border:1px solid #E8E8E5;border-radius:999px;padding:4px 12px;color:#374151}
-@media (max-width: 1080px){.stepper{grid-template-columns:minmax(0,1fr)}.bento{grid-template-columns:minmax(0,1fr)}.bt.wide{grid-column:auto}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.stats>div:nth-child(3){border-left:0}.stats>div:nth-child(n+3){border-top:1px solid #E8E8E5}.dash-wrap{margin:0 auto}}
-@media (max-width: 640px){.stats b{font-size:36px}.stats>div{padding:22px 14px}.dash-photo,.dash-float{display:none}.dash{margin-top:0}.dash-wrap{padding:0}}
-@media (prefers-reduced-motion: reduce){.mq-track{animation:none;flex-wrap:wrap;width:auto;justify-content:center}.feed li{animation:none;opacity:1}.bar i,.stp.on::after{animation:none}.card:hover,.bt:hover{transform:none}}
+@media (max-width: 1080px){.dash-wrap{margin:0 auto}}
+@media (max-width: 640px){.dash-photo,.dash-float{display:none}.dash{margin-top:0}.dash-wrap{padding:0}}
+@media (prefers-reduced-motion: reduce){.mq-track{animation:none;flex-wrap:wrap;width:auto;justify-content:center}.feed li{animation:none;opacity:1}.bar i{animation:none}.card:hover{transform:none}.dotbg::before{animation:none}}
+
+/* dotted background: faint grid that drifts slowly; dots near the cursor turn navy */
+.dotbg{position:relative;isolation:isolate}
+.dotbg::before,.dotbg::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-size:22px 22px}
+.dotbg::before{background-image:radial-gradient(circle,#D3D7DE 1.1px,transparent 1.6px);-webkit-mask-image:linear-gradient(180deg,transparent,#000 18%,#000 82%,transparent);mask-image:linear-gradient(180deg,transparent,#000 18%,#000 82%,transparent);animation:dotDrift 60s linear infinite}
+.dotbg::after{background-image:radial-gradient(circle,rgba(15,45,86,.55) 1.3px,transparent 1.9px);-webkit-mask-image:radial-gradient(240px circle at var(--mx,-999px) var(--my,-999px),#000,transparent 70%);mask-image:radial-gradient(240px circle at var(--mx,-999px) var(--my,-999px),#000,transparent 70%);animation:dotDrift 60s linear infinite}
+@keyframes dotDrift{to{background-position:220px 110px}}
 </style>
 </head>
 <body>
@@ -277,7 +256,7 @@ h1,h2,h3,h4,.fhead{font-family:'Playfair Display',Georgia,'Times New Roman',seri
 </header>
 
 <!-- HERO -->
-<section style="padding: 80px 0 96px; overflow: hidden; background: #FFFFFF">
+<section class="dotbg" style="padding: 80px 0 96px; overflow: hidden; background: #FFFFFF">
 <div class="wrap hero">
 <div style="padding-bottom: 40px">
 <div class="rise" style="animation-delay: 1.35s; display: inline-flex; align-items: center; gap: 10px; background: #FFFFFF; border: 1px solid #E8E8E5; border-radius: 999px; padding: 6px 16px 6px 6px; font-size: 14px; font-weight: 600; color: #0F2D56">
@@ -308,12 +287,6 @@ IBCC-registered exam delivery partner
 </div>
 </div>
 </div>
-</section>
-
-<!-- awarding bodies marquee -->
-<section style="background: #FFFFFF; padding: 36px 0; border-top: 1px solid #E8E8E5; border-bottom: 1px solid #E8E8E5">
-<div class="wrap" style="text-align: center; font-size: 14px; color: #6B7280; margin-bottom: 18px">Trusted by awarding bodies and institutions</div>
-<div class="mq"><div class="mq-track"><span>University of Greenwich</span><span>NCC Education</span><span>City &amp; Guilds</span><span>Denning Campuses</span><span>University of Greenwich</span><span>NCC Education</span><span>City &amp; Guilds</span><span>Denning Campuses</span><span aria-hidden="true" style="display: contents"><span>University of Greenwich</span><span>NCC Education</span><span>City &amp; Guilds</span><span>Denning Campuses</span><span>University of Greenwich</span><span>NCC Education</span><span>City &amp; Guilds</span><span>Denning Campuses</span></span></div></div>
 </section>
 
 <!-- audience finder -->
@@ -358,15 +331,9 @@ IBCC-registered exam delivery partner
 </div>
 </section>
 
-<!-- numbers band -->
-<section style="background: #FFFFFF; padding: 120px 0">
+<!-- trust bar -->
+<section style="background: #FFFFFF; padding: 64px 0; border-top: 1px solid #E8E8E5; border-bottom: 1px solid #E8E8E5">
 <div class="wrap">
-<div class="g2" style="align-items: end; gap: 48px; margin-bottom: 48px">
-<div><div class="eyebrow">ITA in numbers</div><h2 class="serif h2" style="font-size: 28px; line-height: 1.15; font-weight: 600; color: #0F2D56; margin: 0">Proven at scale. Built for more.</h2></div>
-<p style="margin: 0; font-size: 16px">A track record built across Pakistan, now opening in new countries to the same standard.</p>
-</div>
-<div class="stats"><div><b><span class="cnt" style="--to: 100"><span class="st">100</span></span>k+</b><span>Candidates served</span></div><div><b><span class="cnt" style="--to: 20"><span class="st">20</span></span>+</b><span>Examination centres</span></div><div><b><span class="cnt" style="--to: 9"><span class="st">9</span></span></b><span>Cities in Pakistan</span></div><div><b><span class="cnt" style="--to: 5"><span class="st">5</span></span></b><span>Years of experience</span></div></div>
-<p style="margin: 14px 0 48px; font-size: 14px; color: #6B7280">Figures reflect the ITS group track record in Pakistan.</p>
 <div class="g4 trustbar" style="gap: 0">
 <div style="display: flex; gap: 14px; align-items: center; padding: 6px 18px; border-right: 1px solid #E8E8E5"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0F2D56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M12 3v18M5 7h14M5 7l-3 7a4 4 0 0 0 6 0zM19 7l-3 7a4 4 0 0 0 6 0z"></path></svg><span style="font-weight: 600; color: #0F2D56; line-height: 1.35">Independent and impartial</span></div>
 <div style="display: flex; gap: 14px; align-items: center; padding: 6px 18px; border-right: 1px solid #E8E8E5"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0F2D56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg><span style="font-weight: 600; color: #0F2D56; line-height: 1.35">IBCC-aligned procedures</span></div>
@@ -374,6 +341,12 @@ IBCC-registered exam delivery partner
 <div style="display: flex; gap: 14px; align-items: center; padding: 6px 18px"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0F2D56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle pathLength="100" cx="12" cy="12" r="10"></circle><path pathLength="100" d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"></path></svg><span style="font-weight: 600; color: #0F2D56; line-height: 1.35">Proven in Pakistan, launching worldwide</span></div>
 </div>
 </div>
+</section>
+
+<!-- awarding bodies marquee -->
+<section style="background: #FFFFFF; padding: 36px 0; border-bottom: 1px solid #E8E8E5">
+<div class="wrap" style="text-align: center; font-size: 14px; color: #6B7280; margin-bottom: 18px">Trusted by awarding bodies and institutions</div>
+<div class="mq"><div class="mq-track"><span>University of Greenwich</span><span>NCC Education</span><span>City &amp; Guilds</span><span>Denning Campuses</span><span>University of Greenwich</span><span>NCC Education</span><span>City &amp; Guilds</span><span>Denning Campuses</span><span aria-hidden="true" style="display: contents"><span>University of Greenwich</span><span>NCC Education</span><span>City &amp; Guilds</span><span>Denning Campuses</span><span>University of Greenwich</span><span>NCC Education</span><span>City &amp; Guilds</span><span>Denning Campuses</span></span></div></div>
 </section>
 
 <!-- who we serve + quick access -->
@@ -436,7 +409,7 @@ IBCC-registered exam delivery partner
 </section>
 
 <!-- independence, interactive -->
-<section style="background: #FFFFFF; color: #374151; padding: 120px 0; border-top: 1px solid #E8E8E5; position: relative; overflow: hidden">
+<section class="dotbg" style="background: #FFFFFF; color: #374151; padding: 120px 0; border-top: 1px solid #E8E8E5; position: relative; overflow: hidden">
 <div class="wrap g2" style="gap: 72px">
 <div>
 <div style="font-size: 14px; font-weight: 700; color: #6B7280; margin-bottom: 14px">Why choose ITA</div>
@@ -482,37 +455,6 @@ IBCC-registered exam delivery partner
 </div>
 </section>
 
-<!-- how a session runs (interactive) -->
-<section style="background: #F7F7F5; padding: 120px 0">
-<div class="wrap">
-<div style="margin-bottom: 48px"><div class="eyebrow">How it works</div><h2 class="serif h2" style="font-size: 28px; line-height: 1.15; font-weight: 600; color: #0F2D56; margin: 0">From our side of the desk, start to finish.</h2></div>
-<div class="stepper">
-<div role="tablist" aria-label="Exam session stages"><button type="button" role="tab" class="stp on" aria-selected="true" aria-controls="sp0" id="st0"><span class="n">1</span><h3>We agree the plan</h3><p>Requirements, venues and schedules, settled with your team in writing.</p></button><button type="button" role="tab" class="stp" aria-selected="false" aria-controls="sp1" id="st1"><span class="n">2</span><h3>We check the room</h3><p>Candidates, materials and the room, before the first paper opens.</p></button><button type="button" role="tab" class="stp" aria-selected="false" aria-controls="sp2" id="st2"><span class="n">3</span><h3>We run the session</h3><p>Calm, impartial supervision, with every event logged as it happens.</p></button><button type="button" role="tab" class="stp" aria-selected="false" aria-controls="sp3" id="st3"><span class="n">4</span><h3>You see what happened</h3><p>Attendance, incidents and evidence, back to you as one record.</p></button></div>
-<div><div role="tabpanel" id="sp0" aria-labelledby="st0" data-sp><div class="ui"><div class="ui-h"><span>Session plan</span><span class="pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0F2D56" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Agreed</span></div><div class="ui-row"><span>Exam</span><b>BSc Business, Paper 2</b></div><div class="ui-row"><span>Venue</span><b>Karachi Centre, Hall B</b></div><div class="ui-row"><span>Date</span><b>14 Nov, 09:00</b></div><div class="ui-row"><span>Invigilators</span><b>14 assigned</b></div><div class="ui-row"><span>Awarding body sign-off</span><b>Received</b></div></div></div><div role="tabpanel" id="sp1" aria-labelledby="st1" data-sp hidden><div class="ui"><div class="ui-h"><span>Pre-exam checklist</span><span class="pill">4 of 4</span></div><div class="ui-row"><span>Seating plan posted</span><b><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0F2D56" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></b></div><div class="ui-row"><span>CCTV online</span><b><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0F2D56" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></b></div><div class="ui-row"><span>Papers sealed and logged</span><b><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0F2D56" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></b></div><div class="ui-row" style="display: block"><div style="display: flex; justify-content: space-between"><span>Candidate IDs verified</span><b>104 / 120</b></div><div class="bar" style="margin-top: 10px"><i style="--w: 87%"></i></div></div></div></div><div role="tabpanel" id="sp2" aria-labelledby="st2" data-sp hidden><div class="ui"><div class="ui-h"><span>Live log</span><span class="pill"><span class="live"></span>01:12:40 left</span></div><div class="ui-row"><span>09:00</span><b>Papers opened</b></div><div class="ui-row"><span>09:45</span><b>Break logged, Desk 18</b></div><div class="ui-row"><span>10:30</span><b>30-minute warning given</b></div><div class="ui-row"><span>11:00</span><b>Scripts collected</b></div></div></div><div role="tabpanel" id="sp3" aria-labelledby="st3" data-sp hidden><div class="ui"><div class="ui-h"><span>Session report</span><span class="pill">Ready</span></div><div class="ui-row"><span>Attendance</span><b>118 / 120</b></div><div class="ui-row"><span>Incidents</span><b>1, resolved</b></div><div class="ui-row"><span>Evidence files</span><b>46</b></div><div class="ui-row"><span>Chain of custody</span><b>Complete</b></div><a class="btn btn-m" href="#" style="margin-top: 16px">Download report</a></div></div></div>
-</div>
-</div>
-</section>
-
-<!-- what we do (bento) -->
-<section style="background: #FFFFFF; padding: 120px 0">
-<div class="wrap">
-<div class="g2" style="align-items: end; gap: 48px; margin-bottom: 48px">
-<div><div class="eyebrow">What we do</div><h2 class="serif h2" style="font-size: 28px; line-height: 1.15; font-weight: 600; color: #0F2D56; margin: 0">Four pillars built for exam integrity.</h2></div>
-<p style="margin: 0; font-size: 16px">Take one service or hand us the whole sitting. Together they remove conflicts of interest at every stage.</p>
-</div>
-<div class="bento">
-<div class="bt wide"><div><h3>Independent invigilation</h3><p>Trained, conflict-free invigilators deliver every session to awarding-body protocols.</p></div>
-<div class="mini"><div class="ui-row" style="border-top: 0; padding-top: 0"><span>Invigilators assigned</span><b>14</b></div><div class="ui-row"><span>Conflict-of-interest check</span><b style="display: inline-flex; gap: 6px; align-items: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0F2D56" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Clear</b></div><div class="ui-row" style="padding-bottom: 0"><span>Ratio</span><b>1 per 9 candidates</b></div></div></div>
-<div class="bt"><div><h3>Venue security</h3><p>Controlled venues, CCTV, secure storage and a documented chain of custody.</p></div>
-<div class="ph" style="height: 150px; margin-top: auto"><img src="assets/dummy-d8-hall.jpg" alt="Exam hall under CCTV coverage"><span class="glass" style="position: absolute; left: 12px; top: 12px; display: flex; align-items: center; gap: 8px; padding: 4px 10px; font-size: 14px; font-weight: 700; color: #FFFFFF"><span class="recdot"></span>4 cameras live</span></div></div>
-<div class="bt"><div><h3>Training and standards</h3><p>Structured training and competency checks, so every centre runs the same way.</p></div>
-<div class="mini"><div class="dash-row"><span>Competency checks passed</span><span><b>12</b> / 12</span></div><div class="bar"><i style="--w: 100%"></i></div><div class="chips" style="margin-top: 14px"><span>IBCC-aligned SOPs</span><span>Annual refresh</span></div></div></div>
-<div class="bt wide"><div><h3>Technology-enhanced compliance</h3><p>Digital ID checks, QR verification and real-time incident reporting create an auditable record of every sitting.</p></div>
-<div class="mini" style="display: flex; gap: 18px; align-items: center"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#0F2D56" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect><path d="M14 14h3v3M21 14v7h-7"></path></svg><div style="flex: 1; min-width: 0"><div style="font-size: 14px; color: #6B7280">Scan result</div><div style="font-weight: 700; color: #0F2D56">Ayesha K. · Desk 41</div><div class="chips" style="margin-top: 8px"><span>QR match</span><span>Photo ID match</span><span>08:42</span></div></div><span class="pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0F2D56" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Verified</span></div></div>
-</div>
-</div>
-</section>
-
 <!-- venue -->
 <section style="background: #F7F7F5; padding: 120px 0">
 <div class="wrap">
@@ -539,7 +481,7 @@ IBCC-registered exam delivery partner
 </section>
 
 <!-- case study -->
-<section style="background: #FFFFFF; padding: 120px 0">
+<section class="dotbg" style="background: #FFFFFF; padding: 120px 0">
 <div class="wrap">
 <div style="background: #FFFFFF; border: 1px solid #E8E8E5; border-radius: 16px; overflow: hidden; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))">
 <div style="padding: 56px; color: #374151; display: flex; flex-direction: column; justify-content: center">
@@ -588,7 +530,7 @@ IBCC-registered exam delivery partner
 (function(){
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   // cursor glow
-  document.querySelectorAll('.spot').forEach(function(el){
+  document.querySelectorAll('.spot, .dotbg').forEach(function(el){
     el.addEventListener('mousemove', function(e){ var r = el.getBoundingClientRect(); el.style.setProperty('--mx', (e.clientX - r.left) + 'px'); el.style.setProperty('--my', (e.clientY - r.top) + 'px'); });
   });
   // tilt / parallax
@@ -624,7 +566,7 @@ IBCC-registered exam delivery partner
 
 (function(){
   if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var sel = 'h2, section p, figure, blockquote, .card, .flip, .tile, .news, .trustbar>div, .stats>div, .bt, .stp, .qa a, .g4>div, .chip, .ph, ol>li, .who a, .nrow, .step, .cell, .chk, [role="tablist"], .fgrid, .bgrid';
+  var sel = 'h2, section p, figure, blockquote, .card, .flip, .tile, .news, .trustbar>div, .qa a, .g4>div, .chip, .ph, ol>li, .who a, .nrow, .step, .cell, .chk, [role="tablist"], .fgrid, .bgrid';
   var hero = document.querySelector('.hero, .hgrid'); hero = hero && hero.closest('section');
   var els = [].filter.call(document.querySelectorAll(sel), function(el){ return !(hero && hero.contains(el)) && !el.closest('footer'); });
   // animate the outermost match only, so a card and its photo don't both slide
@@ -638,14 +580,6 @@ IBCC-registered exam delivery partner
   });
 })();
 
-(function(){
-  var tabs = [].slice.call(document.querySelectorAll('.stp')); if (!tabs.length) return;
-  var panels = [].slice.call(document.querySelectorAll('[data-sp]')), cur = 0, timer = null;
-  function show(i){ cur = i; tabs.forEach(function(t, k){ t.classList.toggle('on', k === i); t.setAttribute('aria-selected', k === i ? 'true' : 'false'); }); panels.forEach(function(p, k){ p.hidden = k !== i; }); }
-  tabs.forEach(function(t, k){ t.addEventListener('click', function(){ clearInterval(timer); show(k); }); });
-  // auto-advance like a product tour until the visitor takes over
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) timer = setInterval(function(){ show((cur + 1) % tabs.length); }, 5000);
-})();
 </script>
 </body>
 </html>
