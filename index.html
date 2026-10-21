@@ -241,6 +241,20 @@ h1,h2,h3,h4,.fhead{font-family:'Playfair Display',Georgia,'Times New Roman',seri
 @media (max-width: 1080px){.kpis{grid-template-columns:repeat(3,minmax(0,1fr))}.kpi:nth-child(4){border-left:0}.kpi:nth-child(n+4){border-top:1px solid #E3EAF4}.ctry{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width: 640px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.kpi:nth-child(n){border-left:0;border-top:1px solid #E3EAF4}.kpi:nth-child(1),.kpi:nth-child(2){border-top:0}.kpi:nth-child(even){border-left:1px solid #E3EAF4}.kpi{padding:22px 16px}.kpi b{font-size:34px}}
 @media (prefers-reduced-motion: reduce){.cc:hover{transform:none}}
+
+/* animated route map behind the hero (from Option B, in the Option A palette) */
+.heromap{position:absolute;z-index:0;left:50%;top:50%;width:min(1180px,96%);transform:translate(-50%,-50%);opacity:.22;pointer-events:none;-webkit-mask-image:radial-gradient(ellipse 70% 70% at 55% 50%,#000 45%,transparent 100%);mask-image:radial-gradient(ellipse 70% 70% at 55% 50%,#000 45%,transparent 100%)}
+.heromap .arc,.heromap .arc2{fill:none;stroke-linecap:round}
+.heromap .arc{stroke:#1F5AA6;stroke-width:1.8;stroke-dasharray:700}
+.heromap .arc2{stroke:#6B9FD6;stroke-width:1.4;stroke-dasharray:3 8}
+.hero-v>.wrap{position:relative;z-index:1}
+@keyframes arcLoop{0%{stroke-dashoffset:700;opacity:1}35%{stroke-dashoffset:0;opacity:1}80%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+@keyframes dashLoop{0%{opacity:0;stroke-dashoffset:0}25%{opacity:.85}80%{opacity:.85}100%{opacity:0;stroke-dashoffset:-60}}
+@keyframes pinLoop{0%{opacity:0;transform:scale(.3)}20%{opacity:1;transform:scale(1.25)}30%{transform:scale(1)}85%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(.6)}}
+.heromap .arc{animation:arcLoop 8s cubic-bezier(.4,0,.2,1) infinite}
+.heromap .arc2{opacity:0;animation:dashLoop 8s linear infinite}
+.heromap .pin{transform-box:fill-box;transform-origin:center;animation:pinLoop 8s ease infinite}
+@media (prefers-reduced-motion: reduce){.heromap .arc,.heromap .arc2,.heromap .pin{animation:none;opacity:1;stroke-dashoffset:0}.trav{display:none}}
 </style>
 </head>
 <body>
@@ -275,6 +289,31 @@ h1,h2,h3,h4,.fhead{font-family:'Playfair Display',Georgia,'Times New Roman',seri
 
 <!-- HERO: copy + services video -->
 <section class="hero-v">
+<div class="heromap" aria-hidden="true">
+<div class="drift" style="position: relative">
+<img src="assets/map-a.svg" alt="" style="display: block; width: 100%; height: auto">
+<svg viewBox="0 0 1040 600" style="position: absolute; inset: 0; width: 100%; height: 100%">
+<path class="arc" style="animation-delay: 2.30s" d="M651 285 Q599 245 547 337"></path>
+<path class="arc2" style="animation-delay: 2.45s" d="M651 285 Q583 220 515 316"></path>
+<path class="arc2" style="animation-delay: 2.60s" d="M651 285 Q562 215 474 336"></path>
+<path class="arc2" style="animation-delay: 2.75s" d="M651 285 Q556 180 462 258"></path>
+<path class="arc2" style="animation-delay: 2.90s" d="M651 285 Q507 165 363 314"></path>
+<path class="arc2" style="animation-delay: 3.05s" d="M651 285 Q648 215 589 184"></path>
+<path class="arc2" style="animation-delay: 3.20s" d="M651 285 Q820 290 930 500"></path>
+<path class="arc2" style="animation-delay: 3.35s" d="M651 285 Q390 20 133 78"></path>
+<circle class="pin" style="animation-delay: 3.50s" cx="547" cy="337" r="5" fill="#1F5AA6"></circle>
+<circle class="pin" style="animation-delay: 3.60s" cx="515" cy="316" r="5" fill="#FFFFFF" stroke="#1F5AA6" stroke-width="2.5"></circle>
+<circle class="pin" style="animation-delay: 3.70s" cx="474" cy="336" r="5" fill="#FFFFFF" stroke="#1F5AA6" stroke-width="2.5"></circle>
+<circle class="pin" style="animation-delay: 3.80s" cx="462" cy="258" r="5" fill="#FFFFFF" stroke="#1F5AA6" stroke-width="2.5"></circle>
+<circle class="pin" style="animation-delay: 3.90s" cx="363" cy="314" r="5" fill="#FFFFFF" stroke="#1F5AA6" stroke-width="2.5"></circle>
+<circle class="pin" style="animation-delay: 4.00s" cx="589" cy="184" r="5" fill="#FFFFFF" stroke="#1F5AA6" stroke-width="2.5"></circle>
+<circle class="pin" style="animation-delay: 4.10s" cx="930" cy="500" r="5" fill="#FFFFFF" stroke="#1F5AA6" stroke-width="2.5"></circle>
+<circle class="pin" style="animation-delay: 4.20s" cx="133" cy="78" r="5" fill="#FFFFFF" stroke="#1F5AA6" stroke-width="2.5"></circle>
+<circle class="trav" r="4" fill="#1F5AA6" opacity="0"><animateMotion dur="8s" begin="2.30s" repeatCount="indefinite" path="M651 285 Q599 245 547 337" keyPoints="0;1;1" keyTimes="0;0.38;1" calcMode="spline" keySplines="0.45 0 0.25 1;0 0 1 1"></animateMotion><animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.06;0.38;0.46;1" dur="8s" begin="2.30s" repeatCount="indefinite"></animate></circle><circle class="trav" r="4" fill="#1F5AA6" opacity="0"><animateMotion dur="8s" begin="2.45s" repeatCount="indefinite" path="M651 285 Q583 220 515 316" keyPoints="0;1;1" keyTimes="0;0.38;1" calcMode="spline" keySplines="0.45 0 0.25 1;0 0 1 1"></animateMotion><animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.06;0.38;0.46;1" dur="8s" begin="2.45s" repeatCount="indefinite"></animate></circle><circle class="trav" r="4" fill="#1F5AA6" opacity="0"><animateMotion dur="8s" begin="2.60s" repeatCount="indefinite" path="M651 285 Q562 215 474 336" keyPoints="0;1;1" keyTimes="0;0.38;1" calcMode="spline" keySplines="0.45 0 0.25 1;0 0 1 1"></animateMotion><animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.06;0.38;0.46;1" dur="8s" begin="2.60s" repeatCount="indefinite"></animate></circle><circle class="trav" r="4" fill="#1F5AA6" opacity="0"><animateMotion dur="8s" begin="2.75s" repeatCount="indefinite" path="M651 285 Q556 180 462 258" keyPoints="0;1;1" keyTimes="0;0.38;1" calcMode="spline" keySplines="0.45 0 0.25 1;0 0 1 1"></animateMotion><animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.06;0.38;0.46;1" dur="8s" begin="2.75s" repeatCount="indefinite"></animate></circle><circle class="trav" r="4" fill="#1F5AA6" opacity="0"><animateMotion dur="8s" begin="2.90s" repeatCount="indefinite" path="M651 285 Q507 165 363 314" keyPoints="0;1;1" keyTimes="0;0.38;1" calcMode="spline" keySplines="0.45 0 0.25 1;0 0 1 1"></animateMotion><animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.06;0.38;0.46;1" dur="8s" begin="2.90s" repeatCount="indefinite"></animate></circle><circle class="trav" r="4" fill="#1F5AA6" opacity="0"><animateMotion dur="8s" begin="3.05s" repeatCount="indefinite" path="M651 285 Q648 215 589 184" keyPoints="0;1;1" keyTimes="0;0.38;1" calcMode="spline" keySplines="0.45 0 0.25 1;0 0 1 1"></animateMotion><animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.06;0.38;0.46;1" dur="8s" begin="3.05s" repeatCount="indefinite"></animate></circle><circle class="trav" r="4" fill="#1F5AA6" opacity="0"><animateMotion dur="8s" begin="3.20s" repeatCount="indefinite" path="M651 285 Q820 290 930 500" keyPoints="0;1;1" keyTimes="0;0.38;1" calcMode="spline" keySplines="0.45 0 0.25 1;0 0 1 1"></animateMotion><animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.06;0.38;0.46;1" dur="8s" begin="3.20s" repeatCount="indefinite"></animate></circle><circle class="trav" r="4" fill="#1F5AA6" opacity="0"><animateMotion dur="8s" begin="3.35s" repeatCount="indefinite" path="M651 285 Q390 20 133 78" keyPoints="0;1;1" keyTimes="0;0.38;1" calcMode="spline" keySplines="0.45 0 0.25 1;0 0 1 1"></animateMotion><animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.06;0.38;0.46;1" dur="8s" begin="3.35s" repeatCount="indefinite"></animate></circle><circle class="pr" cx="651" cy="285" r="10"></circle>
+<circle cx="651" cy="285" r="10" fill="#0F2D56" stroke="#FFFFFF" stroke-width="3"></circle>
+</svg>
+</div>
+</div>
 <div class="wrap hero-g">
 <div>
 <div class="rise" style="animation-delay: 1.35s; display: inline-flex; align-items: center; gap: 10px; background: #FFFFFF; border: 1px solid #E3EAF4; border-radius: 999px; padding: 6px 16px 6px 6px; font-size: 14px; font-weight: 600; color: #0F2D56">
