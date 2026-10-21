@@ -204,6 +204,12 @@ h1,h2,h3,h4,.fhead{font-family:'Playfair Display',Georgia,'Times New Roman',seri
 
 /* light glass cards: only where something sits behind them (photo, dot grid) */
 .glass-card{background:rgba(255,255,255,.62) !important;-webkit-backdrop-filter:saturate(1.5) blur(16px);backdrop-filter:saturate(1.5) blur(16px);border:1px solid rgba(255,255,255,.75) !important;box-shadow:0 24px 48px -24px rgba(15,45,86,.4),inset 0 1px 0 rgba(255,255,255,.9) !important}
+
+/* warm-grey sections: recessed edges, raised cards (minimal 3D) */
+.depth{box-shadow:inset 0 14px 22px -18px rgba(15,45,86,.16),inset 0 -14px 22px -18px rgba(15,45,86,.16)}
+.depth .card,.depth aside,.depth .glass-card,.depth figure .ph,.depth .ph{box-shadow:0 1px 2px rgba(15,45,86,.06),0 8px 18px -10px rgba(15,45,86,.16),0 28px 44px -28px rgba(15,45,86,.28) !important;transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s ease}
+.depth .card:not(.face):hover,.depth aside:hover,.depth figure:hover .ph{transform:translateY(-4px);box-shadow:0 2px 4px rgba(15,45,86,.06),0 14px 26px -12px rgba(15,45,86,.2),0 40px 60px -32px rgba(15,45,86,.34) !important}
+@media (prefers-reduced-motion: reduce){.depth .card:not(.face):hover,.depth aside:hover,.depth figure:hover .ph{transform:none}}
 </style>
 </head>
 <body>
@@ -281,7 +287,7 @@ IBCC-registered exam delivery partner
 </section>
 
 <!-- audience finder -->
-<section class="dotbg" style="background: #F7F7F5; padding: 96px 0">
+<section class="dotbg depth" style="background: #F7F7F5; padding: 96px 0">
 <div class="wrap">
 <div style="text-align: center; margin-bottom: 36px">
 <div style="font-size: 14px; font-weight: 700; color: #6B7280; margin-bottom: 10px">Get started</div>
@@ -341,7 +347,7 @@ IBCC-registered exam delivery partner
 </section>
 
 <!-- who we serve + quick access -->
-<section style="background: #F7F7F5; padding: 120px 0">
+<section class="depth" style="background: #F7F7F5; padding: 120px 0">
 <div class="wrap">
 <div class="g2" style="align-items: end; gap: 48px; margin-bottom: 56px">
 <div>
@@ -447,7 +453,7 @@ IBCC-registered exam delivery partner
 </section>
 
 <!-- venue -->
-<section style="background: #F7F7F5; padding: 120px 0">
+<section class="depth" style="background: #F7F7F5; padding: 120px 0">
 <div class="wrap">
 <div class="g2" style="align-items: end; gap: 48px; margin-bottom: 40px">
 <div>
