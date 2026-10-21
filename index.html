@@ -99,7 +99,7 @@ select.field{appearance:none;background-image:linear-gradient(45deg,transparent 
 .wl{display:block;overflow:hidden;padding:.04em 0 .2em;margin:-.04em 0 -.2em}
 .wl>span{display:inline-block;max-width:100%;transform:translateY(120%);animation:wordUp 1s cubic-bezier(.2,.75,.15,1) forwards}
 .wipe{animation:wipe 1.4s cubic-bezier(.7,0,.2,1) 1.5s both}
-.progress{position:fixed;top:0;left:0;right:0;height:2px;background:#0F2D56;transform-origin:left;transform:scaleX(0);z-index:50;pointer-events:none}
+.progress{position:fixed;top:0;left:0;right:0;height:2px;background:#7A1F3D;transform-origin:left;transform:scaleX(0);z-index:50;pointer-events:none}
 .spot{position:relative}
 .spot::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(520px circle at var(--mx,-600px) var(--my,-600px),rgba(107,159,214,.16),transparent 60%);transition:opacity .4s ease;z-index:0}
 .spot>*{position:relative;z-index:1}
@@ -272,6 +272,7 @@ IBCC-registered exam delivery partner
 <div class="rise" style="animation-delay: 1.50s; position: relative; width: 100%; max-width: 420px; margin-left: auto">
 <div class="wipe tilt" data-tilt="" style="position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 1 / 1; background: #0F2D56">
 <img class="kb" src="assets/dummy-d1-hero.jpg" alt="Candidates sitting an exam in an ITA-managed hall" style="display: block; width: 100%; height: 100%; object-fit: cover">
+<div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none; background: linear-gradient(135deg, rgba(122,31,61,.3) 0%, rgba(122,31,61,.08) 45%, rgba(122,31,61,0) 75%)"></div>
 <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,45,86,0) 40%, rgba(15,45,86,.78) 100%)"></div>
 <svg style="position: absolute; inset: 22px; width: calc(100% - 44px); height: calc(100% - 44px)" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><g fill="none" stroke="#FFFFFF" stroke-width="2" vector-effect="non-scaling-stroke" opacity=".85"><path d="M0 8V0h6" vector-effect="non-scaling-stroke"></path><path d="M94 0h6v8" vector-effect="non-scaling-stroke"></path></g></svg>
 <div class="glass" style="position: absolute; top: 36px; left: 36px; display: flex; align-items: center; gap: 8px; padding: 6px 12px; font-size: 14px; font-weight: 700; color: #FFFFFF"><span class="recdot"></span>CCTV recording</div>
@@ -499,7 +500,7 @@ IBCC-registered exam delivery partner
 <a class="btn btn-m" href="#" style="align-self: flex-start">Read the case study</a>
 </div>
 <div style="background: #FAFAF9; border-left: 1px solid #E8E8E5; padding: 56px; display: flex; flex-direction: column; justify-content: flex-start; gap: 0">
-<img src="assets/dummy-d2-wide.jpg" alt="Students walking outside the University of Greenwich" style="display: block; width: calc(100% + 112px); max-width: none; margin: -56px -56px 32px; height: 200px; object-fit: cover">
+<div style="position: relative; width: calc(100% + 112px); max-width: none; margin: -56px -56px 32px; height: 200px"><img src="assets/dummy-d2-wide.jpg" alt="Students walking outside the University of Greenwich" style="display: block; width: 100%; height: 100%; object-fit: cover"><div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none; background: linear-gradient(135deg, rgba(122,31,61,.3) 0%, rgba(122,31,61,.08) 45%, rgba(122,31,61,0) 75%)"></div></div>
 <div style="font-size: 14px; color: #6B7280; margin-bottom: 12px">Delivery footprint</div>
 <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px">
 <div style="display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid #E8E8E5; color: #0F2D56; font-weight: 600">Islamabad<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F2D56" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M20 6 9 17l-5-5"></path></svg></div>
