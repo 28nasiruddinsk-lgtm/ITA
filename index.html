@@ -360,6 +360,10 @@ h3{font-weight:600 !important}
 .sv p{margin:0;font-size:15px;line-height:1.6;color:#4B5563}
 @media (max-width: 1080px){.sv-row{grid-template-columns:repeat(2,minmax(0,1fr))}.sv,.sv:nth-child(n+4){grid-column:auto}.sv:last-child{grid-column:1 / -1}}
 @media (max-width: 640px){.sv-row{grid-template-columns:minmax(0,1fr)}.sv:last-child{grid-column:auto}.sv{padding:22px}}
+/* numbers: full-width strip, no heading */
+.kpis-full{border-top:1px solid #E3EAF4;border-bottom:1px solid #E3EAF4}
+.kpis-full .kpis{border:0 !important;border-radius:0;background:transparent}
+.kpis-full .kpi:first-child{padding-left:0}
 </style>
 </head>
 <body>
@@ -411,9 +415,9 @@ h3{font-weight:600 !important}
 
 <!-- stats (count up once on scroll) -->
 <section class="sec-stats" style="background: #FFFFFF; padding: 24px 0 40px">
-<div class="wrap">
-<h2 class="serif h2" style="font-size: 28px; line-height: 1.15; font-weight: 600; color: #0F2D56; margin: 0 0 24px">ITA in numbers</h2>
-<div class="kpis"><div class="kpi"><b><span class="cnt" style="--to: 9"><span class="st">9</span></span></b><span>Countries</span></div><div class="kpi"><b><span class="cnt" style="--to: 8"><span class="st">8</span></span>+</b><span>Cities in Pakistan</span></div><div class="kpi"><b><span class="cnt" style="--to: 20"><span class="st">20</span></span>+</b><span>Examination centres</span></div><div class="kpi"><b><span class="cnt" style="--to: 100"><span class="st">100</span></span>k+</b><span>Candidates served</span></div><div class="kpi"><b><span class="cnt" style="--to: 5"><span class="st">5</span></span></b><span>Years of experience</span></div></div>
+<div class="kpis-full">
+<div class="wrap"><div class="kpis"><div class="kpi"><b><span class="cnt" style="--to: 9"><span class="st">9</span></span></b><span>Countries</span></div><div class="kpi"><b><span class="cnt" style="--to: 8"><span class="st">8</span></span>+</b><span>Cities in Pakistan</span></div><div class="kpi"><b><span class="cnt" style="--to: 20"><span class="st">20</span></span>+</b><span>Examination centres</span></div><div class="kpi"><b><span class="cnt" style="--to: 100"><span class="st">100</span></span>k+</b><span>Candidates served</span></div><div class="kpi"><b><span class="cnt" style="--to: 5"><span class="st">5</span></span></b><span>Years of experience</span></div></div>
+</div>
 </div>
 </section>
 
