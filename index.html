@@ -347,6 +347,16 @@ h3{font-weight:600 !important}
 .why-panel p{color:#FFFFFF !important}
 .why-panel p[style*="color: #6B7280"]{color:#A9C3E6 !important}
 .why-panel [style*="color: #374151"]{color:#DCE7F5 !important}
+/* our services: numbered list beside the heading */
+.svc-g{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:56px;align-items:start}
+.svc-list{list-style:none;margin:0;padding:0;border-top:1px solid #E3EAF4}
+.svc{display:grid;grid-template-columns:36px 40px minmax(0,1fr);gap:16px;align-items:start;padding:20px 0;border-bottom:1px solid #E3EAF4}
+.svc-n{font-size:14px;font-weight:600;color:#9AA3AF;padding-top:10px}
+.svc>i{width:40px;height:40px;border-radius:10px;background:#E7EEF8;color:#1F5AA6;font-size:16px !important}
+.svc h3{margin:0 0 4px;font-size:18px;color:#0F2D56}
+.svc p{margin:0;font-size:15px;color:#4B5563}
+@media (max-width: 1080px){.svc-g{grid-template-columns:minmax(0,1fr);gap:28px}}
+@media (max-width: 640px){.svc{grid-template-columns:40px minmax(0,1fr)}.svc-n{display:none}}
 </style>
 </head>
 <body>
@@ -415,44 +425,14 @@ h3{font-weight:600 !important}
 </div>
 </section>
 
-<!-- audience finder -->
-<section class="depth" style="background: #FFFFFF; padding: 72px 0">
-<div class="wrap">
-<div style="text-align: center; margin-bottom: 36px">
-<h2 class="serif h2" style="font-size: 28px; line-height: 1.15; font-weight: 600; color: #0F2D56; margin: 0">How can we help?</h2>
+<!-- services -->
+<section class="sec-svc" style="background: #FFFFFF; padding: 72px 0">
+<div class="wrap svc-g">
+<div class="shead" style="margin-bottom: 0">
+<h2 class="serif h2" style="font-size: 28px; line-height: 1.15; font-weight: 600; color: #0F2D56; margin: 0">Our services</h2>
+<p style="margin: 0; font-size: 16px">Take a single service or hand us the whole sitting. Each one is delivered to the awarding body&rsquo;s own protocols.</p>
 </div>
-<div class="glass-card" style="background: #FFFFFF; border: 1px solid #E3EAF4; border-radius: 16px; box-shadow: 0 24px 60px -36px rgba(15,45,86,.35); overflow: hidden">
-<div role="tablist" aria-label="Choose who you are" style="display: flex; flex-wrap: wrap; border-bottom: 1px solid #E3EAF4">
-<button type="button" role="tab" class="ftab on" data-aud="cand" aria-selected="true"><i class="fa-regular fa-user" aria-hidden="true" style="font-size: 14px"></i>I’m sitting an exam</button>
-<button type="button" role="tab" class="ftab" data-aud="body" aria-selected="false"><i class="fa-solid fa-building-columns" aria-hidden="true" style="font-size: 14px"></i>I run exams for an institution</button>
-<button type="button" role="tab" class="ftab" data-aud="centre" aria-selected="false"><i class="fa-solid fa-location-dot" aria-hidden="true" style="font-size: 14px"></i>I want to become a centre</button>
-</div>
-<div style="padding: 26px 28px 28px">
-<div data-panel="cand">
-<div class="fgrid">
-<div><label class="flabel" for="f-exam">Exam</label><select class="field" id="f-exam"><option>University of Greenwich</option><option>NCC Education</option><option>City &amp; Guilds</option><option>Foreign LLB</option><option>Other awarding body</option></select></div>
-<div><label class="flabel" for="f-country">Country</label><select class="field" id="f-country"><option>Pakistan</option><option>United Arab Emirates</option><option disabled="">Saudi Arabia (coming soon)</option><option disabled="">Bahrain (coming soon)</option><option disabled="">Iraq (coming soon)</option><option disabled="">Egypt (coming soon)</option><option disabled="">Uzbekistan (coming soon)</option><option disabled="">Malaysia (coming soon)</option><option disabled="">United Kingdom (coming soon)</option></select></div>
-<div><label class="flabel" for="f-city">City</label><select class="field" id="f-city"><option>Karachi</option><option>Lahore</option><option>Islamabad</option><option>Rawalpindi</option><option>Multan</option><option>Hyderabad</option><option>Gujranwala</option><option>Faisalabad</option><option>Gilgit</option><option>Dubai</option></select></div>
-<button class="btn btn-m" type="button" style="justify-content: center">Find exam centres</button>
-</div>
-</div>
-<div data-panel="body" hidden>
-<div class="fgrid">
-<div><label class="flabel" for="f-org">You are</label><select class="field" id="f-org"><option>An awarding body</option><option>A university</option><option>A training organisation</option><option>A partner campus</option></select></div>
-<div><label class="flabel" for="f-need">You need</label><select class="field" id="f-need"><option>Full exam management</option><option>Invigilation only</option><option>Secure venues</option><option>Exam technology</option></select></div>
-<div><label class="flabel" for="f-where">Where</label><select class="field" id="f-where"><option>Pakistan</option><option>Middle East</option><option>Central Asia</option><option>South East Asia</option><option>Several countries</option></select></div>
-<button class="btn btn-m" type="button" style="justify-content: center">Talk to our team</button>
-</div>
-</div>
-<div data-panel="centre" hidden>
-<div class="fgrid">
-<div style="grid-column: span 2; min-width: 0"><div style="font-weight: 700; color: #0F2D56">Run ITA-standard exams at your venue</div><div style="font-size: 14px">We train your staff, audit the room and add you to our network.</div></div>
-<div><label class="flabel" for="f-cc">Country</label><select class="field" id="f-cc"><option>Pakistan</option><option>United Arab Emirates</option><option>Another country (we are expanding)</option></select></div>
-<button class="btn btn-m" type="button" style="justify-content: center">Apply to become a centre</button>
-</div>
-</div>
-</div>
-</div>
+<ol class="svc-list"><li class="svc"><span class="svc-n">01</span><i class="fa-solid fa-clipboard-list" aria-hidden="true"></i><div><h3>Exam management</h3><p>We handle scheduling, venue preparation, candidate checks, and post-session reporting.</p></div></li><li class="svc"><span class="svc-n">02</span><i class="fa-solid fa-user-shield" aria-hidden="true"></i><div><h3>Professional invigilation</h3><p>Trained personnel supervise exam sessions impartially.</p></div></li><li class="svc"><span class="svc-n">03</span><i class="fa-solid fa-building-lock" aria-hidden="true"></i><div><h3>Secure venues</h3><p>We ensure controlled access, CCTV oversight, and secure storage at all locations.</p></div></li><li class="svc"><span class="svc-n">04</span><i class="fa-solid fa-qrcode" aria-hidden="true"></i><div><h3>Technology and QA</h3><p>Digital ID and QR verification provide incident reporting and full audit trails.</p></div></li><li class="svc"><span class="svc-n">05</span><i class="fa-solid fa-sliders" aria-hidden="true"></i><div><h3>Customised services</h3><p>Partners can select individual services or entrust ITA with end-to-end examination delivery.</p></div></li></ol>
 </div>
 </section>
 
@@ -659,12 +639,6 @@ h3{font-weight:600 !important}
     el.addEventListener('mousemove', function(e){ var r = el.getBoundingClientRect(); var x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
       el.style.setProperty('--rx', (x * 7).toFixed(2) + 'deg'); el.style.setProperty('--ry', (-y * 7).toFixed(2) + 'deg'); el.style.setProperty('--px', (x * -16).toFixed(1) + 'px'); el.style.setProperty('--py', (y * -16).toFixed(1) + 'px'); });
     el.addEventListener('mouseleave', function(){ ['--rx','--ry'].forEach(function(k){ el.style.setProperty(k,'0deg'); }); ['--px','--py'].forEach(function(k){ el.style.setProperty(k,'0px'); }); });
-  });
-  // audience finder tabs
-  document.querySelectorAll('[data-aud]').forEach(function(b){
-    b.addEventListener('click', function(){ var v = b.getAttribute('data-aud');
-      document.querySelectorAll('[data-aud]').forEach(function(x){ x.classList.toggle('on', x === b); x.setAttribute('aria-selected', x === b ? 'true' : 'false'); });
-      document.querySelectorAll('[data-panel]').forEach(function(p){ p.hidden = p.getAttribute('data-panel') !== v; }); });
   });
   // counters
   var els = Array.prototype.slice.call(document.querySelectorAll('.cnt'));
