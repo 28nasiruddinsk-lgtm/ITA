@@ -318,9 +318,9 @@ h3{font-weight:600 !important}
 .ita i[class*="fa-"]{line-height:1;display:inline-flex;align-items:center;justify-content:center;flex:none}
 /* countries: one simple line of names */
 .ctry{display:flex !important;flex-wrap:wrap;align-items:center;gap:6px 0;grid-template-columns:none !important}
-.cc{display:inline-flex;border:0 !important;background:none !important;box-shadow:none !important;transform:none !important;padding:0 !important;border-radius:0;font-size:20px;font-weight:500;color:#0F2D56;letter-spacing:-.01em}
-.cc+.cc::before{content:"";width:5px;height:5px;border-radius:50%;background:#A9C3E6;margin:0 18px}
-@media (max-width: 640px){.cc{font-size:17px}.cc+.cc::before{margin:0 12px}}
+.cc{display:inline-flex;border:0 !important;background:none !important;box-shadow:none !important;transform:none !important;padding:0 !important;border-radius:0;font-size:18px;font-weight:500;color:#0F2D56;letter-spacing:-.01em;align-items:center}
+.cc:not(:last-child)::after{content:"";width:5px;height:5px;border-radius:50%;background:#A9C3E6;margin:0 14px}
+@media (max-width: 640px){.cc{font-size:16px}.cc:not(:last-child)::after{margin:0 10px}}
 /* plain photo caption */
 .cap{position:absolute;left:12px;bottom:12px;font-size:13px;font-weight:500;color:#FFFFFF;background:rgba(15,45,86,.62);padding:4px 10px;border-radius:999px}
 /* hero badge: plain text line above the headline */
@@ -377,7 +377,7 @@ h3{font-weight:600 !important}
 <!-- stats (count up once on scroll) -->
 <section class="sec-stats" style="background: #FFFFFF; padding: 24px 0 40px">
 <div class="wrap">
-<div class="kpis"><div class="kpi"><b><span class="cnt" style="--to: 8"><span class="st">8</span></span></b><span>Countries</span></div><div class="kpi"><b><span class="cnt" style="--to: 8"><span class="st">8</span></span>+</b><span>Cities in Pakistan</span></div><div class="kpi"><b><span class="cnt" style="--to: 20"><span class="st">20</span></span>+</b><span>Examination centres</span></div><div class="kpi"><b><span class="cnt" style="--to: 100"><span class="st">100</span></span>k+</b><span>Candidates served</span></div><div class="kpi"><b><span class="cnt" style="--to: 5"><span class="st">5</span></span></b><span>Years of experience</span></div></div>
+<div class="kpis"><div class="kpi"><b><span class="cnt" style="--to: 9"><span class="st">9</span></span></b><span>Countries</span></div><div class="kpi"><b><span class="cnt" style="--to: 8"><span class="st">8</span></span>+</b><span>Cities in Pakistan</span></div><div class="kpi"><b><span class="cnt" style="--to: 20"><span class="st">20</span></span>+</b><span>Examination centres</span></div><div class="kpi"><b><span class="cnt" style="--to: 100"><span class="st">100</span></span>k+</b><span>Candidates served</span></div><div class="kpi"><b><span class="cnt" style="--to: 5"><span class="st">5</span></span></b><span>Years of experience</span></div></div>
 </div>
 </section>
 
@@ -385,10 +385,10 @@ h3{font-weight:600 !important}
 <section class="sec-ctry" style="background: #FFFFFF; padding: 40px 0 72px">
 <div class="wrap">
 <div class="shead">
-<div><div style="font-size: 14px; font-weight: 700; color: #6B7280; margin-bottom: 12px">Where we operate</div><h2 class="serif h2" style="font-size: 28px; line-height: 1.15; font-weight: 600; color: #0F2D56; margin: 0">Eight countries. One standard.</h2></div>
+<div><div style="font-size: 14px; font-weight: 700; color: #6B7280; margin-bottom: 12px">Where we operate</div><h2 class="serif h2" style="font-size: 28px; line-height: 1.15; font-weight: 600; color: #0F2D56; margin: 0">Nine countries. One standard.</h2></div>
 <p style="margin: 0; font-size: 16px">Every centre runs to the same procedures, whichever country your candidates sit in.</p>
 </div>
-<div class="ctry"><div class="cc">Pakistan</div><div class="cc">United Arab Emirates</div><div class="cc">United Kingdom</div><div class="cc">Saudi Arabia</div><div class="cc">Bahrain</div><div class="cc">Iraq</div><div class="cc">Egypt</div><div class="cc">Malaysia</div></div>
+<div class="ctry"><div class="cc">Pakistan</div><div class="cc">Iraq</div><div class="cc">United Arab Emirates</div><div class="cc">Saudi Arabia</div><div class="cc">Egypt</div><div class="cc">Bahrain</div><div class="cc">Malaysia</div><div class="cc">Uzbekistan</div><div class="cc">United Kingdom</div></div>
 </div>
 </section>
 
