@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="assets/fa/css/fontawesome.min.css">
 <link rel="stylesheet" href="assets/fa/css/solid.min.css">
 <link rel="stylesheet" href="assets/fa/css/regular.min.css">
-<link id="font-css" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600&amp;display=swap">
 <style>
 body{margin:0;background:#FFFFFF}
 a{color:#1F5AA6}a:hover{color:#0F2D56}
@@ -289,9 +289,6 @@ h3{font-weight:600 !important;letter-spacing:-.01em}
 .tab{border-radius:999px}
 .field{border-radius:12px}
 @media (max-width: 640px){h1.h1{font-size:36px !important}h2.h2{font-size:26px !important}}
-/* font preview picker (review only; remove before launch) */
-.fontpick{position:fixed;left:16px;bottom:16px;z-index:60;display:flex;align-items:center;gap:8px;padding:6px 6px 6px 14px;border-radius:999px;background:#0F2D56;color:#DCE7F5;font:600 13px/1 var(--font);box-shadow:0 12px 30px -12px rgba(0,0,0,.5)}
-.fontpick select{font:inherit;color:#0F2D56;background:#FFFFFF;border:0;border-radius:999px;padding:7px 10px;cursor:pointer}
 
 /* ===== feedback round 2 ===== */
 /* type: medium/semi-bold only, lighter headline sizes */
@@ -653,13 +650,6 @@ h3{font-weight:600 !important}
 </footer>
 
 </div>
-<label class="fontpick">Font
-<select id="fontsel" aria-label="Preview a font">
-<option value="jakarta">Plus Jakarta Sans</option>
-<option value="dmsans">DM Sans</option>
-<option value="manrope">Manrope (backup)</option>
-<option value="inter">Inter (backup)</option>
-</select></label>
 <script>
 
 (function(){
@@ -732,17 +722,6 @@ h3{font-weight:600 !important}
     b.querySelector('i').className = v.muted ? 'fa-solid fa-volume-xmark' : 'fa-solid fa-volume-high'; });
 })();
 
-(function(){
-  // font preview: ?font=inter etc. keeps the choice in the link so it can be shared with the client
-  var F = { jakarta: ['Plus Jakarta Sans', 'Plus+Jakarta+Sans'], dmsans: ['DM Sans', 'DM+Sans'], manrope: ['Manrope', 'Manrope'], inter: ['Inter', 'Inter'] };
-  var sel = document.getElementById('fontsel'), link = document.getElementById('font-css');
-  function use(k){ if (!F[k]) k = 'jakarta'; var f = F[k];
-    link.href = 'https://fonts.googleapis.com/css2?family=' + f[1] + ':wght@500;600&display=swap';
-    document.documentElement.style.setProperty('--font', "'" + f[0] + "', system-ui, -apple-system, 'Segoe UI', sans-serif");
-    if (sel) sel.value = k; }
-  var q = new URLSearchParams(location.search).get('font'); if (q) use(q);
-  if (sel) sel.addEventListener('change', function(){ use(sel.value); var u = new URL(location.href); u.searchParams.set('font', sel.value); history.replaceState(null, '', u); });
-})();
 </script>
 </body>
 </html>
