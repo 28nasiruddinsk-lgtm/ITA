@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ITA homepage — Option A, maroon</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&amp;display=swap">
+<link id="font-css" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&amp;display=swap">
 <style>
 body{margin:0;background:#FFFFFF}
 a{color:#1F5AA6}a:hover{color:#0F2D56}
@@ -218,7 +218,7 @@ h1,h2,h3,h4,.fhead{font-family:'Playfair Display',Georgia,'Times New Roman',seri
 
 /* hero: copy left, framed services video right */
 .hero-v{position:relative;overflow:hidden;background:#FFFFFF;padding:96px 0 104px}
-.hero-g{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:56px;align-items:center}
+.hero-g{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:48px;align-items:center}
 .hero-vid{position:relative;border-radius:16px;overflow:hidden;background:#0F2D56;aspect-ratio:16 / 9;border:1px solid #E3EAF4;box-shadow:0 2px 4px rgba(15,45,86,.06),0 30px 60px -30px rgba(15,45,86,.4)}
 .hero-vid video{display:block;width:100%;height:100%;object-fit:cover}
 .vbtn{position:absolute;z-index:1;right:14px;bottom:14px;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.6);background:rgba(15,45,86,.72);color:#FFFFFF;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
@@ -252,16 +252,49 @@ h1,h2,h3,h4,.fhead{font-family:'Playfair Display',Georgia,'Times New Roman',seri
 .heromap .arc2{opacity:0;animation:dashLoop 8s linear infinite}
 .heromap .pin{transform-box:fill-box;transform-origin:center;animation:pinLoop 8s ease infinite}
 @media (prefers-reduced-motion: reduce){.heromap .arc,.heromap .arc2,.heromap .pin{animation:none;opacity:1;stroke-dashoffset:0}.trav{display:none}}
+
+/* ===== client feedback pass: one clean sans, tighter rhythm, pill buttons, less decoration ===== */
+:root{--font:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif}
+.ita,.ita button,.ita input,.ita select{font-family:var(--font)}
+.serif,h1,h2,h3,h4,.fhead,.kpi b,.mq-track span{font-family:var(--font) !important;font-style:normal !important}
+.ita [style*="italic"]{font-style:normal !important}
+h1.h1{font-size:50px !important;font-weight:600 !important;line-height:1.06 !important;letter-spacing:-.03em !important;margin:20px 0 16px !important}
+h1.h1 .wl:last-child>span{color:#1F5AA6}
+h2.h2{font-size:34px !important;font-weight:600 !important;line-height:1.12 !important;letter-spacing:-.02em !important}
+h3{font-weight:600 !important;letter-spacing:-.01em}
+.kpi b{font-weight:600;letter-spacing:-.02em;font-size:42px}
+.mq-track span{font-weight:500;font-size:20px;letter-spacing:-.01em}
+.ita p{line-height:1.6}
+/* section headers sit together: eyebrow, heading, intro, action */
+.shead{display:flex;flex-direction:column;gap:12px;max-width:720px;margin-bottom:40px}
+.shead p{margin:0 !important;max-width:40em}
+.shead>div{display:block}
+.shead>div[style*="justify-content: space-between"]{display:flex !important;flex-direction:column;align-items:flex-start !important;gap:16px !important}
+/* calmer vertical rhythm */
+.ita section[style*="padding: 120px 0"]{padding-top:88px !important;padding-bottom:88px !important}
+.hero-v{padding:72px 0 56px}
+/* pill buttons with balanced icon spacing; plain colour hover instead of the wipe */
+.btn{border-radius:999px;min-height:46px;padding:0 22px;gap:8px;font-size:15px;font-weight:600;letter-spacing:-.005em;transition:background-color .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease}
+.btn::before{display:none}
+.btn:hover{transform:none;box-shadow:0 8px 20px -12px rgba(15,45,86,.45)}
+.btn svg{width:16px;height:16px;margin-right:-4px}
+.btn:hover svg{transform:translateX(2px)}
+.btn-b:hover,.btn-m:hover{background:#4D0026;border-color:#4D0026}
+.btn-o:hover{background:#F4F6FA;color:#0F2D56;border-color:#C9D2E0}
+.btn-w:hover{background:#E7EEF8}
+.btn-wl:hover{background:rgba(255,255,255,.12);color:#FFFFFF;border-color:#FFFFFF}
+.tab{border-radius:999px}
+.field{border-radius:12px}
+@media (max-width: 640px){h1.h1{font-size:36px !important}h2.h2{font-size:26px !important}}
+/* font preview picker (review only; remove before launch) */
+.fontpick{position:fixed;left:16px;bottom:16px;z-index:60;display:flex;align-items:center;gap:8px;padding:6px 6px 6px 14px;border-radius:999px;background:#0F2D56;color:#DCE7F5;font:600 13px/1 var(--font);box-shadow:0 12px 30px -12px rgba(0,0,0,.5)}
+.fontpick select{font:inherit;color:#0F2D56;background:#FFFFFF;border:0;border-radius:999px;padding:7px 10px;cursor:pointer}
 </style>
 </head>
 <body>
 <div class="progress" aria-hidden="true"></div>
-<div class="loader" aria-hidden="true">
-<svg width="92" height="108" viewBox="0 0 120 140"><path class="sh" pathLength="100" d="M12 8h96v64c0 34-26 54-48 62C38 126 12 106 12 72z"></path><text class="lt" x="60" y="80" text-anchor="middle" fill="#0F2D56" font-family="Open Sans, sans-serif" font-weight="800" font-size="38" letter-spacing="2">ITA</text></svg>
-<div class="cap">Trusted assessment. Delivered.</div>
-</div>
 
-<div class="ita" style="font-family: 'Open Sans', system-ui, sans-serif; color: #374151; background: #FFFFFF; font-size: 16px; line-height: 1.6">
+<div class="ita" style="font-family: var(--font); color: #374151; background: #FFFFFF; font-size: 16px; line-height: 1.6">
 
 <!-- utility bar -->
 <div style="background: #0A2242; color: #DCE7F5; font-size: 14px">
@@ -286,31 +319,6 @@ h1,h2,h3,h4,.fhead{font-family:'Playfair Display',Georgia,'Times New Roman',seri
 
 <!-- HERO: copy + services video -->
 <section class="hero-v">
-<div class="heromap" aria-hidden="true">
-<div class="drift" style="position: relative">
-<img src="assets/map-a.svg" alt="" style="display: block; width: 100%; height: auto">
-<svg viewBox="0 0 1040 600" style="position: absolute; inset: 0; width: 100%; height: 100%">
-<path class="arc" style="animation-delay: 2.30s" d="M651 285 Q599 245 547 337"></path>
-<path class="arc2" style="animation-delay: 2.45s" d="M651 285 Q583 220 515 316"></path>
-<path class="arc2" style="animation-delay: 2.60s" d="M651 285 Q562 215 474 336"></path>
-<path class="arc2" style="animation-delay: 2.75s" d="M651 285 Q556 180 462 258"></path>
-<path class="arc2" style="animation-delay: 2.90s" d="M651 285 Q507 165 363 314"></path>
-<path class="arc2" style="animation-delay: 3.05s" d="M651 285 Q648 215 589 184"></path>
-<path class="arc2" style="animation-delay: 3.20s" d="M651 285 Q820 290 930 500"></path>
-<path class="arc2" style="animation-delay: 3.35s" d="M651 285 Q390 20 133 78"></path>
-<circle class="pin" style="animation-delay: 3.50s" cx="547" cy="337" r="5" fill="#1F5AA6"></circle>
-<circle class="pin" style="animation-delay: 3.60s" cx="515" cy="316" r="5" fill="#FFFFFF" stroke="#1F5AA6" stroke-width="2.5"></circle>
-<circle class="pin" style="animation-delay: 3.70s" cx="474" cy="336" r="5" fill="#FFFFFF" stroke="#1F5AA6" stroke-width="2.5"></circle>
-<circle class="pin" style="animation-delay: 3.80s" cx="462" cy="258" r="5" fill="#FFFFFF" stroke="#1F5AA6" stroke-width="2.5"></circle>
-<circle class="pin" style="animation-delay: 3.90s" cx="363" cy="314" r="5" fill="#FFFFFF" stroke="#1F5AA6" stroke-width="2.5"></circle>
-<circle class="pin" style="animation-delay: 4.00s" cx="589" cy="184" r="5" fill="#FFFFFF" stroke="#1F5AA6" stroke-width="2.5"></circle>
-<circle class="pin" style="animation-delay: 4.10s" cx="930" cy="500" r="5" fill="#FFFFFF" stroke="#1F5AA6" stroke-width="2.5"></circle>
-<circle class="pin" style="animation-delay: 4.20s" cx="133" cy="78" r="5" fill="#FFFFFF" stroke="#1F5AA6" stroke-width="2.5"></circle>
-<circle class="trav" r="4" fill="#1F5AA6" opacity="0"><animateMotion dur="8s" begin="2.30s" repeatCount="indefinite" path="M651 285 Q599 245 547 337" keyPoints="0;1;1" keyTimes="0;0.38;1" calcMode="spline" keySplines="0.45 0 0.25 1;0 0 1 1"></animateMotion><animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.06;0.38;0.46;1" dur="8s" begin="2.30s" repeatCount="indefinite"></animate></circle><circle class="trav" r="4" fill="#1F5AA6" opacity="0"><animateMotion dur="8s" begin="2.45s" repeatCount="indefinite" path="M651 285 Q583 220 515 316" keyPoints="0;1;1" keyTimes="0;0.38;1" calcMode="spline" keySplines="0.45 0 0.25 1;0 0 1 1"></animateMotion><animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.06;0.38;0.46;1" dur="8s" begin="2.45s" repeatCount="indefinite"></animate></circle><circle class="trav" r="4" fill="#1F5AA6" opacity="0"><animateMotion dur="8s" begin="2.60s" repeatCount="indefinite" path="M651 285 Q562 215 474 336" keyPoints="0;1;1" keyTimes="0;0.38;1" calcMode="spline" keySplines="0.45 0 0.25 1;0 0 1 1"></animateMotion><animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.06;0.38;0.46;1" dur="8s" begin="2.60s" repeatCount="indefinite"></animate></circle><circle class="trav" r="4" fill="#1F5AA6" opacity="0"><animateMotion dur="8s" begin="2.75s" repeatCount="indefinite" path="M651 285 Q556 180 462 258" keyPoints="0;1;1" keyTimes="0;0.38;1" calcMode="spline" keySplines="0.45 0 0.25 1;0 0 1 1"></animateMotion><animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.06;0.38;0.46;1" dur="8s" begin="2.75s" repeatCount="indefinite"></animate></circle><circle class="trav" r="4" fill="#1F5AA6" opacity="0"><animateMotion dur="8s" begin="2.90s" repeatCount="indefinite" path="M651 285 Q507 165 363 314" keyPoints="0;1;1" keyTimes="0;0.38;1" calcMode="spline" keySplines="0.45 0 0.25 1;0 0 1 1"></animateMotion><animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.06;0.38;0.46;1" dur="8s" begin="2.90s" repeatCount="indefinite"></animate></circle><circle class="trav" r="4" fill="#1F5AA6" opacity="0"><animateMotion dur="8s" begin="3.05s" repeatCount="indefinite" path="M651 285 Q648 215 589 184" keyPoints="0;1;1" keyTimes="0;0.38;1" calcMode="spline" keySplines="0.45 0 0.25 1;0 0 1 1"></animateMotion><animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.06;0.38;0.46;1" dur="8s" begin="3.05s" repeatCount="indefinite"></animate></circle><circle class="trav" r="4" fill="#1F5AA6" opacity="0"><animateMotion dur="8s" begin="3.20s" repeatCount="indefinite" path="M651 285 Q820 290 930 500" keyPoints="0;1;1" keyTimes="0;0.38;1" calcMode="spline" keySplines="0.45 0 0.25 1;0 0 1 1"></animateMotion><animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.06;0.38;0.46;1" dur="8s" begin="3.20s" repeatCount="indefinite"></animate></circle><circle class="trav" r="4" fill="#1F5AA6" opacity="0"><animateMotion dur="8s" begin="3.35s" repeatCount="indefinite" path="M651 285 Q390 20 133 78" keyPoints="0;1;1" keyTimes="0;0.38;1" calcMode="spline" keySplines="0.45 0 0.25 1;0 0 1 1"></animateMotion><animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.06;0.38;0.46;1" dur="8s" begin="3.35s" repeatCount="indefinite"></animate></circle><circle class="pr" cx="651" cy="285" r="10"></circle>
-<circle cx="651" cy="285" r="10" fill="#0F2D56" stroke="#FFFFFF" stroke-width="3"></circle>
-</svg>
-</div>
-</div>
 <div class="wrap hero-g">
 <div>
 <div class="rise" style="animation-delay: 1.35s; display: inline-flex; align-items: center; gap: 10px; background: #FFFFFF; border: 1px solid #E3EAF4; border-radius: 999px; padding: 6px 16px 6px 6px; font-size: 14px; font-weight: 600; color: #0F2D56">
@@ -322,8 +330,6 @@ IBCC-registered exam delivery partner
 <div class="rise" style="animation-delay: 1.75s; display: flex; gap: 14px; flex-wrap: wrap; align-items: center">
 <a class="btn btn-b" href="#">Book an exam <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
-<div class="rise serif" style="animation-delay: 2.00s; margin-top: 44px; font-style: italic; font-size: 18px; color: #6B7280; display: flex; align-items: center; gap: 16px">
-<span class="rule-in" style="height: 1px; width: 56px; background: #C9CDD4; display: block"></span>Trusted assessment. Delivered.</div>
 </div>
 <div class="rise hero-vid" style="animation-delay: 1.5s">
 <video id="svc" autoplay muted loop playsinline preload="metadata" poster="assets/ita-services-poster.jpg" aria-label="ITA services overview: exam management, professional invigilation, exam venues, technology and customised services">
@@ -336,16 +342,16 @@ IBCC-registered exam delivery partner
 </section>
 
 <!-- stats (count up once on scroll) -->
-<section class="dotbg" style="background: #FFFFFF; padding: 96px 0 48px">
+<section style="background: #FFFFFF; padding: 24px 0 40px">
 <div class="wrap">
 <div class="kpis"><div class="kpi"><b><span class="cnt" style="--to: 8"><span class="st">8</span></span></b><span>Countries</span></div><div class="kpi"><b><span class="cnt" style="--to: 8"><span class="st">8</span></span>+</b><span>Cities in Pakistan</span></div><div class="kpi"><b><span class="cnt" style="--to: 20"><span class="st">20</span></span>+</b><span>Examination centres</span></div><div class="kpi"><b><span class="cnt" style="--to: 100"><span class="st">100</span></span>k+</b><span>Candidates served</span></div><div class="kpi"><b><span class="cnt" style="--to: 5"><span class="st">5</span></span></b><span>Years of experience</span></div></div>
 </div>
 </section>
 
 <!-- countries -->
-<section class="dotbg" style="background: #FFFFFF; padding: 48px 0 120px">
+<section style="background: #FFFFFF; padding: 40px 0 72px">
 <div class="wrap">
-<div class="g2" style="align-items: end; gap: 48px; margin-bottom: 36px">
+<div class="shead">
 <div><div style="font-size: 14px; font-weight: 700; color: #6B7280; margin-bottom: 12px">Where we operate</div><h2 class="serif h2" style="font-size: 28px; line-height: 1.15; font-weight: 600; color: #0F2D56; margin: 0">Eight countries. One standard.</h2></div>
 <p style="margin: 0; font-size: 16px">Every centre runs to the same procedures, whichever country your candidates sit in.</p>
 </div>
@@ -354,7 +360,7 @@ IBCC-registered exam delivery partner
 </section>
 
 <!-- audience finder -->
-<section class="depth" style="background: #FFFFFF; padding: 96px 0">
+<section class="depth" style="background: #FFFFFF; padding: 72px 0">
 <div class="wrap">
 <div style="text-align: center; margin-bottom: 36px">
 <div style="font-size: 14px; font-weight: 700; color: #6B7280; margin-bottom: 10px">Get started</div>
@@ -418,7 +424,7 @@ IBCC-registered exam delivery partner
 <!-- who we serve + quick access -->
 <section class="depth" style="background: #FFFFFF; padding: 120px 0">
 <div class="wrap">
-<div class="g2" style="align-items: end; gap: 48px; margin-bottom: 56px">
+<div class="shead">
 <div>
 <div style="font-size: 14px; font-weight: 700; color: #6B7280; margin-bottom: 12px">Who we work with</div>
 <h2 class="serif h2" style="font-size: 28px; line-height: 1.1; font-weight: 600; color: #0F2D56; margin: 0">Fair, reliable, internationally aligned exams.</h2>
@@ -435,7 +441,7 @@ IBCC-registered exam delivery partner
 <div class="face card">
 <div class="ph" style="height: 210px; border-radius: 0"><img src="assets/card-awarding-bodies.jpg" alt="Historic university building with students walking in the courtyard"></div>
 <div style="padding: 22px"><h3 class="serif" style="font-size: 18px; color: #0F2D56; margin: 0 0 6px; font-weight: 600">Awarding bodies</h3><p style="margin: 0; font-size: 14px">Every session to your protocols, with conflict-free invigilators.</p></div>
-<span class="glass fliphint"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5"></path></svg>Hover for details</span></div>
+</div>
 <div class="face back"><div style="font-size: 14px; font-weight: 700; color: #6B7280">For awarding bodies</div><h3 class="serif" style="font-size: 20px; font-weight: 600; line-height: 1.15">What we handle for you</h3><span class="bl">Your protocols applied at every sitting</span><span class="bl">Trained, conflict-free invigilators</span><span class="bl">A full report after each session</span><a href="#">See how it works</a></div>
 </div>
 </article>
@@ -444,7 +450,7 @@ IBCC-registered exam delivery partner
 <div class="face card">
 <div class="ph" style="height: 210px; border-radius: 0"><img src="assets/card-universities.jpg" alt="Sunlit Gothic university building behind trees"></div>
 <div style="padding: 22px"><h3 class="serif" style="font-size: 18px; color: #0F2D56; margin: 0 0 6px; font-weight: 600">Universities</h3><p style="margin: 0; font-size: 14px">One consistent picture across a distributed exam network.</p></div>
-<span class="glass fliphint"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5"></path></svg>Hover for details</span></div>
+</div>
 <div class="face back"><div style="font-size: 14px; font-weight: 700; color: #6B7280">For universities</div><h3 class="serif" style="font-size: 20px; font-weight: 600; line-height: 1.15">What we handle for you</h3><span class="bl">The same checks in every city</span><span class="bl">One consistent record across campuses</span><span class="bl">Controlled venues with CCTV</span><a href="#">See how it works</a></div>
 </div>
 </article>
@@ -453,7 +459,7 @@ IBCC-registered exam delivery partner
 <div class="face card">
 <div class="ph" style="height: 210px; border-radius: 0"><img src="assets/card-training-providers.jpg" alt="Students walking towards a campus building"></div>
 <div style="padding: 22px"><h3 class="serif" style="font-size: 18px; color: #0F2D56; margin: 0 0 6px; font-weight: 600">Training providers</h3><p style="margin: 0; font-size: 14px">A neutral layer, with an auditable record of every sitting.</p></div>
-<span class="glass fliphint"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="100" d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5"></path></svg>Hover for details</span></div>
+</div>
 <div class="face back"><div style="font-size: 14px; font-weight: 700; color: #6B7280">For training providers</div><h3 class="serif" style="font-size: 20px; font-weight: 600; line-height: 1.15">What we handle for you</h3><span class="bl">A neutral layer between you and candidates</span><span class="bl">An auditable record of every sitting</span><span class="bl">Photo ID and QR checks at the door</span><a href="#">See how it works</a></div>
 </div>
 </article>
@@ -524,7 +530,7 @@ IBCC-registered exam delivery partner
 <!-- venue -->
 <section class="depth" style="background: #FFFFFF; padding: 120px 0">
 <div class="wrap">
-<div class="g2" style="align-items: end; gap: 48px; margin-bottom: 40px">
+<div class="shead">
 <div>
 <div style="font-size: 14px; font-weight: 700; color: #6B7280; margin-bottom: 12px">Inside an ITA venue</div>
 <h2 class="serif h2" style="font-size: 28px; line-height: 1.1; font-weight: 600; color: #0F2D56; margin: 0">The room is ready before the first candidate arrives.</h2>
@@ -589,6 +595,14 @@ IBCC-registered exam delivery partner
 </footer>
 
 </div>
+<label class="fontpick">Font
+<select id="fontsel" aria-label="Preview a font">
+<option value="instrument">Instrument Sans</option>
+<option value="inter">Inter</option>
+<option value="manrope">Manrope</option>
+<option value="jakarta">Plus Jakarta Sans</option>
+<option value="dmsans">DM Sans</option>
+</select></label>
 <script>
 
 (function(){
@@ -659,6 +673,18 @@ IBCC-registered exam delivery partner
   if (b) b.addEventListener('click', function(){ v.muted = !v.muted; if (!v.muted) v.play();
     b.setAttribute('aria-pressed', v.muted ? 'false' : 'true'); b.setAttribute('aria-label', v.muted ? 'Turn sound on' : 'Turn sound off');
     b.querySelector('.x').style.display = v.muted ? '' : 'none'; b.querySelector('.w').style.display = v.muted ? 'none' : ''; });
+})();
+
+(function(){
+  // font preview: ?font=inter etc. keeps the choice in the link so it can be shared with the client
+  var F = { instrument: ['Instrument Sans', 'Instrument+Sans'], inter: ['Inter', 'Inter'], manrope: ['Manrope', 'Manrope'], jakarta: ['Plus Jakarta Sans', 'Plus+Jakarta+Sans'], dmsans: ['DM Sans', 'DM+Sans'] };
+  var sel = document.getElementById('fontsel'), link = document.getElementById('font-css');
+  function use(k){ if (!F[k]) k = 'instrument'; var f = F[k];
+    link.href = 'https://fonts.googleapis.com/css2?family=' + f[1] + ':wght@400;500;600;700&display=swap';
+    document.documentElement.style.setProperty('--font', "'" + f[0] + "', system-ui, -apple-system, 'Segoe UI', sans-serif");
+    if (sel) sel.value = k; }
+  var q = new URLSearchParams(location.search).get('font'); if (q) use(q);
+  if (sel) sel.addEventListener('change', function(){ use(sel.value); var u = new URL(location.href); u.searchParams.set('font', sel.value); history.replaceState(null, '', u); });
 })();
 </script>
 </body>
