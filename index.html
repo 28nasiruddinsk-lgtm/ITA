@@ -341,6 +341,15 @@ h3{font-weight:600 !important}
 .ita section .card,.ita section aside,.kpis,.glass-card,.hero-vid,.ita section .face,.ita section [style*="border-radius: 16px"]{border:1px solid #E3EAF4 !important}
 .depth .card:not(.face):hover,.depth aside:hover,.depth figure:hover .ph,.card:hover{transform:none !important}
 .card:hover{border-color:#C9D2E0 !important}
+/* "Why choose ITA": diagram on a navy panel so the section stands out (section base stays white) */
+.why-panel{background:#0F2D56 !important;border-color:#0F2D56 !important;color:#DCE7F5;-webkit-backdrop-filter:none;backdrop-filter:none}
+.why-panel [style*="background: #FFFFFF"]{background:rgba(255,255,255,.08) !important;border-color:rgba(255,255,255,.24) !important;color:#FFFFFF !important}
+.why-panel [style*="background: #0F2D56"]{background:#FFFFFF !important;color:#0F2D56 !important}
+.why-panel [style*="background: #0F2D56"] i{color:#0F2D56 !important}
+.why-panel i.fa-arrow-right,.why-panel i.fa-arrow-down{color:#6B9FD6 !important}
+.why-panel p{color:#FFFFFF !important}
+.why-panel p[style*="color: #6B7280"]{color:#A9C3E6 !important}
+.why-panel [style*="color: #374151"]{color:#DCE7F5 !important}
 </style>
 </head>
 <body>
@@ -541,7 +550,7 @@ h3{font-weight:600 !important}
 <button class="tab on" type="button" data-model="ita">The ITA model</button>
 </div>
 </div>
-<div class="glass-card" style="background: #F4F6FA; border: 1px solid #E3EAF4; border-radius: 16px; padding: 40px 32px; min-height: 340px; display: flex; flex-direction: column; justify-content: center">
+<div class="glass-card why-panel" style="background: #F4F6FA; border: 1px solid #E3EAF4; border-radius: 16px; padding: 48px 36px; min-height: 360px; display: flex; flex-direction: column; justify-content: center">
 <div data-mpanel="trad" hidden>
 <div style="display: flex; flex-direction: column; align-items: center; gap: 18px">
 <div style="border: 1px solid #D5D9DF; background: #FFFFFF; border-radius: 8px; padding: 14px 22px; font-weight: 700; color: #0F2D56">Local centre</div>
